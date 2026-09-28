@@ -29,7 +29,8 @@ jobs:
           GRAPH_VERSION: v21.0
           IMAGE_HOST: github
           ASSETS_GITHUB_REPO: Idecassio/elucre-social-assets
-          ASSETS_GITHUB_TOKEN: ${{ secrets.ASSETS_GITHUB_TOKEN }}
+          # Mesmo repo do código → o token embutido do Actions (contents:write) já sobe as imagens.
+          ASSETS_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_BRANCH: main
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: node scripts/run-due.mjs

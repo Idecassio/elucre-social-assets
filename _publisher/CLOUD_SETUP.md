@@ -34,7 +34,8 @@ No repo → **Settings → Secrets and variables → Actions → New repository 
 | `IG_USER_ID` | `17841435197554548` |
 | `IG_ACCESS_TOKEN` | (o token de System User do Instagram — o mesmo do `.env`) |
 | `DISCORD_WEBHOOK` | (o webhook do canal MC-monitor — o mesmo do `_social/config.json`) |
-| `ASSETS_GITHUB_TOKEN` | (o PAT do repo `elucre-social-assets` — o mesmo do `.env`) |
+
+> As imagens sobem no próprio repo usando o **token embutido do Actions** — não precisa de Secret extra pra isso.
 
 ## Passo 4 — Testar manualmente (antes de confiar no cron)
 Em **Actions**, rode cada um por **"Run workflow"** (workflow_dispatch), nesta ordem:
