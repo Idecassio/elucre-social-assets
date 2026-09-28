@@ -1,0 +1,151 @@
+========================================================
+eLUCRE — PLANO DE MARKETING / EXPANSÃO — LISTA DE TAREFAS
+Base: transcrição da conversa (Fhelyp x Idecássio)
+Formato: Tarefa | Dono | Prazo | Prioridade | Custo
+Marcadores: [PROMO] = tarefa de promoção/venda | (sem custo) só tempo | (investimento) requer $
+========================================================
+
+PRINCÍPIOS QUE GUIAM O PLANO
+- Orgânico primeiro (porta a porta, conteúdo, indicação). Só investir em pago depois de ter caixa (~90 dias).
+- Foco geográfico e de nicho: 1–2 municípios (Maceió, Rio Largo) e 1–2 nichos por vez (dominar um "game" e passar ao próximo).
+- Tracking-first: toda decisão baseada em dado.
+- Concierge: pegar na mão do cliente nos primeiros 20–50 dias.
+- RISCO Nº 1 = capacidade de execução. O plano é bom (nota 9), mas incompleto; o gargalo é consistência/dono.
+  Por isso: tudo vira tarefa com dono e data.
+
+
+--------------------------------------------------------
+SPRINT 0 — FUNDAÇÃO (08–19/09) — fechar decisões + instrumentar
+--------------------------------------------------------
+
+1) Definir "sucesso" da operação + funil de marcos progressivos
+   (conta criada -> >=3 produtos -> loja publicada -> link compartilhado -> cartão/trial -> 7 dias sem cancelar)
+   Dono: Fhelyp + Idecássio | Prazo: 09/09 | Prioridade: P0 | (sem custo)
+
+2) Definir foco: municípios (Maceió / Rio Largo) + 1–2 nichos iniciais (começar por celular/acessórios)
+   Dono: Fhelyp + Idecássio | Prazo: 09/09 | Prioridade: P0 | (sem custo)
+
+3) Definir rotina de execução (quem faz o quê, dia fixo na semana) — resposta ao risco nº 1
+   Dono: Fhelyp + Idecássio | Prazo: 10/09 | Prioridade: P0 | (sem custo)
+
+4) Instalar Pixel do Meta + Google Analytics (GA4) nas páginas/loja
+   Dono: Fhelyp | Prazo: 12/09 | Prioridade: P0 | (sem custo)
+
+5) Corrigir o atrito do link de confirmação que vem pelo Instagram
+   Dono: Fhelyp | Prazo: 12/09 | Prioridade: P0 | (sem custo)
+
+6) Instrumentar eventos do funil (visita, cadastro, >=3 produtos, publicou, compartilhou, cartão)
+   Dono: Fhelyp | Prazo: 19/09 | Prioridade: P0 | (sem custo)
+
+7) Criar/organizar os perfis das redes (bio, identidade visual, destaques) prontos para publicar
+   Dono: Idecássio (+Claude) | Prazo: 15/09 | Prioridade: P0 | (sem custo)
+
+8) Definir linha editorial + calendário de conteúdo (3–4 Reels/semana, carrosséis, Stories diários)
+   Dono: Idecássio (+Claude) | Prazo: 15/09 | Prioridade: P0 | (sem custo)
+
+9) [PROMO] Montar loja piloto/demo do nicho-âncora (ex.: cardápio -> tabela -> loja montada) — dogfooding
+   Dono: Idecássio (+Claude) | Prazo: 19/09 | Prioridade: P0 | (sem custo)
+
+10) [PROMO] Apresentar ao cliente que já está esperando (avaliação + teste de assinatura)
+    Dono: Idecássio | Prazo: 17/09 | Prioridade: P0 | (sem custo)
+
+
+--------------------------------------------------------
+SPRINT 1 — ATIVAÇÃO + CONTEÚDO + VENDA (22/09–03/10)
+--------------------------------------------------------
+
+11) E-mails de ativação / ciclo de vida (onboarding dia 1 / 1,5 / 3,5 / 6, com variações por ação concluída ou não)
+    Dono: Fhelyp (automação) + Claude (copy) | Prazo: 26/09 | Prioridade: P0 | (sem custo)
+
+12) Métricas de e-mail (SendGrid): abertura, clique, bounce
+    Dono: Fhelyp | Prazo: 30/09 | Prioridade: P1 | (sem custo)
+
+13) Educação do trial na página/checkout e nos criativos ("nada será cobrado nos 7 dias, sem compromisso")
+    Dono: Idecássio (copy) + Fhelyp (loja) | Prazo: 30/09 | Prioridade: P1 | (sem custo)
+
+14) [PROMO] 1º lote de posts reais (o kit anterior foi só modelo)
+    Dono: Idecássio (+Claude) | Prazo: recorrente | Prioridade: P1 | (sem custo)
+
+15) [PROMO] Criativo do diferencial "0% de comissão, 100% da sua venda é sua"
+    Dono: Idecássio (+Claude) | Prazo: 30/09 | Prioridade: P1 | (sem custo)
+
+16) Criar variações de demo por nicho (celular + acessórios em categorias distintas; 2º nicho)
+    Dono: Idecássio (+Claude) | Prazo: 03/10 | Prioridade: P1 | (sem custo)
+
+17) Planilha de CAC/LTV + receita + unit economics (contar o tempo; plano anual = caixa à vista)
+    Dono: Fhelyp | Prazo: 03/10 | Prioridade: P1 | (sem custo)
+
+18) Definir o checklist do "Executivo de Sucesso do Cliente"
+    (dia fixo, ex. terça de manhã: revisar clientes ativos/trial, olhar Instagram/config da loja, mandar mensagem, oferecer Meet)
+    Dono: Idecássio | Prazo: 24/09 | Prioridade: P0 | (sem custo)
+
+
+--------------------------------------------------------
+SPRINT 2 — RETENÇÃO, PROVA SOCIAL E FUNDAÇÃO DE BUSCA (06–17/10)
+--------------------------------------------------------
+
+19) WhatsApp oficial + automação
+    (número oficial; definir conteúdo/templates/régua/cadência/ações monitoradas; testar no n8n; conectar WhatsApp + SendGrid)
+    Dono: Fhelyp | Prazo: 17/10 | Prioridade: P1 | (investimento: número oficial)
+
+20) Fluxo de indicação real: definir benefício + canal (WhatsApp) + página no produto para indicar e ver status
+    Dono: Fhelyp (+Claude) | Prazo: 17/10 | Prioridade: P1 | (sem custo / investimento)
+
+21) [PROMO] Coletar depoimentos / vídeos (oferecer meses grátis) -> usar como prova social nas redes
+    Dono: Idecássio | Prazo: recorrente | Prioridade: P1 | (sem custo)
+
+22) [PROMO] Blog/artigos no eLucre ("como criar loja online") + páginas e sub-páginas para ranquear
+    Dono: Idecássio (+Claude) | Prazo: recorrente | Prioridade: P1 | (sem custo)
+
+23) SEO + AEO/GEO: refino de palavras-chave para Google E para IA (ChatGPT/Claude/Google Modo IA)
+    Dono: Fhelyp (+Claude) | Prazo: contínuo | Prioridade: P1 | (sem custo)
+    OBS.: SEO/AEO NÃO é canal de lançamento — é fundação de longo prazo (frutos com 90–180 dias).
+    Marco/teste real: pesquisar no GPT "melhor sistema para criar loja online grátis" e o eLucre aparecer no resultado.
+
+24) Grupo de WhatsApp / comunidade (avisos, lançamentos, "ouvimos você")
+    Dono: Idecássio | Prazo: 17/10 | Prioridade: P2 | (sem custo)
+
+
+--------------------------------------------------------
+CONTÍNUO / RECORRENTE (entra na rotina)
+--------------------------------------------------------
+
+25) Concierge 20–50 dias por loja: montar a 1ª loja junto, ativar, gerar print real,
+    ensinar a divulgar (bio Instagram, Stories, Reels "feito no eLucre" -> divulgação orgânica).
+    Dono: Idecássio | Prioridade: P0 | (sem custo)
+
+26) Produção de conteúdo semanal (Reels / carrossel / Stories) + monitorar quem travou no funil e mandar mensagem.
+    Dono: Idecássio (+Claude) | Prioridade: P1 | (sem custo)
+
+27) Medir semanalmente: funil, churn, CAC/LTV e onde o cliente trava.
+    Dono: Fhelyp | Prioridade: P1 | (sem custo)
+
+
+--------------------------------------------------------
+FASE 2 — SÓ DEPOIS DE CAIXA / COM INVESTIMENTO
+--------------------------------------------------------
+
+28) Módulo de prospecção ativa (Forux agentes) para lojas de um nicho/cidade focada (pagar template).
+    Dono: Fhelyp | Prioridade: P2 | (investimento)
+
+29) Tráfego pago (Meta) com Pixel maduro + público semelhante — gasto consciente,
+    financiado pela indicação/depoimentos/MRR.
+    Dono: Fhelyp | Prioridade: P2 | (investimento)
+
+30) Análise automatizada de clientes (ex.: Discord) que já gera a mensagem sugerida; operador só executa.
+    Dono: Idecássio + Fhelyp | Prioridade: P2 | (sem custo / automação)
+
+
+--------------------------------------------------------
+GAPS DE PRODUTO (consolidado — o que falta na plataforma)
+--------------------------------------------------------
+- Pixel do Meta / GA4
+- Atrito do link de confirmação vindo do Instagram
+- E-mails de ativação / ciclo de vida
+- Fluxo de indicação real (página + status das indicações)
+- Número oficial de WhatsApp para automação
+
+========================================================
+Meta dos primeiros 90 dias: fazer caixa via indicação (não anúncio),
+primeiros clientes pagantes já com concierge. Só investir em pago depois.
+========================================================

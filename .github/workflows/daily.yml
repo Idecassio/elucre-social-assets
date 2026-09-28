@@ -1,0 +1,37 @@
+name: eLucre · daily preview
+# Todo dia útil 09:00 BRT (12:00 UTC): posta a prévia no Discord + enfileira o post do dia.
+on:
+  schedule:
+    - cron: '0 12 * * 1-5'
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    env:
+      TZ: America/Sao_Paulo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Instalar deps
+        working-directory: _publisher
+        run: npm ci
+      - name: Prévia + enfileirar
+        working-directory: _publisher
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GRAPH_VERSION: v21.0
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: node scripts/elucre/daily.mjs
+      - name: Commitar estado
+        run: |
+          git config user.name "eLucre bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add _publisher/content/ledger.json _social/dashboard_data.js 2>/dev/null || true
+          git commit -m "chore(daily): estado $(date -u +%FT%TZ)" || echo "sem mudancas"
+          git pull --rebase --autostash || true
+          git push

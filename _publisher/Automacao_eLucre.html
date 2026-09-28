@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Automação eLucre</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 13mm 14mm; }
+  @page :first { margin: 0; }
+  :root{
+    --indigo:#4F46E5; --indigo-deep:#4338CA; --hl:#5b53f0;
+    --green:#12864B; --green-soft:#E4F6EC; --wpp:#25D366;
+    --ink:#171310; --muted:#6a6f7a; --cream:#FAF9F7; --line:#E4E1D9;
+    --font:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--font);color:var(--ink);font-size:11px;line-height:1.5;background:#fff}
+  /* ===== CAPA (página 1, full-bleed) ===== */
+  .coverimg{display:block;width:210mm;height:297mm;object-fit:cover;page-break-after:always;break-after:page}
+  .cover{width:210mm;height:297mm;box-sizing:border-box;overflow:hidden;page-break-after:always;break-after:page;color:#fff;position:relative;padding:28mm 22mm;display:flex;flex-direction:column;justify-content:space-between;
+    background:radial-gradient(90% 60% at 85% 0%,rgba(124,120,255,.55),transparent 55%),radial-gradient(80% 55% at 5% 100%,rgba(28,24,88,.9),transparent 62%),linear-gradient(160deg,#241F63 0%,#35309C 48%,#4F46E5 82%,#4A41D6 100%);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .cover .cdots{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(2px 2px at 14% 18%,rgba(255,255,255,.5),transparent),radial-gradient(2px 2px at 82% 12%,rgba(255,255,255,.4),transparent),radial-gradient(2px 2px at 26% 88%,rgba(255,255,255,.35),transparent),radial-gradient(2px 2px at 92% 70%,rgba(255,255,255,.4),transparent)}
+  .cover>*{position:relative;z-index:2}
+  .ctop{display:flex;align-items:center;justify-content:center;gap:15px}
+  .cmark{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);box-shadow:0 12px 30px rgba(8,6,30,.4)}
+  .cmark svg{width:36px;height:36px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .cbrand{font-size:28px;font-weight:900;letter-spacing:-.01em}
+  .ckicker{font-size:13px;font-weight:800;letter-spacing:.26em;color:#C7CBFF;text-transform:uppercase}
+  .ctitle{font-size:42px;font-weight:900;line-height:1.05;letter-spacing:-.02em;margin-top:16px;white-space:nowrap}
+  .cmid{text-align:center}
+  .csub{font-size:15px;font-weight:600;opacity:.92;margin-top:18px;white-space:nowrap}
+  .cflow{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;justify-content:center}
+  .cflow span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);border-radius:100px;padding:7px 15px;font-size:12.5px;font-weight:700}
+  .cbadge{display:inline-block;margin-top:30px;background:#E4F6EC;color:#0f7a44;padding:10px 20px;border-radius:100px;font-weight:800;font-size:14px}
+  .cfoot{display:flex;justify-content:center;align-items:flex-end;font-size:12.5px;opacity:.9;border-top:1px solid rgba(255,255,255,.2);padding-top:14px;text-align:center}
+  .cfoot b{color:#fff}
+  .hero{background:linear-gradient(135deg,var(--indigo),var(--indigo-deep));color:#fff;border-radius:14px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center}
+  .hero h1{font-size:22px;font-weight:900;letter-spacing:-.02em}
+  .hero .sub{font-size:12px;opacity:.9;margin-top:3px}
+  .badge{background:#E4F6EC;color:#0f7a44;font-weight:800;font-size:12px;padding:6px 14px;border-radius:100px;white-space:nowrap}
+  h2{font-size:14px;font-weight:800;color:var(--indigo-deep);margin:16px 0 8px;display:flex;align-items:center;gap:7px;break-after:avoid;page-break-after:avoid}
+  /* Paginação: título não fica órfão no fim da página; blocos não quebram no meio. */
+  .step,.card,.box,table,.warn,.flow,.keep{break-inside:avoid;page-break-inside:avoid}
+  h2 .n{background:var(--indigo);color:#fff;width:20px;height:20px;border-radius:6px;display:inline-grid;place-items:center;font-size:11px;font-weight:800}
+  p{margin:4px 0}
+  .flow{display:flex;flex-direction:column;gap:0;margin:6px 0}
+  .step{border:1px solid var(--line);border-left:4px solid var(--indigo);border-radius:9px;padding:9px 13px;background:var(--cream)}
+  .step b{color:var(--ink)} .step .t{font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+  .arrow{align-self:center;color:var(--indigo);font-size:15px;line-height:1;margin:2px 0}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:4px}
+  .card{border:1px solid var(--line);border-radius:10px;padding:11px 13px;break-inside:avoid}
+  .card h3{font-size:12px;font-weight:800;margin-bottom:4px;color:var(--ink)}
+  .card .auto{display:inline-block;font-size:9px;font-weight:800;padding:2px 7px;border-radius:100px;margin-bottom:5px}
+  .a-auto{background:var(--green-soft);color:var(--green)} .a-claude{background:#EEF0FF;color:var(--indigo-deep)}
+  table{width:100%;border-collapse:collapse;margin:6px 0;font-size:10.5px}
+  th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:#101828;color:#fff;font-weight:700;font-size:9.5px;text-transform:uppercase;letter-spacing:.03em}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .box{border:1px solid var(--line);border-radius:10px;padding:11px 13px;break-inside:avoid}
+  .box h3{font-size:12px;font-weight:800;margin-bottom:5px}
+  ul{margin:3px 0 0 16px} li{margin:3px 0}
+  .warn{background:#FFF7E8;border:1px solid #F3E2B8;border-radius:9px;padding:9px 13px;font-size:10.5px;color:#7a5a12;margin-top:8px}
+  .foot{margin-top:14px;border-top:1px solid var(--line);padding-top:8px;color:var(--muted);font-size:9.5px}
+  .pill{display:inline-block;background:var(--green-soft);color:var(--green);font-weight:700;font-size:9.5px;padding:1px 8px;border-radius:100px}
+  b.k{color:var(--indigo-deep)}
+</style>
+</head>
+<body>
+  <img class="coverimg" src="cover.jpg" alt="Automação de Social Media — eLucre">
+  <div class="cover" style="display:none">
+    <div class="cdots"></div>
+    <div class="ctop">
+      <div class="cmark"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1.4"/><circle cx="18" cy="21" r="1.4"/><path d="M1.5 2.5h3l2.2 12.4a1.6 1.6 0 0 0 1.6 1.3h8.8a1.6 1.6 0 0 0 1.6-1.3L22 6.5H6"/></svg></div>
+      <div class="cbrand">eLucre</div>
+    </div>
+    <div class="cmid">
+      <div class="ckicker">Documentação da operação</div>
+      <div class="ctitle">Automação de Social Media</div>
+      <div class="csub">Como o eLucre planeja, cria, aprova e publica sozinho no Instagram.</div>
+      <div class="cflow"><span>Calendário</span><span>Posts (feed + story)</span><span>Discord (veto)</span><span>Instagram</span><span>Dashboard</span></div>
+    </div>
+    <div class="cfoot">
+      <div>Instagram <b>@elucre.oficial</b></div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div>
+      <h1>Automação de Social Media — eLucre</h1>
+      <div class="sub">Criação de calendário · posts · aprovação no Discord · publicação no Instagram</div>
+    </div>
+  </div>
+
+  <h2><span class="n">1</span> Como funciona — o fluxo</h2>
+  <div class="flow">
+    <div class="step"><span class="t">Dia 1 do mês · 08:55 · automático</span><br><b>Cria o calendário do mês</b> (esqueleto: dias úteis, pilares, tema dark/claro). Avisa no Discord pra planejar. <i>O conteúdo criativo (temas, legendas e artes) é preenchido pelo Claude a seu pedido.</i></div>
+    <div class="arrow">▼</div>
+    <div class="step"><span class="t">Todo dia · 09:00 · automático</span><br><b>Prepara o post do dia</b> (feed + story) e posta a <b>prévia no Discord</b> (canal MC-monitor) com o horário de publicação.</div>
+    <div class="arrow">▼</div>
+    <div class="step" style="border-left-color:var(--wpp);background:#E7FBEF"><span class="t">09:00 → 13:00 · você</span><br><b>Janela de veto (aprovação por silêncio).</b> Não fez nada = aprovado. Se não quiser um post, é só <b>vetar</b> antes das 13:00.</div>
+    <div class="arrow">▼</div>
+    <div class="step" style="border-left-color:var(--green)"><span class="t">13:00 · automático (checa a cada 15 min)</span><br><b>Publica no Instagram</b> (@elucre.oficial): <b>feed + stories</b>. Grava o link e <b>atualiza o dashboard sozinho</b> (posts do mês + check "Postado no IG").</div>
+  </div>
+
+  <h2><span class="n">2</span> As etapas em detalhe</h2>
+  <div class="cards">
+    <div class="card"><span class="auto a-auto">AUTOMÁTICO + CLAUDE</span><h3>📅 Calendário</h3>No dia 1, o sistema cria o <b>esqueleto</b> do mês (arquivo novo por mês — nunca sobrescreve o anterior). O <b>Claude</b> preenche os temas, legendas e gera os assets quando você pede “monta o calendário de [mês]”.</div>
+    <div class="card"><span class="auto a-claude">FEITO PELO CLAUDE</span><h3>🎨 Posts (criativos)</h3>Cada peça é desenhada seguindo o playbook da marca e sai sempre em <b>feed (1080×1350)</b> + <b>story (1080×1920)</b>. O sistema converte para JPG e organiza nas pastas.</div>
+    <div class="card"><span class="auto a-auto">AUTOMÁTICO</span><h3>💬 Discord</h3>Todo dia às 09:00 a <b>prévia</b> do post vai pro canal MC-monitor pra você revisar. É o seu ponto de controle: aprovar (silêncio) ou <b>vetar</b>.</div>
+    <div class="card"><span class="auto a-auto">AUTOMÁTICO</span><h3>📸 Instagram</h3>No horário, se não houve veto, publica <b>feed + stories</b> no @elucre.oficial via API oficial da Meta e registra o link da publicação.</div>
+    <div class="card"><span class="auto a-auto">AUTOMÁTICO</span><h3>📊 Dashboard</h3>O painel de acompanhamento (<code>dashboard.html</code>) é <b>gerado a partir das fontes vivas</b> (calendário + histórico de publicações). A cada publicação ele se atualiza sozinho: os posts do mês aparecem e o que foi ao ar fica <b>marcado como "Postado no IG"</b> — sem preencher à mão.</div>
+  </div>
+
+  <div class="keep">
+  <h2><span class="n">3</span> Horários &amp; gatilhos</h2>
+  <table>
+    <tr><th>Quando</th><th>O quê</th><th>Tipo</th></tr>
+    <tr><td>Dia 1 do mês · 08:55</td><td>Cria o esqueleto do calendário do mês + aviso no Discord</td><td><span class="pill">automático</span></td></tr>
+    <tr><td>Todo dia · 09:00</td><td>Prévia do post no Discord + entra na fila pra publicar às 13:00</td><td><span class="pill">automático</span></td></tr>
+    <tr><td>09:00 → 13:00</td><td>Janela de veto (você barra se quiser)</td><td>você</td></tr>
+    <tr><td>Todo dia · 13:00</td><td>Publica feed + stories no Instagram (se não vetado)</td><td><span class="pill">automático</span></td></tr>
+  </table>
+  </div>
+
+  <h2><span class="n">4</span> Quem faz o quê</h2>
+  <div class="two">
+    <div class="box"><h3>🤖 Automático</h3><ul>
+      <li>Criar o esqueleto do calendário (dia 1)</li>
+      <li>Postar a prévia no Discord (diário)</li>
+      <li>Publicar feed + stories no Instagram no horário</li>
+      <li>Registrar o link e <b>atualizar o dashboard</b> (posts + checks "Postado no IG")</li>
+    </ul></div>
+    <div class="box"><h3>🧑‍💻 Você / Claude</h3><ul>
+      <li><b>Claude:</b> preencher o calendário e criar os criativos (feed+story)</li>
+      <li><b>Você:</b> revisar no Discord e <b>vetar</b> o que não quiser</li>
+    </ul></div>
+  </div>
+
+  <h2><span class="n">5</span> Como operar</h2>
+  <div class="two">
+    <div class="box"><h3>🛑 Vetar o post do dia</h3><p>Antes das 13:00, rode no terminal (na pasta <code>_publisher</code>):</p><p><b class="k">node scripts/elucre/veto.mjs today</b></p><p>…ou peça ao Claude “veta o post de hoje”. O post não vai ao ar.</p></div>
+    <div class="box"><h3>⏸️ Pausar / retomar tudo</h3><p>Desligar a automação:</p><p><b class="k">./scripts/elucre/schedule.ps1 -Remove</b></p><p>Religar:</p><p><b class="k">./scripts/elucre/schedule.ps1</b></p></div>
+  </div>
+
+  <div class="warn"><b>⚠️ Ponto de atenção:</b> O agendador é <b>local</b> — o computador precisa estar <b>ligado</b> no horário da publicação (~13:00). Os tokens do Instagram e do GitHub <b>não expiram</b>.</div>
+
+  <div class="foot">
+    <b>Peças técnicas:</b> motor em <code>eLucre_Posts\_publisher</code> (Node) · imagens hospedadas no GitHub (repo público) · publicação via Instagram Graph API (@elucre.oficial, conta própria) · fila/histórico em <code>ledger.json</code> · acompanhamento no <code>dashboard.html</code> (auto-gerado do calendário + ledger). Segredos ficam só no <code>.env</code> (nunca expostos). · Documento gerado em 28/09/2026.
+  </div>
+</body>
+</html>

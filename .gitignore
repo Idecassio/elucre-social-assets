@@ -1,0 +1,20 @@
+# ===== eLucre — repo PRIVADO (código + estado + assets) =====
+
+# SEGREDOS — NUNCA versionar
+_publisher/.env
+# (abaixo) config.json contem o webhook do Discord -> na nuvem usar o Secret DISCORD_WEBHOOK
+_social/config.json
+
+# dependencias e saidas regeneraveis
+_publisher/node_modules/
+_publisher/out/
+_publisher/cover.jpg
+chrome_prof*/
+
+# imagens avulsas do operador (so o README fica)
+_publisher/inbox/*
+!_publisher/inbox/README.md
+
+# pesados/temporarios
+*.rar
+*.zip

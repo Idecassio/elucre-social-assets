@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>eLucre · Painel de Publicações</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  :root{
+    --bg:#FAF9F7;--surface:#FFFFFF;--surface-2:#F3F1EC;--line:#EBE7E0;--line-soft:#F1EEE8;
+    --ink:#171310;--ink-soft:#544C40;--ink-faint:#8B8272;
+    --indigo:#4F46E5;--indigo-deep:#4338CA;--indigo-wash:#EEEDFB;
+    --green:#1B9E5A;--green-wash:#E4F5EC;--amber:#B8860B;--amber-wash:#FBF1DA;
+    --font:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --shadow:0 1px 2px rgba(23,19,16,.04), 0 10px 30px rgba(23,19,16,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;font-size:15px}
+  .wrap{max-width:1080px;margin:0 auto;padding:34px 22px 70px}
+  header{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
+  .mk{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(150deg,#8B84FF,#5B4FE6 60%,#4338CA);box-shadow:0 8px 20px rgba(38,30,120,.35)}
+  .mk svg{width:29px;height:29px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  header h1{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+  header .sub{color:var(--ink-faint);font-size:13.5px;font-weight:600;margin-top:2px}
+  header .mes{margin-left:auto;font-weight:800;font-size:16px;color:var(--indigo-deep);background:var(--indigo-wash);padding:9px 16px;border-radius:99px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+  .stat .n{font-size:32px;font-weight:900;letter-spacing:-.03em;line-height:1}
+  .stat .l{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-faint);margin-top:8px}
+  .stat.ok .n{color:var(--green)}.stat.plan .n{color:var(--amber)}.stat.ig .n{color:var(--indigo-deep)}
+  .progress{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+  .progress .top{display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:var(--ink-soft);margin-bottom:10px}
+  .bar{height:10px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#7C78FF,#4F46E5);width:0;transition:width .3s}
+  .tablewrap{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+  table{border-collapse:collapse;width:100%;min-width:820px}
+  thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-faint);font-weight:800;background:var(--surface-2);text-align:left;padding:13px 16px;border-bottom:1px solid var(--line)}
+  tbody td{padding:12px 16px;border-bottom:1px solid var(--line-soft);vertical-align:middle}
+  tbody tr.hoje td{background:var(--indigo-wash)}
+  tbody tr.done td{background:#FBFBF9}
+  .scroll{overflow-x:auto}
+  .day{font-weight:900;font-size:17px;letter-spacing:-.02em}
+  .dow{font-size:12px;font-weight:700;color:var(--ink-faint);text-transform:uppercase}
+  .badge-hoje{display:inline-block;margin-top:4px;font-size:10px;font-weight:800;color:#fff;background:var(--indigo);padding:2px 7px;border-radius:99px;letter-spacing:.04em}
+  .post{display:flex;align-items:center;gap:13px}
+  .thumb{width:46px;height:58px;border-radius:9px;flex:none;object-fit:contain;background:#241F63;border:1px solid var(--line)}
+  .thumb.ph{display:grid;place-items:center;color:#9a93c9;background:#EEEDFB}
+  .thumb.ph svg{width:20px;height:20px;stroke:#9089c9;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .pt{font-weight:800;font-size:15px;letter-spacing:-.01em;line-height:1.2}
+  .meta{display:flex;gap:7px;align-items:center;margin-top:5px;flex-wrap:wrap}
+  .chip{font-size:11px;font-weight:700;padding:3px 9px;border-radius:99px;background:var(--indigo-wash);color:var(--indigo-deep)}
+  .chip.nicho{background:var(--surface-2);color:var(--ink-soft)}
+  .tipo{font-size:11.5px;font-weight:700;color:var(--ink-faint)}
+  .capbtn{margin-top:8px;font-family:var(--font);font-size:12px;font-weight:700;color:var(--indigo-deep);background:none;border:none;padding:0;cursor:pointer}
+  .capbtn:hover{text-decoration:underline}
+  .thumblink{display:block;text-decoration:none;border-radius:9px}
+  .thumblink:hover{outline:2px solid var(--indigo);outline-offset:1px}
+  .folderlink{font-size:11px;font-weight:800;color:var(--indigo-deep);text-decoration:none;background:var(--indigo-wash);padding:3px 9px;border-radius:99px;display:inline-flex;align-items:center;gap:4px}
+  .folderlink:hover{background:#e3e1fa;text-decoration:underline}
+  .cell-c{text-align:center;white-space:nowrap}
+  .fs{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:13.5px}
+  .fs.ok{color:var(--green)}.fs.no{color:var(--ink-faint)}
+  .fs .ic{width:20px;height:20px;border-radius:6px;display:grid;place-items:center;background:var(--green-wash)}
+  .fs.no .ic{background:var(--surface-2)}
+  .fs .ic svg{width:13px;height:13px;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+  .fs.ok .ic svg{stroke:var(--green)}.fs.no .ic svg{stroke:var(--ink-faint)}
+  .status{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:800;padding:6px 12px;border-radius:99px}
+  .status .d{width:8px;height:8px;border-radius:50%}
+  .status.pronto{background:var(--green-wash);color:var(--green)}.status.pronto .d{background:var(--green)}
+  .status.plan{background:var(--amber-wash);color:var(--amber)}.status.plan .d{background:var(--amber)}
+  .igbox{display:flex;align-items:center;justify-content:center}
+  .igbox input{width:24px;height:24px;accent-color:var(--indigo);cursor:pointer}
+  /* caption row */
+  .cap-row td{padding:0 16px 16px 16px;background:#FBFBF9}
+  .cap-row.hoje-cap td{background:var(--indigo-wash)}
+  .cap-panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+  .cap-panel .cap-h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+  .cap-panel .cap-h span{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-faint)}
+  .cap-copy{font-family:var(--font);font-size:12.5px;font-weight:700;color:var(--indigo-deep);background:var(--indigo-wash);border:none;padding:7px 14px;border-radius:99px;cursor:pointer}
+  .cap-copy:hover{background:#e3e1fa}
+  .cap-txt{white-space:pre-wrap;font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+  .cap-hs{color:var(--indigo-deep);font-weight:600;font-size:13.5px;margin-top:12px;line-height:1.5}
+  footer{margin-top:22px;color:var(--ink-faint);font-size:12.5px;line-height:1.6}
+  footer code{background:var(--surface-2);padding:2px 6px;border-radius:6px;font-size:12px}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:12.5px;color:var(--ink-soft);font-weight:600}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .legend .d{width:9px;height:9px;border-radius:50%}
+  .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#FAF9F7;padding:10px 18px;border-radius:99px;font-size:14px;font-weight:600;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;z-index:50}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mk"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1.4"/><circle cx="18" cy="21" r="1.4"/><path d="M1.5 2.5h3l2.2 12.4a1.6 1.6 0 0 0 1.6 1.3h8.8a1.6 1.6 0 0 0 1.6-1.3L22 6.5H6"/></svg></div>
+    <div>
+      <h1>eLucre · Painel de Publicações</h1>
+      <div class="sub">Acompanhamento de divulgação no Instagram — feed &amp; stories</div>
+    </div>
+    <span class="mes" id="mesLabel"></span>
+  </header>
+  <div class="stats">
+    <div class="stat"><div class="n" id="s-total">0</div><div class="l">Publicações no mês</div></div>
+    <div class="stat ok"><div class="n" id="s-ok">0</div><div class="l">Prontas (feed + story)</div></div>
+    <div class="stat plan"><div class="n" id="s-plan">0</div><div class="l">A gerar</div></div>
+    <div class="stat ig"><div class="n" id="s-ig">0</div><div class="l">Postadas no Instagram</div></div>
+  </div>
+  <div class="progress">
+    <div class="top"><span>Progresso de publicação no Instagram</span><span id="p-label">0 / 0</span></div>
+    <div class="bar"><i id="p-bar"></i></div>
+  </div>
+  <div class="tablewrap"><div class="scroll">
+    <table>
+      <thead><tr>
+        <th>Dia</th><th>Publicação</th><th class="cell-c">Feed</th><th class="cell-c">Story</th><th class="cell-c">Status</th><th class="cell-c">Postado no IG</th>
+      </tr></thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </div></div>
+  <div class="legend">
+    <span><span class="d" style="background:var(--green)"></span>Pronta — arte gerada (feed + story)</span>
+    <span><span class="d" style="background:var(--amber)"></span>A gerar — planejada no calendário</span>
+    <span><span class="d" style="background:var(--indigo)"></span>Hoje</span>
+  </div>
+  <footer>
+    Snapshot gerado do calendário <code>_social/calendario_2026-09.json</code>. Clique em <b>"Ver legenda"</b> para revisar/copiar o texto de cada post. Os checkboxes "Postado no IG" ficam salvos no navegador (localStorage).<br>
+    <b>Abrir a pasta do post no Explorer:</b> o navegador não consegue abrir o Explorer, então aqui os links <b>copiam o caminho</b> (cole no Explorer com Ctrl+L). Para abrir a pasta com <b>um clique</b>, use o painel <code>dashboard.hta</code> (dê duplo-clique nele — roda no Windows).
+  </footer>
+</div>
+<div class="toast" id="toast">Legenda copiada ✓</div>
+
+<script src="dashboard_data.js" charset="utf-8"></script>
+<script>
+/* Fonte viva: dashboard_data.js (gerado pelo dashboard-build.mjs). O array embutido abaixo
+   é só FALLBACK caso o dashboard_data.js não carregue. */
+var DATA = (typeof DASH_DATA!=="undefined") ? DASH_DATA : [
+  {data:"2026-09-10",dia:10,dow:"Qui",pilar:"Institucional",tema:"Quem somos",tipo:"carrossel",nicho:"geral",status:"pronto",feed:6,story:6,thumb:"../quem somos/quem_somos_1_capa.jpg",
+    leg:"Prazer, somos a eLucre 👋\n\nA gente cria a sua LOJA ONLINE — um site de verdade, no computador e no celular, onde seu cliente navega, monta o carrinho e finaliza. O pedido cai pronto no seu WhatsApp e 100% da venda é sua.\n\nSem comissão, sem programador, no ar em poucos minutos. Pra todo negócio — do brechó ao restaurante.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#lojaonline #vendaspelowhatsapp #catalogodigital #empreendedorismo #lojavirtual #pequenonegocio #semcomissao #elucre"},
+  {data:"2026-09-11",dia:11,dow:"Sex",pilar:"Sem comissão",tema:"0% de comissão / 100% da venda",tipo:"card",nicho:"geral",status:"pronto",feed:1,story:1,thumb:"../0 comissão/post_1_card_0_comissao.jpg",
+    leg:"Marketplace e app de delivery levam até ~16% de cada venda sua. 💸\n\nNo eLucre é o contrário: mensalidade fixa e baixa, e você fica com 100% de cada venda. A cada R$ 100 vendidos, R$ 100 caem pra você.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#semcomissao #0comissao #lojaonline #empreendedorismo #pequenonegocio #vendaspelowhatsapp #lojavirtual"},
+  {data:"2026-09-14",dia:14,dow:"Seg",pilar:"Dor & educação",tema:"3 erros no WhatsApp",tipo:"carrossel",nicho:"geral",status:"pronto",feed:6,story:6,thumb:"../pilar 1 - dor e educacao/pilar1_1_capa.jpg",
+    leg:"Você provavelmente comete pelo menos 1 desses 3 erros — e eles fazem você perder venda todo dia. 👇\n\nFoto solta, repetir preço o dia inteiro e não ter um link pra divulgar são os maiores ladrões de venda no WhatsApp.\n\nA saída: uma loja online profissional, com busca e filtros, e o pedido caindo pronto no seu WhatsApp. No ar em minutos, sem programador e sem comissão.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#vendaspelowhatsapp #lojaonline #catalogodigital #pequenoempreendedor #empreendedorismo #lojavirtual #vendasonline"},
+  {data:"2026-09-15",dia:15,dow:"Ter",pilar:"Produto",tema:"Da foto solta à loja online",tipo:"carrossel",nicho:"geral",status:"pronto",feed:3,story:3,thumb:"../stories - sequencia de 3/seq3_1_gancho.jpg",
+    leg:"Ainda manda foto solta no WhatsApp? 👀\n\nMonte uma loja online de verdade: vitrine, busca e carrinho num link só — e o pedido cai pronto no seu WhatsApp. 0% de comissão.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#lojaonline #vendaspelowhatsapp #catalogodigital #empreendedorismo #lojavirtual #semcomissao"},
+  {data:"2026-09-16",dia:16,dow:"Qua",pilar:"Direcionado",tema:"Delivery: cardápio que vende",tipo:"carrossel",nicho:"delivery",status:"pronto",feed:5,story:5,thumb:"../delivery - cardapio/delivery_1_capa.jpg",
+    leg:"Delivery de verdade não depende de foto solta nem de app que leva sua margem. 🍔\n\nCom um cardápio digital só seu, o cliente monta o pedido — combo, adicionais, observação — e ele cai pronto e formatado no seu WhatsApp. Sem erro, sem app cobrando até 30% de comissão. 100% da venda é sua.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#delivery #cardapiodigital #lanchonete #hamburgueria #semcomissao #vendaspelowhatsapp #lojaonline"},
+  {data:"2026-09-17",dia:17,dow:"Qui",pilar:"Demonstração",tema:"Montei uma loja em 2 min",tipo:"carrossel",nicho:"geral",status:"pronto",feed:4,story:4,thumb:"../demonstracao - 2 minutos/feed_1.jpg",
+    leg:"Montei uma loja online em 2 minutos — sem programador. 🛠️\n\n1) Escolhe o nome e a cara · 2) Adiciona os produtos · 3) Publica o link e vende. Simples assim: sua vitrine no ar, com o pedido caindo no seu WhatsApp e 0% de comissão.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#lojaonline #comofazer #empreendedorismo #vendasonline #semprogramador #catalogodigital"},
+  {data:"2026-09-18",dia:18,dow:"Sex",pilar:"Prova & resultado",tema:"R$ 5.760 de comissão por ano",tipo:"card",nicho:"geral",status:"pronto",feed:1,story:1,thumb:"../prova - 100 da venda/feed_1.jpg",
+    leg:"16% de comissão parece pouco? No fim do ano vira R$ 5.760 saindo do seu bolso (numa loja de R$ 3.000/mês). 💸\n\nNo eLucre é 0% de comissão: você fica com 100% de cada venda, pagando só uma mensalidade fixa e baixa.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#semcomissao #lucro #empreendedorismo #pequenonegocio #lojaonline"},
+  {data:"2026-09-21",dia:21,dow:"Seg",pilar:"Direcionado",tema:"Loja de roupa (tamanhos/filtros)",tipo:"carrossel",nicho:"moda",status:"pronto",feed:4,story:4,thumb:"../moda - loja de roupa/feed_1.jpg",
+    leg:"Loja de roupa não precisa virar interrogatório no WhatsApp. 👗\n\n'Tem no M?' 'E na cor azul?' — sua vitrine responde por você: tamanhos, cores e filtros num link só. O cliente escolhe e o pedido cai certinho no seu WhatsApp. 0% de comissão.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#lojaderoupa #moda #lojaonline #vendaspelowhatsapp #catalogodigital #empreendedorismo"},
+  {data:"2026-09-22",dia:22,dow:"Ter",pilar:"Dor & educação",tema:"Catálogo x foto solta",tipo:"carrossel",nicho:"geral",status:"pronto",feed:4,story:4,thumb:"../educacao - catalogo x foto/feed_1.jpg",
+    leg:"Foto solta x catálogo: o mesmo produto, dois resultados. 👇\n\nNa foto solta o cliente cansa, pergunta tudo e some. No catálogo ele busca, filtra, vê preço e monta o carrinho — e o pedido cai pronto. Organização = mais venda.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#vendaspelowhatsapp #lojaonline #catalogodigital #dicasdevendas #empreendedorismo"},
+  {data:"2026-09-23",dia:23,dow:"Qua",pilar:"Produto",tema:"Pedido pronto no WhatsApp",tipo:"card",nicho:"geral",status:"pronto",feed:1,story:1,thumb:"../produto - pedido no whatsapp/feed_1.jpg",
+    leg:"O pedido cai pronto e formatado no seu WhatsApp. 📲\n\nItens, quantidade, total e dados do cliente — tudo certinho, sem você anotar nada na correria. É só confirmar e entregar.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#vendaspelowhatsapp #lojaonline #pedidoonline #empreendedorismo #catalogodigital"},
+  {data:"2026-09-24",dia:24,dow:"Qui",pilar:"Direcionado",tema:"Loja de celular",tipo:"carrossel",nicho:"celular",status:"pronto",feed:4,story:4,thumb:"../celular - loja de celular/feed_1.jpg",
+    leg:"Loja de celular vive repetindo preço no zap. 📱\n\nCom um catálogo próprio, o preço fica sempre certo e o cliente monta o pedido sozinho — aparelhos, acessórios e capas num link só. O pedido cai pronto no seu WhatsApp, com 0% de comissão.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#lojadecelular #acessorios #lojaonline #vendaspelowhatsapp #catalogodigital"},
+  {data:"2026-09-25",dia:25,dow:"Sex",pilar:"Prova & resultado",tema:"Mais barato que sua internet",tipo:"card",nicho:"geral",status:"pronto",feed:1,story:1,thumb:"../prova - mais barato que internet/feed_1.jpg",
+    leg:"Sua loja online custa menos que a sua internet. 📶\n\nA partir de R$ 49/mês você tem uma loja profissional que vende por você — busca, carrinho e pedido no WhatsApp, com 0% de comissão. Menos do que você já paga sem pensar.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#lojaonline #precojusto #empreendedorismo #pequenonegocio #semcomissao"},
+  {data:"2026-09-28",dia:28,dow:"Seg",pilar:"Produto",tema:"Painel próprio",tipo:"carrossel",nicho:"geral",status:"pronto",feed:4,story:4,thumb:"../produto - painel proprio/feed_1.jpg",
+    leg:"Sua loja, seu painel, seu controle. 🎛️\n\nNum lugar só: adicione produtos, acompanhe os pedidos e personalize a loja com a sua cara. Tudo no PC e no celular. A loja é sua — o controle também.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#lojaonline #painel #gestao #empreendedorismo #ecommerce"},
+  {data:"2026-09-29",dia:29,dow:"Ter",pilar:"Dor & educação",tema:"3 sinais que precisa de loja",tipo:"carrossel",nicho:"geral",status:"pronto",feed:4,story:4,thumb:"../educacao - 3 sinais/feed_1.jpg",
+    leg:"3 sinais de que você já precisa de uma loja online 👇\n\n1) Você perde pedido no chat · 2) Não tem link pra divulgar · 3) Paga comissão pra vender. Se deu 1, já passou da hora — e a solução é uma loja só sua, sem comissão.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#lojaonline #empreendedorismo #dicasdevendas #vendaspelowhatsapp #pequenonegocio"},
+  {data:"2026-09-30",dia:30,dow:"Qua",pilar:"Conversão",tema:"Teste 7 dias grátis",tipo:"card",nicho:"geral",status:"pronto",feed:1,story:1,thumb:"../conversao - teste gratis/feed_1.jpg",
+    leg:"Sua loja online no ar, grátis por 7 dias. 🚀\n\nLoja de verdade, no PC e no celular. Pedido no WhatsApp, 0% de comissão, sem programador. Comece hoje — qualquer nicho.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net",
+    hs:"#testegratis #lojaonline #comecehoje #empreendedorismo #vendaspelowhatsapp"}
+];
+
+var CK="elucre_ig_"+((typeof DASH_MONTH!=="undefined")?DASH_MONTH:"2026-09")+"_";
+/* POSTED_IG vem do dashboard_data.js (ledger + postado_manual); fallback abaixo só se não carregar. */
+if(typeof POSTED_IG==="undefined"){var POSTED_IG=["2026-09-18","2026-09-21","2026-09-22","2026-09-23","2026-09-24","2026-09-25","2026-09-28"];}
+function isPosted(d){try{if(POSTED_IG.indexOf(d)!==-1)return true;return localStorage.getItem(CK+d)==="1";}catch(e){return POSTED_IG.indexOf(d)!==-1;}}
+function setPosted(d,v){try{localStorage.setItem(CK+d,v?"1":"0");}catch(e){}}
+const today=new Date();
+const todayStr=today.getFullYear()+"-"+String(today.getMonth()+1).padStart(2,"0")+"-"+String(today.getDate()).padStart(2,"0");
+const CHECK='<svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>';
+const DASH='<svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg>';
+const CLOCK='<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+function fsCell(ok,n){return ok?'<span class="fs ok"><span class="ic">'+CHECK+'</span>'+n+'</span>':'<span class="fs no"><span class="ic">'+DASH+'</span>—</span>';}
+
+var toast=null,tt=null;
+function showToast(msg){if(!toast)return;if(msg)toast.textContent=msg;toast.classList.add("show");clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove("show");},1600);}
+const BASE_WIN="C:\\Users\\Idecasio\\Desktop\\eLucre_Posts\\";
+function copyPath(cat){
+  if(!cat)return;
+  var w=BASE_WIN+cat.replace(/\//g,"\\");
+  function done(){showToast("Caminho copiado — cole no Explorer (Ctrl+L) ✓");}
+  try{ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(w).then(done).catch(pf);return;} }catch(e){}
+  pf();
+  function pf(){try{var ta=document.createElement("textarea");ta.value=w;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);}catch(e2){}done();}
+}
+function copyText(t){
+  function ok(){showToast("Legenda copiada ✓");}
+  try{ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok).catch(fb);}else fb(); }catch(e){fb();}
+  function fb(){try{var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);ok();}catch(e2){}}
+}
+
+function render(){
+  const tb=document.getElementById("tb");tb.innerHTML="";
+  DATA.forEach(function(p){
+    const posted=isPosted(p.data);const isToday=p.data===todayStr;
+    const tr=document.createElement("tr");
+    tr.className=isToday?"hoje":(posted?"done":"");
+    const folder=p.thumb?p.thumb.substring(0,p.thumb.lastIndexOf('/')+1):'';
+    const cat=folder?folder.replace(/^\.\.\//,'').replace(/\/+$/,''):'';
+    const thumbImg=p.thumb?'<img class="thumb" src="'+encodeURI(p.thumb)+'" alt="">':'<span class="thumb ph">'+CLOCK+'</span>';
+    const thumb=cat?'<a class="thumblink" href="#" title="Copiar caminho da pasta">'+thumbImg+'</a>':thumbImg;
+    const stat=p.status==="pronto"?'<span class="status pronto"><span class="d"></span>Pronta</span>':'<span class="status plan"><span class="d"></span>A gerar</span>';
+    tr.innerHTML=
+      '<td><div class="day">'+p.dia+'</div><div class="dow">'+p.dow+'</div>'+(isToday?'<div class="badge-hoje">HOJE</div>':'')+'</td>'+
+      '<td><div class="post">'+thumb+'<div><div class="pt">'+p.tema+'</div>'+
+        '<div class="meta"><span class="chip">'+p.pilar+'</span>'+(p.nicho!=="geral"?'<span class="chip nicho">'+p.nicho+'</span>':'')+'<span class="tipo">'+p.tipo+'</span>'+(cat?'<a class="folderlink" href="#" title="Copiar caminho da pasta">📂 copiar caminho</a>':'')+'</div>'+
+        '<button class="capbtn" type="button">Ver legenda ▾</button>'+
+      '</div></div></td>'+
+      '<td class="cell-c">'+fsCell(p.status==="pronto",p.feed)+'</td>'+
+      '<td class="cell-c">'+fsCell(p.status==="pronto",p.story)+'</td>'+
+      '<td class="cell-c">'+stat+'</td>'+
+      '<td class="cell-c"><span class="igbox"><input type="checkbox" '+(posted?"checked":"")+'></span></td>';
+    tb.appendChild(tr);
+
+    const cr=document.createElement("tr");cr.className="cap-row"+(isToday?" hoje-cap":"");cr.hidden=true;
+    const td=document.createElement("td");td.colSpan=6;
+    const panel=document.createElement("div");panel.className="cap-panel";
+    const h=document.createElement("div");h.className="cap-h";
+    const hl=document.createElement("span");hl.textContent="Legenda — "+p.tema;
+    const cp=document.createElement("button");cp.className="cap-copy";cp.type="button";cp.textContent="Copiar legenda";
+    cp.onclick=function(){copyText(p.leg+"\n\n"+p.hs);};
+    h.appendChild(hl);h.appendChild(cp);
+    const tx=document.createElement("div");tx.className="cap-txt";tx.textContent=p.leg;
+    const hsd=document.createElement("div");hsd.className="cap-hs";hsd.textContent=p.hs;
+    panel.appendChild(h);panel.appendChild(tx);panel.appendChild(hsd);
+    td.appendChild(panel);cr.appendChild(td);tb.appendChild(cr);
+
+    const btn=tr.querySelector(".capbtn");
+    btn.onclick=function(){cr.hidden=!cr.hidden;btn.textContent=cr.hidden?"Ver legenda ▾":"Ocultar legenda ▴";};
+    const fl=tr.querySelector(".folderlink"); if(fl) fl.onclick=function(){copyPath(cat);return false;};
+    const tl=tr.querySelector(".thumblink"); if(tl) tl.onclick=function(){copyPath(cat);return false;};
+    const cb=tr.querySelector('input[type=checkbox]');
+    cb.onchange=function(){setPosted(p.data,cb.checked);tr.className=isToday?"hoje":(cb.checked?"done":"");updateStats();};
+  });
+}
+function updateStats(){
+  const total=DATA.length;
+  const ok=DATA.filter(function(p){return p.status==="pronto";}).length;
+  const ig=DATA.filter(function(p){return isPosted(p.data);}).length;
+  document.getElementById("s-total").textContent=total;
+  document.getElementById("s-ok").textContent=ok;
+  document.getElementById("s-plan").textContent=total-ok;
+  document.getElementById("s-ig").textContent=ig;
+  document.getElementById("p-label").textContent=ig+" / "+total;
+  document.getElementById("p-bar").style.width=(total?Math.round(ig/total*100):0)+"%";
+}
+toast=document.getElementById("toast");
+var _mes=document.getElementById("mesLabel");if(_mes)_mes.textContent=(typeof DASH_MONTH_LABEL!=="undefined")?DASH_MONTH_LABEL:"Setembro 2026";
+render();updateStats();
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+Exemplo de legenda.
+
+Escreva aqui o texto do post (até 2200 caracteres, até 30 hashtags).
+Passe este arquivo com --caption-file captions/example.txt no enqueue.

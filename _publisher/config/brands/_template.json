@@ -1,0 +1,26 @@
+{
+  "key": "<marca>",
+  "name": "<Nome da Marca>",
+  "handle": "@<usuario_instagram>",
+  "site": "<site.com.br>",
+  "igUserId": "<ig-user-id — id da conta IG Business (não é segredo; o token fica no .env)>",
+  "igUserIdEnv": "IG_USER_ID",
+  "tokens": {
+    "bgGradient": "linear-gradient(155deg,#111 0%,#222 100%)",
+    "iconGradient": "linear-gradient(135deg,#7C3AED 0%,#2563EB 100%)",
+    "accentBlue": "#2563EB",
+    "accentPurple": "#7C3AED",
+    "accentGreen": "#12A150",
+    "ink": "#0F1B3D",
+    "font": "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+  },
+  "formats": {
+    "feed": { "w": 1080, "h": 1350 },
+    "story": { "w": 1080, "h": 1920 }
+  },
+  "copyRules": [
+    "Título one-line, destaque de UMA palavra na cor de acento.",
+    "CTA final claro (ex.: 'Conheça em <site>')."
+  ],
+  "note": "Copie este arquivo para config/brands/<marca>.json e preencha. O token de acesso NUNCA vai aqui — só no .env."
+}

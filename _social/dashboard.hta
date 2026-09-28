@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<hta:application id="app" applicationname="eLucreDash" border="thin" caption="yes"
+  maximizebutton="yes" minimizebutton="yes" scroll="yes" singleinstance="yes" contextmenu="yes" />
+<title>eLucre · Painel (PC)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  html,body{margin:0;padding:0}
+  *{box-sizing:border-box}
+  body{background:#FAF9F7;color:#171310;font-family:"Inter","Segoe UI",Arial,sans-serif;font-size:15px}
+  .wrap{max-width:1080px;margin:0 auto;padding:34px 22px 70px}
+  header{display:flex;align-items:center;flex-wrap:wrap}
+  .mk{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#5B4FE6;background:linear-gradient(150deg,#8B84FF,#5B4FE6 60%,#4338CA);box-shadow:0 8px 20px rgba(38,30,120,.35);margin-right:15px;flex:none}
+  .mk svg{width:29px;height:29px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  header h1{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+  header h1 .tag{font-size:13px;font-weight:700;color:#4338CA}
+  header .sub{color:#8B8272;font-size:13.5px;font-weight:600;margin-top:2px}
+  header .mes{margin-left:auto;font-weight:800;font-size:16px;color:#4338CA;background:#EEEDFB;padding:9px 16px;border-radius:99px}
+  .stats{display:flex;margin-top:24px}
+  .stat{flex:1 1 0%;background:#FFFFFF;border:1px solid #EBE7E0;border-radius:16px;padding:18px;box-shadow:0 1px 2px rgba(23,19,16,.04),0 10px 30px rgba(23,19,16,.06);margin-left:14px}
+  .stats .stat:first-child{margin-left:0}
+  .stat .n{font-size:32px;font-weight:900;letter-spacing:-.03em;line-height:1;color:#171310}
+  .stat .l{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#8B8272;margin-top:8px}
+  .stat.ok .n{color:#1B9E5A}.stat.plan .n{color:#B8860B}.stat.ig .n{color:#4338CA}
+  .progress{margin-top:16px;background:#FFFFFF;border:1px solid #EBE7E0;border-radius:14px;padding:16px 18px;box-shadow:0 1px 2px rgba(23,19,16,.04),0 10px 30px rgba(23,19,16,.06)}
+  .progress .top{display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:#544C40;margin-bottom:10px}
+  .bar{height:10px;border-radius:99px;background:#F3F1EC;overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#7C78FF,#4F46E5);width:0}
+  .tablewrap{margin-top:22px;background:#FFFFFF;border:1px solid #EBE7E0;border-radius:18px;box-shadow:0 1px 2px rgba(23,19,16,.04),0 10px 30px rgba(23,19,16,.06);overflow:hidden}
+  .scroll{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;min-width:860px}
+  thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:#8B8272;font-weight:800;background:#F3F1EC;text-align:left;padding:13px 16px;border-bottom:1px solid #EBE7E0}
+  tbody td{padding:12px 16px;border-bottom:1px solid #F1EEE8;vertical-align:middle}
+  tbody tr.hoje td{background:#EEEDFB}
+  tbody tr.done td{background:#FBFBF9}
+  .day{font-weight:900;font-size:17px;letter-spacing:-.02em}
+  .dow{font-size:12px;font-weight:700;color:#8B8272;text-transform:uppercase}
+  .badge-hoje{display:inline-block;margin-top:4px;font-size:10px;font-weight:800;color:#fff;background:#4F46E5;padding:2px 7px;border-radius:99px;letter-spacing:.04em}
+  .post{display:flex;align-items:center}
+  .thumb{width:46px;height:58px;border-radius:9px;flex:none;background:#241F63;border:1px solid #EBE7E0;display:block}
+  .thumblink{display:block;text-decoration:none;border-radius:9px;cursor:pointer;flex:none;margin-right:13px}
+  .thumblink:hover{outline:2px solid #4F46E5;outline-offset:1px}
+  .post > .thumb{margin-right:13px}
+  .thumb.ph{display:flex;align-items:center;justify-content:center;color:#9a93c9;background:#EEEDFB}
+  .thumb.ph svg{width:20px;height:20px;stroke:#9089c9;fill:none;stroke-width:2}
+  .pt{font-weight:800;font-size:15px;letter-spacing:-.01em;line-height:1.2}
+  .meta{display:flex;flex-wrap:wrap;align-items:center;margin-top:5px}
+  .meta > *{margin-right:7px;margin-top:3px}
+  .chip{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:99px;background:#EEEDFB;color:#4338CA}
+  .chip.nicho{background:#F3F1EC;color:#544C40}
+  .chip.tema-claro{background:#EFEDE7;color:#544C40}
+  .chip.tema-dark{background:#241F63;color:#CFCBF7}
+  .tipo{display:inline-block;font-size:11.5px;font-weight:700;color:#8B8272}
+  .folderlink{display:inline-block;font-size:11px;font-weight:800;color:#4338CA;text-decoration:none;background:#EEEDFB;padding:3px 10px;border-radius:99px;cursor:pointer}
+  .folderlink:hover{background:#e3e1fa}
+  .folderlink svg{width:13px;height:13px;vertical-align:-2px;margin-right:4px;fill:none;stroke:#4338CA;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .capbtn{display:block;margin-top:8px;font-family:inherit;font-size:12px;font-weight:700;color:#4338CA;background:none;border:none;padding:0;cursor:pointer}
+  .capbtn:hover{text-decoration:underline}
+  .cell-c{text-align:center;white-space:nowrap}
+  .fs{display:inline-block;font-weight:800;font-size:13.5px}
+  .fs .ic{display:inline-block;width:20px;height:20px;border-radius:6px;background:#E4F5EC;vertical-align:middle;margin-right:6px;text-align:center}
+  .fs.no .ic{background:#F3F1EC}
+  .fs .ic svg{width:13px;height:13px;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;vertical-align:-2px}
+  .fs.ok{color:#1B9E5A}.fs.ok .ic svg{stroke:#1B9E5A}
+  .fs.no{color:#8B8272}.fs.no .ic svg{stroke:#8B8272}
+  .status{display:inline-block;font-size:12.5px;font-weight:800;padding:6px 12px;border-radius:99px}
+  .status .d{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:middle}
+  .status.pronto{background:#E4F5EC;color:#1B9E5A}.status.pronto .d{background:#1B9E5A}
+  .status.plan{background:#FBF1DA;color:#B8860B}.status.plan .d{background:#B8860B}
+  .igbox input{width:22px;height:22px;cursor:pointer}
+  .cap-panel{background:#FFFFFF;border:1px solid #EBE7E0;border-radius:12px;padding:16px 18px;margin:0 0 6px}
+  .cap-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+  .cap-h span{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#8B8272}
+  .cap-copy{font-family:inherit;font-size:12.5px;font-weight:700;color:#4338CA;background:#EEEDFB;border:none;padding:7px 14px;border-radius:99px;cursor:pointer}
+  .cap-txt{white-space:pre-wrap;font-size:14.5px;color:#544C40;line-height:1.55}
+  .cap-hs{color:#4338CA;font-weight:600;font-size:13.5px;margin-top:12px;line-height:1.5}
+  footer{margin-top:22px;color:#8B8272;font-size:12.5px;line-height:1.6}
+  footer code{background:#F3F1EC;padding:2px 6px;border-radius:6px;font-size:12px}
+  .legend{margin-top:14px;font-size:12.5px;color:#544C40;font-weight:600}
+  .legend span{display:inline-block;margin-right:16px}
+  .legend .d{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:middle}
+  .toast{position:fixed;bottom:22px;left:44%;background:#171310;color:#FAF9F7;padding:10px 18px;border-radius:99px;font-size:14px;font-weight:600;display:none}
+  .toast.show{display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mk"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1.4"/><circle cx="18" cy="21" r="1.4"/><path d="M1.5 2.5h3l2.2 12.4a1.6 1.6 0 0 0 1.6 1.3h8.8a1.6 1.6 0 0 0 1.6-1.3L22 6.5H6"/></svg></div>
+    <div>
+      <h1>eLucre · Painel de Publicações <span class="tag">(versão PC — abre a pasta no Explorer)</span></h1>
+      <div class="sub">Acompanhamento de divulgação no Instagram — feed &amp; stories</div>
+    </div>
+    <span class="mes" id="mesLabel"></span>
+  </header>
+  <div class="stats">
+    <div class="stat"><div class="n" id="s-total">0</div><div class="l">Publicações no mês</div></div>
+    <div class="stat ok"><div class="n" id="s-ok">0</div><div class="l">Prontas (feed + story)</div></div>
+    <div class="stat plan"><div class="n" id="s-plan">0</div><div class="l">A gerar</div></div>
+    <div class="stat ig"><div class="n" id="s-ig">0</div><div class="l">Postadas no Instagram</div></div>
+  </div>
+  <div class="progress">
+    <div class="top"><span>Progresso de publicação no Instagram</span><span id="p-label">0 / 0</span></div>
+    <div class="bar"><i id="p-bar"></i></div>
+  </div>
+  <div class="tablewrap"><div class="scroll">
+    <table>
+      <thead><tr>
+        <th>Dia</th><th>Publicação</th><th class="cell-c">Feed</th><th class="cell-c">Story</th><th class="cell-c">Status</th><th class="cell-c">Postado no IG</th>
+      </tr></thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </div></div>
+  <div class="legend">
+    <span><span class="d" style="background:#1B9E5A"></span>Pronta — arte gerada (feed + story)</span>
+    <span><span class="d" style="background:#B8860B"></span>A gerar — planejada</span>
+    <span><span class="d" style="background:#4F46E5"></span>Hoje</span>
+    <span>Clique na <b>miniatura</b> ou no chip <b>pasta</b> para abrir no Explorer.</span>
+  </div>
+  <footer>
+    Painel (HTA) — abre pastas locais no Explorer ao clicar. Dados em <code>_social/dashboard_data.js</code>. Os checkboxes "Postado no IG" ficam salvos localmente.
+  </footer>
+</div>
+<div class="toast" id="toast">Feito &#10003;</div>
+
+<script src="dashboard_data.js" charset="utf-8"></script>
+<script>
+var DATA = DASH_DATA;
+var CLARO = (typeof DASH_CLARO!=="undefined")?DASH_CLARO:{};
+var BASE = "C:\\Users\\Idecasio\\Desktop\\eLucre_Posts\\";
+var FOLDER='<svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>';
+
+function openFolder(cat){
+  if(!cat){return;}
+  var win = BASE + cat.replace(/\//g,"\\");
+  try{
+    new ActiveXObject("WScript.Shell").Run("explorer.exe \"" + win + "\"", 1, false);
+  }catch(e){
+    try{ if(window.clipboardData){ window.clipboardData.setData("Text", win); } }catch(e2){}
+    showToast("Caminho copiado");
+  }
+}
+
+var CK="elucre_ig_"+((typeof DASH_MONTH!=="undefined")?DASH_MONTH:"2026-09")+"_";
+if(typeof POSTED_IG==="undefined"){var POSTED_IG=[];}
+function isPosted(d){try{if(POSTED_IG.indexOf(d)!==-1)return true;return localStorage.getItem(CK+d)==="1";}catch(e){return POSTED_IG.indexOf(d)!==-1;}}
+function setPosted(d,v){try{localStorage.setItem(CK+d,v?"1":"0");}catch(e){}}
+function pad2(n){n=String(n);return n.length<2?("0"+n):n;}
+var today=new Date();
+var todayStr=today.getFullYear()+"-"+pad2(today.getMonth()+1)+"-"+pad2(today.getDate());
+var CHECK='<svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>';
+var DASHIC='<svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg>';
+var CLOCK='<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+function fsCell(ok,n){return ok?'<span class="fs ok"><span class="ic">'+CHECK+'</span>'+n+'</span>':'<span class="fs no"><span class="ic">'+DASHIC+'</span>&mdash;</span>';}
+
+var toast=null,tt=null;
+function showToast(msg){if(!toast){return;}toast.innerHTML=(msg?msg:"Feito")+" \u2713";toast.className="toast show";clearTimeout(tt);tt=setTimeout(function(){toast.className="toast";},1600);}
+function copyText(t){
+  try{ if(window.clipboardData&&window.clipboardData.setData){window.clipboardData.setData("Text",t);showToast("Legenda copiada");return;} }catch(e){}
+  try{ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t);showToast("Legenda copiada");return;} }catch(e2){}
+  try{var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);showToast("Legenda copiada");}catch(e3){}
+}
+
+function render(){
+  var tb=document.getElementById("tb");tb.innerHTML="";
+  for(var k=0;k<DATA.length;k++){ (function(p){
+    var posted=isPosted(p.data);var isToday=p.data===todayStr;
+    var folder=p.thumb?p.thumb.substring(0,p.thumb.lastIndexOf("/")+1):"";
+    var cat=folder?folder.replace(/^\.\.\//,"").replace(/\/+$/,""):"";
+    var temaClaro=CLARO[p.dia]?true:false;
+    var tr=document.createElement("tr");
+    tr.className=isToday?"hoje":(posted?"done":"");
+    var thumbImg=p.thumb?'<img class="thumb" src="'+encodeURI(p.thumb)+'" alt="">':'<span class="thumb ph">'+CLOCK+'</span>';
+    var thumb=cat?'<a class="thumblink" href="#" title="Abrir pasta no Explorer">'+thumbImg+'</a>':thumbImg;
+    var stat=p.status==="pronto"?'<span class="status pronto"><span class="d"></span>Pronta</span>':'<span class="status plan"><span class="d"></span>A gerar</span>';
+    var temaChip='<span class="chip '+(temaClaro?'tema-claro':'tema-dark')+'">'+(temaClaro?'tema claro':'tema dark')+'</span>';
+    var folderChip=cat?'<a class="folderlink" href="#" title="Abrir pasta no Explorer">'+FOLDER+'pasta</a>':'';
+    tr.innerHTML=
+      '<td><div class="day">'+p.dia+'</div><div class="dow">'+p.dow+'</div>'+(isToday?'<div class="badge-hoje">HOJE</div>':'')+'</td>'+
+      '<td><div class="post">'+thumb+'<div><div class="pt">'+p.tema+'</div>'+
+        '<div class="meta"><span class="chip">'+p.pilar+'</span>'+(p.nicho!=="geral"?'<span class="chip nicho">'+p.nicho+'</span>':'')+temaChip+'<span class="tipo">'+p.tipo+'</span>'+folderChip+'</div>'+
+        '<button class="capbtn" type="button">Ver legenda &#9662;</button>'+
+      '</div></div></td>'+
+      '<td class="cell-c">'+fsCell(p.status==="pronto",p.feed)+'</td>'+
+      '<td class="cell-c">'+fsCell(p.status==="pronto",p.story)+'</td>'+
+      '<td class="cell-c">'+stat+'</td>'+
+      '<td class="cell-c"><span class="igbox"><input type="checkbox" '+(posted?"checked":"")+'></span></td>';
+    tb.appendChild(tr);
+
+    var cr=document.createElement("tr");cr.style.display="none";
+    var td=document.createElement("td");td.colSpan=6;td.style.background="#FBFBF9";td.style.padding="0 16px 16px";
+    var panel=document.createElement("div");panel.className="cap-panel";
+    var h=document.createElement("div");h.className="cap-h";
+    var hl=document.createElement("span");hl.innerHTML="Legenda";
+    var cp=document.createElement("button");cp.className="cap-copy";cp.type="button";cp.innerHTML="Copiar legenda";
+    cp.onclick=function(){copyText(p.leg+"\n\n"+p.hs);};
+    h.appendChild(hl);h.appendChild(cp);
+    var tx=document.createElement("div");tx.className="cap-txt";tx.appendChild(document.createTextNode(p.leg));
+    var hsd=document.createElement("div");hsd.className="cap-hs";hsd.appendChild(document.createTextNode(p.hs));
+    panel.appendChild(h);panel.appendChild(tx);panel.appendChild(hsd);
+    td.appendChild(panel);cr.appendChild(td);tb.appendChild(cr);
+
+    var btn=tr.querySelector(".capbtn");
+    btn.onclick=function(){var hidden=cr.style.display==="none";cr.style.display=hidden?"":"none";btn.innerHTML=hidden?"Ocultar legenda \u25B4":"Ver legenda \u25BE";};
+    var fl=tr.querySelector(".folderlink"); if(fl){fl.onclick=function(){openFolder(cat);return false;};}
+    var tl=tr.querySelector(".thumblink"); if(tl){tl.onclick=function(){openFolder(cat);return false;};}
+    var cb=tr.querySelector('input[type=checkbox]');
+    cb.onclick=function(){setPosted(p.data,cb.checked);tr.className=isToday?"hoje":(cb.checked?"done":"");updateStats();};
+  })(DATA[k]); }
+}
+function updateStats(){
+  var total=DATA.length,ok=0,ig=0;
+  for(var i=0;i<DATA.length;i++){ if(DATA[i].status==="pronto"){ok++;} if(isPosted(DATA[i].data)){ig++;} }
+  document.getElementById("s-total").innerHTML=total;
+  document.getElementById("s-ok").innerHTML=ok;
+  document.getElementById("s-plan").innerHTML=total-ok;
+  document.getElementById("s-ig").innerHTML=ig;
+  document.getElementById("p-label").innerHTML=ig+" / "+total;
+  document.getElementById("p-bar").style.width=(total?Math.round(ig/total*100):0)+"%";
+}
+toast=document.getElementById("toast");
+var _mes=document.getElementById("mesLabel");if(_mes){_mes.innerHTML=(typeof DASH_MONTH_LABEL!=="undefined")?DASH_MONTH_LABEL:"Setembro 2026";}
+render();updateStats();
+</script>
+</body>
+</html>

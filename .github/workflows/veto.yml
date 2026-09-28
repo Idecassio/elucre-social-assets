@@ -1,0 +1,38 @@
+name: eLucre · vetar publicação
+# Manual: veta a publicação de uma data (não vai ao ar). Rode em Actions → "eLucre · vetar publicação".
+# Alternativa: editar _social/vetos.json direto no GitHub, adicionando a data.
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Data a vetar (YYYY-MM-DD). Deixe vazio = hoje.'
+        required: false
+        default: ''
+permissions:
+  contents: write
+jobs:
+  veto:
+    runs-on: ubuntu-latest
+    env:
+      TZ: America/Sao_Paulo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Instalar deps
+        working-directory: _publisher
+        run: npm ci
+      - name: Vetar
+        working-directory: _publisher
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: node scripts/elucre/veto.mjs "${{ github.event.inputs.date }}"
+      - name: Commitar veto
+        run: |
+          git config user.name "eLucre bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add _social/vetos.json _publisher/content/ledger.json 2>/dev/null || true
+          git commit -m "chore(veto): $(date -u +%F)" || echo "sem mudancas"
+          git pull --rebase --autostash || true
+          git push

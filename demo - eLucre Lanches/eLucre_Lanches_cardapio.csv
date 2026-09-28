@@ -1,0 +1,53 @@
+﻿tipo;codigo;nome;descricao;preco;categoria;ativo;destaque;grupo;min;max;obrigatorio;aplicar_em
+produto;GOU01;Chicuta Gourmet;"Hambúrguer caseiro 150g, queijo prato, presunto, ovo, bacon, tomate e alface";"24,50";Sandubas Gourmet;sim;nao;;;;;
+produto;GOU02;Gourmet Duplo;"2 hambúrgueres caseiros de 150g cada, 2 fatias de queijo prato, 2 fatias de presunto, tomate e alface";"29,00";Sandubas Gourmet;sim;sim;;;;;
+produto;GOU03;Gourmet Calabresa;"Hambúrguer caseiro de 150g, calabresa, queijo prato, ovo, tomate e alface";"24,50";Sandubas Gourmet;sim;nao;;;;;
+produto;GOU04;Gourmet Catupiry;"Hambúrguer caseiro de 150g, catupiry, bacon, queijo prato, tomate e alface";"24,50";Sandubas Gourmet;sim;nao;;;;;
+produto;GOU05;Gourmet Cordeiro;"Hambúrguer de carneiro 150g, queijo prato, presunto, ovo, bacon, tomate e alface";"24,50";Sandubas Gourmet;sim;nao;;;;;
+produto;GOU06;Gourmet Cordeiro Catupiry;"Hambúrguer de carneiro 150g, catupiry, queijo prato, bacon, tomate e alface";"24,50";Sandubas Gourmet;sim;nao;;;;;
+produto;SAN01;Chicuta Filé;"Pão bola, filé de alcatra, queijo prato, presunto, ovo, bacon, tomate e alface";"24,00";Sandubas;sim;nao;;;;;
+produto;SAN02;Chicuta Filé Catupiry;"Pão bola, filé de alcatra, queijo prato, catupiry, bacon, tomate e alface";"24,00";Sandubas;sim;nao;;;;;
+produto;SAN03;Chicuta Filé Simples;"Pão bola, filé de alcatra, queijo prato, presunto, tomate e alface";"22,00";Sandubas;sim;nao;;;;;
+produto;SAN04;Chicuta Frango;"Pão bola, filé de frango, queijo prato, presunto, ovo, bacon, tomate e alface";"21,50";Sandubas;sim;nao;;;;;
+produto;SAN05;Chicuta Frango Catupiry;"Pão bola, filé de frango, queijo prato, catupiry, bacon, tomate e alface";"21,50";Sandubas;sim;nao;;;;;
+produto;SAN06;Chicuta Frango Simples;"Pão bola, filé de frango, queijo prato, presunto, alface e tomate";"20,00";Sandubas;sim;nao;;;;;
+produto;SAN07;Chicuta Mistão;"Pão bola, filé de alcatra, filé de frango, queijo prato, presunto, ovo, bacon, tomate e alface";"24,00";Sandubas;sim;nao;;;;;
+produto;SAN08;Chicuta Calabresa;"Pão bola, hambúrguer, calabresa, queijo prato, presunto, ovo, tomate e alface";"21,50";Sandubas;sim;nao;;;;;
+produto;SAN09;Chicutão;"Pão bola, filé de alcatra, filé de frango, calabresa, hambúrguer, queijo prato, presunto, bacon, ovo, tomate e alface";"27,50";Sandubas;sim;sim;;;;;
+produto;SAN10;Chicuta Coração;"Pão bola, coração de galinha, queijo prato, presunto, ovo, bacon, tomate e alface";"24,00";Sandubas;sim;nao;;;;;
+produto;SAN11;Chicuta Picanha;"Pão bola, picanha, queijo prato, presunto, ovo, bacon, tomate e alface";"25,00";Sandubas;sim;sim;;;;;
+produto;SAN12;Chicuta Carne de Sol;"Pão bola, carne de sol desfiada acebolada, catupiry, queijo prato, tomate e alface";"24,00";Sandubas;sim;nao;;;;;
+produto;SAN13;Chicuta Charque;"Pão bola, charque desfiado acebolado, queijo prato, ovo, catupiry, tomate e alface";"25,50";Sandubas;sim;nao;;;;;
+produto;SAN14;Chicuta Misto;"Pão bola, 2 fatias de queijo prato e 1 fatia de presunto";"13,50";Sandubas;sim;nao;;;;;
+produto;SAN15;Chicuta Americano;"Pão bola, queijo prato, presunto, ovo, tomate e alface";"15,50";Sandubas;sim;nao;;;;;
+produto;SAN16;Chicuta Americano Especial;"Pão bola, salsicha, queijo prato, presunto, ovo, tomate e alface";"16,50";Sandubas;sim;nao;;;;;
+produto;SAN17;Chicuta Minuano;"Pão bola, hambúrguer, queijo prato, presunto, ovo, tomate e alface";"17,00";Sandubas;sim;nao;;;;;
+produto;SAN18;Chicuta Minubacon;"Pão bola, hambúrguer, queijo prato, presunto, ovo, bacon, tomate e alface";"18,50";Sandubas;sim;nao;;;;;
+produto;SAN19;Chicuta Burguer;"Pão bola, hambúrguer, queijo prato, presunto, ovo, bacon, salsicha, tomate e alface";"19,50";Sandubas;sim;nao;;;;;
+produto;SAN20;Chicuta Burguer Simples;"Pão bola, hambúrguer, queijo prato, presunto, alface e tomate";"15,50";Sandubas;sim;nao;;;;;
+produto;PAS01;Passaporte de Carne;"Pão de seda, carne moída, salsicha, tomate picado, milho e ervilha, maionese, ketchup e queijo parmesão ralado";"17,00";Passaportes;sim;nao;;;;;
+produto;PAS02;Passaporte de Frango;"Pão de seda, filé de frango em cubo, salsicha, tomate picado, milho e ervilha, maionese, ketchup e queijo parmesão ralado";"18,50";Passaportes;sim;nao;;;;;
+produto;PAS03;Passaporte Misto;"Pão de seda, carne moída, filé de frango em cubo, salsicha, tomate picado, milho e ervilha, maionese, ketchup e queijo parmesão ralado";"20,50";Passaportes;sim;sim;;;;;
+produto;PAS04;Passaporte de Carne de Sol;"Pão de seda, carne de sol desfiada acebolada, salsicha, tomate picado, milho e ervilha, maionese, ketchup e queijo parmesão ralado";"21,00";Passaportes;sim;nao;;;;;
+produto;PAS05;Passaporte de Charque;"Pão de seda, charque desfiado acebolado, linguiça defumada fina, maionese, ketchup, queijo parmesão ralado, tomate picado, milho e ervilha";"22,50";Passaportes;sim;nao;;;;;
+produto;BEB01;Suco 300 ml;"Suco natural 300 ml";"4,50";Bebidas;sim;nao;;;;;
+produto;BEB02;Suco 500 ml;"Suco natural 500 ml";"6,50";Bebidas;sim;nao;;;;;
+produto;BEB03;Água Mineral com Gás 500 ml;"Água mineral com gás 500 ml";"4,00";Bebidas;sim;nao;;;;;
+produto;BEB04;Água Mineral sem Gás 500 ml;"Água mineral sem gás 500 ml";"3,00";Bebidas;sim;nao;;;;;
+produto;BEB05;Refrigerante Copo 300 ml;"Refrigerante em copo 300 ml";"4,00";Bebidas;sim;nao;;;;;
+produto;BEB06;Refrigerante Copo 500 ml;"Refrigerante em copo 500 ml";"6,00";Bebidas;sim;nao;;;;;
+produto;BEB07;Fanta ou Guaraná 1L;"Fanta ou Guaraná 1 litro";"10,00";Bebidas;sim;nao;;;;;
+produto;BEB08;Coca-Cola 1L;"Coca-Cola 1 litro";"11,00";Bebidas;sim;nao;;;;;
+produto;BEB09;Refrigerante Lata;"Refrigerante em lata 350 ml";"6,00";Bebidas;sim;nao;;;;;
+produto;BEB10;Coca-Cola 1,5L;"Coca-Cola 1,5 litro";"14,00";Bebidas;sim;nao;;;;;
+produto;BEB11;Coca-Cola 2L;"Coca-Cola 2 litros";"16,00";Bebidas;sim;nao;;;;;
+adicional;ADI01;Queijo Prato;;"4,00";;sim;nao;Adicionais;0;20;nao;Sandubas Gourmet|Sandubas
+adicional;ADI02;Presunto;;"2,50";;sim;nao;Adicionais;0;20;nao;Sandubas Gourmet|Sandubas
+adicional;ADI03;Salsicha;;"3,00";;sim;nao;Adicionais;0;20;nao;Sandubas Gourmet|Sandubas
+adicional;ADI04;Hambúrguer;;"4,00";;sim;nao;Adicionais;0;20;nao;Sandubas Gourmet|Sandubas
+adicional;ADI05;Bacon;;"5,00";;sim;nao;Adicionais;0;20;nao;Sandubas Gourmet|Sandubas
+adicional;ADI06;Ovo;;"3,00";;sim;nao;Adicionais;0;20;nao;Sandubas Gourmet|Sandubas
+adicional;ADI07;Cheddar;;"4,50";;sim;nao;Adicionais;0;20;nao;Sandubas Gourmet|Sandubas
+adicional;ADI08;Catupiry;;"4,50";;sim;nao;Adicionais;0;20;nao;Sandubas Gourmet|Sandubas
+adicional;ADI09;Porção de Carne Moída;;"9,00";;sim;nao;Adicionais;0;20;nao;Sandubas Gourmet|Sandubas
+adicional;ADI10;Hambúrguer Gourmet;;"14,00";;sim;nao;Adicionais;0;20;nao;Sandubas Gourmet|Sandubas

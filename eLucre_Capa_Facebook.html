@@ -1,0 +1,105 @@
+<title>eLucre — Capa Facebook</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  :root{
+    --indigo:#4F46E5; --indigo-deep:#4338CA; --indigo-bright:#9A94F5;
+    --hl:#B9C0FF; --wpp:#25D366;
+    --font:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{background:#141235; font-family:var(--font); -webkit-font-smoothing:antialiased}
+
+  /* Artboard: 10.182,76 x 3.769,18 (proporção 2,7016:1).
+     Tudo em cqw → escala perfeita em qualquer resolução. */
+  .cover{
+    container-type:inline-size;
+    position:relative; width:100%; aspect-ratio:10182.76 / 3769.18; overflow:hidden;
+    color:#fff; isolation:isolate;
+    background:
+      radial-gradient(90% 130% at 78% 8%, rgba(124,120,255,.55), transparent 55%),
+      radial-gradient(70% 120% at 22% 100%, rgba(30,25,90,.9), transparent 60%),
+      linear-gradient(150deg, #241F63 0%, #35309C 46%, #4F46E5 78%, #4A41D6 100%);
+  }
+  .cover::before{content:""; position:absolute; inset:0; z-index:0;
+    background:radial-gradient(38% 60% at 84% 12%, rgba(150,150,255,.45), transparent 60%);}
+  .cover::after{content:""; position:absolute; inset:0; z-index:0;
+    background:radial-gradient(120% 120% at 50% 50%, transparent 55%, rgba(12,10,40,.55) 100%);}
+
+  .dots{position:absolute; inset:0; z-index:0; opacity:.5;
+    background-image:radial-gradient(.14cqw .14cqw at 12% 30%, rgba(255,255,255,.6), transparent),
+      radial-gradient(.14cqw .14cqw at 30% 70%, rgba(255,255,255,.35), transparent),
+      radial-gradient(.14cqw .14cqw at 68% 22%, rgba(255,255,255,.4), transparent),
+      radial-gradient(.14cqw .14cqw at 88% 62%, rgba(255,255,255,.45), transparent),
+      radial-gradient(.14cqw .14cqw at 54% 84%, rgba(255,255,255,.3), transparent);}
+
+  .center{position:absolute; inset:0; z-index:2; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center; gap:.37cqw; padding:0 2.44cqw}
+
+  .logo{display:flex; align-items:center; gap:1.1cqw; margin-bottom:.61cqw}
+  .mark{width:5.37cqw; height:5.37cqw; border-radius:1.46cqw; display:grid; place-items:center;
+    background:linear-gradient(150deg,#8B84FF,#5B4FE6 60%,#4338CA);
+    box-shadow:0 1.1cqw 2.68cqw rgba(38,30,120,.55), inset 0 .06cqw 0 rgba(255,255,255,.35);}
+  .mark svg{width:3.17cqw; height:3.17cqw; stroke:#fff; fill:none; stroke-width:2.4;
+    stroke-linecap:round; stroke-linejoin:round}
+  .word{font-weight:800; font-size:4.51cqw; letter-spacing:-.04em; line-height:1}
+
+  .head{font-weight:800; font-size:3.66cqw; letter-spacing:-.03em; line-height:1.04; margin-top:.49cqw}
+  .head .hl{color:var(--hl)}
+  .sub{font-weight:500; font-size:1.585cqw; color:rgba(255,255,255,.82); letter-spacing:-.01em; margin-top:.85cqw}
+  .sub b{color:#fff; font-weight:700}
+
+  .card{position:absolute; z-index:3; border-radius:1.1cqw; padding:.98cqw 1.1cqw;
+    background:rgba(24,22,66,.55); border:.06cqw solid rgba(255,255,255,.14);
+    box-shadow:0 1.34cqw 3.05cqw rgba(10,8,40,.45); backdrop-filter:blur(.55cqw)}
+  .c-left{left:9.15cqw; top:38%; transform:rotate(-4deg); display:flex; gap:.79cqw; align-items:center; min-width:15.24cqw}
+  .av{width:2.56cqw; height:2.56cqw; border-radius:50%; flex:none; display:grid; place-items:center;
+    background:linear-gradient(150deg,#2FE07A,#12B85A); box-shadow:inset 0 .06cqw 0 rgba(255,255,255,.4)}
+  .av svg{width:1.46cqw;height:1.46cqw;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .c-left .t1{font-weight:800; font-size:1.16cqw; line-height:1.15}
+  .c-left .t2{font-weight:500; font-size:.88cqw; color:rgba(255,255,255,.72); margin-top:.12cqw}
+
+  .c-right{right:9.15cqw; top:40%; transform:rotate(3deg); min-width:15.24cqw}
+  .c-right .lbl{display:flex; justify-content:space-between; align-items:baseline; gap:.85cqw}
+  .c-right .lbl span{font-weight:600; font-size:.915cqw; color:rgba(255,255,255,.78)}
+  .c-right .lbl b{font-weight:900; font-size:1.22cqw; letter-spacing:-.02em}
+  .c-right .up{color:#39E08A; font-weight:800; font-size:.85cqw}
+  .bar{margin-top:.73cqw; height:.55cqw; border-radius:5cqw; background:rgba(255,255,255,.16); overflow:hidden}
+  .bar i{display:block; height:100%; width:82%; border-radius:5cqw;
+    background:linear-gradient(90deg,#7C78FF,#33D98C)}
+</style>
+
+<div class="cover">
+  <div class="dots"></div>
+
+  <!-- card esquerdo: pedido recebido -->
+  <div class="card c-left">
+    <div class="av">
+      <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.4 8.5 8.5 0 0 1-3.9-.9L3 20l1-5.1a8.38 8.38 0 0 1-.9-3.9A8.5 8.5 0 0 1 11.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg>
+    </div>
+    <div>
+      <div class="t1">Pedido recebido</div>
+      <div class="t2">Hoje, 14h · R$ 89,90</div>
+    </div>
+  </div>
+
+  <!-- card direito: vendas hoje -->
+  <div class="card c-right">
+    <div class="lbl"><span>Vendas hoje</span><b>R$ 1.240 <span class="up">+18%</span></b></div>
+    <div class="bar"><i></i></div>
+  </div>
+
+  <!-- bloco central -->
+  <div class="center">
+    <div class="logo">
+      <div class="mark">
+        <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1.4"/><circle cx="18" cy="21" r="1.4"/><path d="M1.5 2.5h3l2.2 12.4a1.6 1.6 0 0 0 1.6 1.3h8.8a1.6 1.6 0 0 0 1.6-1.3L22 6.5H6"/></svg>
+      </div>
+      <div class="word">eLucre</div>
+    </div>
+    <div class="head">Sua loja online, <span class="hl">0% de comissão</span></div>
+    <div class="sub">O cliente compra na sua loja e o pedido cai no seu WhatsApp · <b>elucre.net</b></div>
+  </div>
+</div>

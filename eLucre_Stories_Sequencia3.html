@@ -1,0 +1,140 @@
+<title>eLucre — Stories · Sequência de 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  :root{
+    --indigo:#4F46E5; --indigo-deep:#4338CA; --indigo-bright:#9A94F5;
+    --hl:#B9C0FF; --green:#39E08A; --green-soft:#8BF3BE; --wpp:#128C4B;
+    --ink:#171310; --cream:#FAF9F7;
+    --font:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{background:#0F0D2A; font-family:var(--font); -webkit-font-smoothing:antialiased}
+  .page{display:flex; flex-direction:column; align-items:center; gap:30px; padding:40px 0 80px}
+  .slabel{color:#8f8ac8; font-size:15px; font-weight:700; letter-spacing:.06em; text-transform:uppercase}
+
+  .story{position:relative; width:1080px; height:1920px; overflow:hidden; color:#fff; isolation:isolate;
+    background:
+      radial-gradient(80% 40% at 84% 4%, rgba(124,120,255,.55), transparent 55%),
+      radial-gradient(80% 40% at 8% 100%, rgba(28,24,88,.92), transparent 62%),
+      linear-gradient(160deg, #241F63 0%, #35309C 48%, #4F46E5 82%, #4A41D6 100%);}
+  .story::before{content:""; position:absolute; inset:0; z-index:0; background:radial-gradient(30% 18% at 90% 8%, rgba(150,150,255,.5), transparent 60%);}
+  .story::after{content:""; position:absolute; inset:0; z-index:0; background:radial-gradient(120% 120% at 50% 45%, transparent 60%, rgba(12,10,40,.5) 100%);}
+  .dots{position:absolute; inset:0; z-index:0; opacity:.5;
+    background-image:radial-gradient(2px 2px at 14% 14%, rgba(255,255,255,.5), transparent),
+      radial-gradient(2px 2px at 82% 10%, rgba(255,255,255,.4), transparent),
+      radial-gradient(2px 2px at 26% 90%, rgba(255,255,255,.35), transparent),
+      radial-gradient(2px 2px at 92% 78%, rgba(255,255,255,.4), transparent);}
+  .in{position:absolute; inset:0; z-index:3; padding:110px 90px; display:flex; flex-direction:column; justify-content:center}
+
+  .brand{display:flex; align-items:center; gap:14px}
+  .mk{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(150deg,#8B84FF,#5B4FE6 60%,#4338CA);box-shadow:0 8px 20px rgba(38,30,120,.5), inset 0 1px 0 rgba(255,255,255,.35)}
+  .mk svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .brand .w{font-weight:800;font-size:30px;letter-spacing:-.03em}
+  .kick{font-size:24px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--indigo-bright)}
+  h1{font-weight:900;letter-spacing:-.035em;line-height:1.04}
+  .hl{color:var(--hl)} .g{color:var(--green-soft)}
+  p.lead{font-weight:500;line-height:1.4;color:rgba(255,255,255,.86)}
+  p.lead b{color:#fff;font-weight:700}
+
+  /* chat */
+  .chat{background:rgba(18,16,52,.55);border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:32px;backdrop-filter:blur(9px);box-shadow:0 30px 60px rgba(8,6,30,.5);display:flex;flex-direction:column;gap:16px}
+  .bub{position:relative;flex:none;max-width:80%;padding:18px 24px;border-radius:22px;font-size:28px;font-weight:600;line-height:1.28}
+  .bub.in{align-self:flex-start;background:#fff;color:var(--ink);border-bottom-left-radius:7px}
+  .bub.out{align-self:flex-end;background:var(--wpp);color:#fff;border-bottom-right-radius:7px}
+  .bub.photos{align-self:flex-start;padding:14px;display:flex;gap:11px;background:#fff}
+  .bub.photos .ph{width:92px;height:92px;border-radius:15px;display:grid;place-items:center;font-size:44px}
+  .meta{align-self:flex-start;font-size:19px;color:rgba(255,255,255,.5);font-weight:600;padding-left:6px}
+
+  /* enquete */
+  .poll{margin-top:46px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);border-radius:28px;padding:30px;backdrop-filter:blur(10px);box-shadow:0 24px 50px rgba(8,6,30,.4)}
+  .poll .q{font-weight:800;font-size:32px;text-align:center;margin-bottom:22px}
+  .poll .opts{display:flex;gap:16px}
+  .poll .opt{flex:1;text-align:center;font-weight:800;font-size:28px;padding:22px;border-radius:18px;background:#fff;color:var(--ink)}
+
+  /* loja */
+  .browser{background:#0C0A26;border:1px solid rgba(255,255,255,.14);border-radius:26px;overflow:hidden;box-shadow:0 34px 70px rgba(8,6,30,.55)}
+  .bbar{display:flex;align-items:center;gap:16px;padding:18px 22px;background:rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.1)}
+  .bbar .dds{display:flex;gap:9px}
+  .bbar .dds i{width:15px;height:15px;border-radius:50%;background:rgba(255,255,255,.3)}
+  .bbar .url{flex:1;background:rgba(255,255,255,.1);border-radius:11px;padding:12px 18px;font-size:22px;font-weight:600;color:rgba(255,255,255,.82);display:flex;align-items:center;gap:11px}
+  .bbar .url svg{width:19px;height:19px;stroke:var(--green);fill:none;stroke-width:2.4}
+  .bbody{background:var(--cream);color:var(--ink);padding:28px}
+  .store-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+  .store-hd .nm{font-weight:900;font-size:30px;letter-spacing:-.02em}
+  .store-hd .cart{display:flex;align-items:center;gap:9px;font-weight:800;font-size:21px;color:var(--indigo)}
+  .store-hd .cart svg{width:24px;height:24px;stroke:var(--indigo);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .bgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .bp{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 6px 16px rgba(23,19,16,.08)}
+  .bp .im{height:150px;display:grid;place-items:center;font-size:66px}
+  .bp .n{font-size:22px;font-weight:700;padding:12px 14px 0}
+  .bp .p{font-size:22px;font-weight:900;color:var(--indigo);padding:3px 14px 14px}
+  .worder{margin-top:18px;display:flex;align-items:center;justify-content:center;gap:12px;background:#25D366;color:#fff;font-weight:800;font-size:24px;border-radius:16px;padding:20px;box-shadow:0 14px 28px rgba(18,140,80,.35)}
+  .worder svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .gpill{align-self:center;margin-top:34px;display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:30px;color:#08351F;background:linear-gradient(150deg,#8BF3BE,#39E08A);padding:18px 34px;border-radius:99px;box-shadow:0 16px 36px rgba(20,160,90,.4)}
+
+  /* cta */
+  .disc{width:150px;height:150px;border-radius:40px;display:grid;place-items:center;background:linear-gradient(150deg,#8B84FF,#5B4FE6 60%,#4338CA);box-shadow:0 30px 70px rgba(40,30,140,.6), 0 0 60px rgba(124,120,255,.4), inset 0 2px 0 rgba(255,255,255,.35);margin-bottom:44px}
+  .disc svg{width:82px;height:82px;stroke:#fff;fill:none;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+  .linkchip{align-self:flex-start;margin-top:38px;display:inline-flex;align-items:center;gap:14px;font-weight:800;font-size:34px;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);padding:22px 36px;border-radius:20px;backdrop-filter:blur(8px)}
+  .linkchip svg{width:32px;height:32px;stroke:var(--green);fill:none;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+  .swipeup{position:absolute;left:0;right:0;bottom:90px;z-index:5;text-align:center;font-size:26px;font-weight:700;color:rgba(255,255,255,.9)}
+  .swipeup svg{display:block;margin:0 auto 10px;width:40px;height:40px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+</style>
+<div class="page">
+
+  <!-- ===== S1 ===== -->
+  <div class="slabel">Story 1 · Gancho</div>
+  <div class="story"><div class="dots"></div>
+    <div class="in">
+      <div class="brand"><div class="mk"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1.4"/><circle cx="18" cy="21" r="1.4"/><path d="M1.5 2.5h3l2.2 12.4a1.6 1.6 0 0 0 1.6 1.3h8.8a1.6 1.6 0 0 0 1.6-1.3L22 6.5H6"/></svg></div><span class="w">eLucre</span></div>
+      <h1 style="font-size:78px;margin-top:40px">Você ainda manda <span class="hl">foto solta</span> no WhatsApp? 👀</h1>
+      <div class="chat" style="margin-top:44px">
+        <div class="bub photos"><span class="ph" style="background:linear-gradient(150deg,#EEEDFB,#DAD8F6)">👗</span><span class="ph" style="background:linear-gradient(150deg,#FBEFE8,#F6DFD0)">👚</span><span class="ph" style="background:linear-gradient(150deg,#FDF3E1,#F8E7C4)">👖</span></div>
+        <div class="bub in">E o preço? Qual o tamanho? 😕</div>
+        <div class="meta">…e a venda escapa.</div>
+      </div>
+      <div class="poll">
+        <div class="q">Você faz isso?</div>
+        <div class="opts"><div class="opt">Sim 🙈</div><div class="opt">Já cansei disso</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== S2 ===== -->
+  <div class="slabel">Story 2 · Valor</div>
+  <div class="story"><div class="dots"></div>
+    <div class="in">
+      <div class="kick">A solução</div>
+      <h1 style="font-size:82px;margin-top:18px">Monte sua <span class="hl">loja online</span></h1>
+      <p class="lead" style="font-size:30px;margin-top:22px;max-width:840px">Vitrine, busca e carrinho num link só. O <b>pedido cai pronto no seu WhatsApp</b>.</p>
+      <div class="browser" style="margin-top:44px">
+        <div class="bbar"><span class="dds"><i></i><i></i><i></i></span><span class="url"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>elucre.net/minha-loja</span></div>
+        <div class="bbody">
+          <div class="store-hd"><span class="nm">Minha Loja</span><span class="cart"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="18" cy="21" r="1"/><path d="M1.5 2.5h3l2.2 12.4a1.6 1.6 0 0 0 1.6 1.3h8.8a1.6 1.6 0 0 0 1.6-1.3L22 6.5H6"/></svg>Carrinho · 2</span></div>
+          <div class="bgrid">
+            <div class="bp"><div class="im" style="background:linear-gradient(150deg,#EEEDFB,#DAD8F6)">👗</div><div class="n">Vestido Flor</div><div class="p">R$ 89,90</div></div>
+            <div class="bp"><div class="im" style="background:linear-gradient(150deg,#FBEFE8,#F6DFD0)">👟</div><div class="n">Tênis Style</div><div class="p">R$ 199</div></div>
+          </div>
+          <div class="worder"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.4 8.5 8.5 0 0 1-3.9-.9L3 20l1-5.1a8.38 8.38 0 0 1-.9-3.9A8.5 8.5 0 0 1 11.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg>Pedido pronto no WhatsApp</div>
+        </div>
+      </div>
+      <span class="gpill">0% de comissão</span>
+    </div>
+  </div>
+
+  <!-- ===== S3 ===== -->
+  <div class="slabel">Story 3 · CTA</div>
+  <div class="story"><div class="dots"></div>
+    <div class="in" style="justify-content:center">
+      <div class="disc"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1.4"/><circle cx="18" cy="21" r="1.4"/><path d="M1.5 2.5h3l2.2 12.4a1.6 1.6 0 0 0 1.6 1.3h8.8a1.6 1.6 0 0 0 1.6-1.3L22 6.5H6"/></svg></div>
+      <h1 style="font-size:96px">Teste <span class="g">7 dias<br>grátis</span></h1>
+      <p class="lead" style="font-size:32px;margin-top:28px;max-width:800px">Sua loja no ar em minutos. Qualquer nicho — moda, lanche, celular, serviços.</p>
+      <span class="linkchip"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></svg>elucre.net</span>
+    </div>
+    <div class="swipeup"><svg viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></svg>arrasta pra cima / figurinha de link</div>
+  </div>
+
+</div>

@@ -1,0 +1,100 @@
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Pacifico&family=Inter:wght@700;800;900&display=swap">
+<style>
+  html,body{margin:0;background:transparent}
+  svg{display:block}
+  text{font-family:"Inter",sans-serif}
+</style>
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="warm" cx="50%" cy="42%" r="70%">
+      <stop offset="0%" stop-color="#FFB03A"/>
+      <stop offset="45%" stop-color="#FF7A18"/>
+      <stop offset="100%" stop-color="#B31208"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFE08A"/>
+      <stop offset="50%" stop-color="#F6B93B"/>
+      <stop offset="100%" stop-color="#C77C16"/>
+    </linearGradient>
+    <linearGradient id="bunTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F2B45C"/>
+      <stop offset="100%" stop-color="#D08A2E"/>
+    </linearGradient>
+    <linearGradient id="bunBot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2A24A"/>
+      <stop offset="100%" stop-color="#B9791F"/>
+    </linearGradient>
+    <linearGradient id="patty" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6E3F22"/>
+      <stop offset="100%" stop-color="#3E2113"/>
+    </linearGradient>
+    <linearGradient id="cheese" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFD54A"/>
+      <stop offset="100%" stop-color="#F2A925"/>
+    </linearGradient>
+    <path id="arcTop" d="M 96,540 A 444,444 0 0 1 984,540"/>
+    <path id="arcBot" d="M 96,540 A 444,444 0 0 0 984,540"/>
+  </defs>
+
+  <!-- disco base escuro (fora fica transparente) -->
+  <circle cx="540" cy="540" r="524" fill="#120C08"/>
+  <circle cx="540" cy="540" r="520" fill="none" stroke="url(#gold)" stroke-width="10"/>
+  <!-- disco interno quente -->
+  <circle cx="540" cy="540" r="432" fill="url(#warm)"/>
+  <circle cx="540" cy="540" r="432" fill="none" stroke="url(#gold)" stroke-width="8"/>
+  <!-- brilho/chama sutil -->
+  <ellipse cx="540" cy="900" rx="360" ry="150" fill="#FFB03A" opacity="0.25"/>
+  <ellipse cx="360" cy="330" rx="120" ry="80" fill="#FFD98A" opacity="0.18"/>
+
+  <!-- texto no anel -->
+  <text font-family="'Baloo 2',sans-serif" font-weight="800" font-size="72" fill="url(#gold)" stroke="#2a1608" stroke-width="6" paint-order="stroke" letter-spacing="2">
+    <textPath href="#arcTop" startOffset="50%" text-anchor="middle">★    eLucre    ★</textPath>
+  </text>
+  <text font-family="Inter,sans-serif" font-weight="800" font-size="34" fill="#FFE9C2" stroke="#2a1608" stroke-width="4" paint-order="stroke" letter-spacing="6">
+    <textPath href="#arcBot" startOffset="50%" text-anchor="middle">★ HAMBÚRGUER ARTESANAL ★</textPath>
+  </text>
+
+  <!-- ============ PASSAPORTE (canto inf. esquerdo) ============ -->
+  <g transform="translate(246,500) rotate(-14) scale(0.82)">
+    <rect x="-78" y="-104" width="156" height="208" rx="14" fill="#16233F" stroke="#0B1428" stroke-width="6"/>
+    <rect x="-64" y="-90" width="128" height="180" rx="9" fill="none" stroke="url(#gold)" stroke-width="3.5"/>
+    <circle cx="0" cy="6" r="34" fill="none" stroke="url(#gold)" stroke-width="4"/>
+    <path d="M0,-16 l7,20 h21 l-17,13 6,21 -17,-13 -17,13 6,-21 -17,-13 h21 z" fill="url(#gold)"/>
+    <text x="0" y="-58" text-anchor="middle" font-family="Inter,sans-serif" font-weight="900" font-size="15" letter-spacing="1.5" fill="url(#gold)">PASSAPORTE</text>
+    <text x="0" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="12" letter-spacing="2" fill="#C9D4EA">eLucre Lanches</text>
+  </g>
+
+  <!-- ============ HAMBÚRGUER ARTESANAL ============ -->
+  <g stroke="#2a1608" stroke-width="6" stroke-linejoin="round">
+    <!-- pão de baixo -->
+    <path d="M 370,560 q 0,60 170,60 q 170,0 170,-60 l 0,-14 q 0,-30 -30,-30 l -280,0 q -30,0 -30,30 z" fill="url(#bunBot)"/>
+    <!-- carne -->
+    <path d="M 356,548 q -14,-40 32,-46 l 304,0 q 46,6 32,46 q -8,20 -184,20 q -176,0 -184,-20 z" fill="url(#patty)"/>
+    <!-- queijo com pingos -->
+    <path d="M 360,512 l 360,0 q 6,26 -18,34 l -12,26 -16,-24 -22,26 -18,-26 -20,24 -18,-26 -20,26 -18,-24 -20,26 -18,-26 -18,22 -12,-24 q -22,-8 -14,-34 z" fill="url(#cheese)"/>
+    <!-- tomate -->
+    <path d="M 372,486 q -6,-26 26,-26 l 284,0 q 32,0 26,26 q -10,20 -168,20 q -158,0 -168,-20 z" fill="#E23B2E"/>
+    <!-- alface -->
+    <path d="M 350,470 q 24,-30 60,-14 q 24,-26 58,-10 q 26,-24 58,-6 q 30,-22 60,-4 q 34,-14 58,14 q 16,20 -16,26 q -168,18 -320,0 q -32,-6 -16,-26 z" fill="#5FAE3B"/>
+    <!-- pão de cima com gergelim -->
+    <path d="M 360,452 q 0,-158 180,-158 q 180,0 180,158 q -180,26 -360,0 z" fill="url(#bunTop)"/>
+  </g>
+  <!-- gergelim -->
+  <g fill="#F7E4B0" stroke="none">
+    <ellipse cx="470" cy="392" rx="9" ry="5" transform="rotate(-18 470 392)"/>
+    <ellipse cx="540" cy="368" rx="9" ry="5" transform="rotate(6 540 368)"/>
+    <ellipse cx="612" cy="392" rx="9" ry="5" transform="rotate(20 612 392)"/>
+    <ellipse cx="430" cy="428" rx="9" ry="5" transform="rotate(-24 430 428)"/>
+    <ellipse cx="505" cy="416" rx="9" ry="5" transform="rotate(-6 505 416)"/>
+    <ellipse cx="578" cy="416" rx="9" ry="5" transform="rotate(10 578 416)"/>
+    <ellipse cx="648" cy="428" rx="9" ry="5" transform="rotate(24 648 428)"/>
+  </g>
+
+  <!-- ============ wordmark "Lanches" ============ -->
+  <g transform="translate(540,802) rotate(-5)">
+    <text x="0" y="0" text-anchor="middle" font-family="Pacifico,cursive" font-size="118" fill="#FFF3DC" stroke="#2a1608" stroke-width="9" paint-order="stroke">Lanches</text>
+  </g>
+</svg>

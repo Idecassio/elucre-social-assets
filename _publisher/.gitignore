@@ -1,0 +1,14 @@
+# segredos
+.env
+
+# dependências
+node_modules/
+
+# saídas de render
+out/
+*.jpg
+*.png
+
+# imagens que o operador solta para publicar (só o README fica versionado)
+inbox/*
+!inbox/README.md

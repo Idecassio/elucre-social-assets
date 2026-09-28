@@ -1,0 +1,307 @@
+<title>Kit de Posts eLucre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+
+<style>
+:root{
+  --bg:#FAF9F7; --surface:#FFFFFF; --surface-2:#F3F1EC;
+  --ink:#171310; --ink-soft:#544C40; --ink-faint:#8B8272; --line:#EBE7E0; --line-soft:#F1EEE8;
+  --indigo:#4F46E5; --indigo-deep:#4338CA; --indigo-bright:#9A94F5; --indigo-wash:#EEEDFB;
+  --cream:#FAF9F7;
+  --shadow:0 1px 2px rgba(23,19,16,.04), 0 10px 30px rgba(23,19,16,.06);
+  --font:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px; margin:0 auto; padding:0 22px}
+h1,h2,h3{font-weight:800; letter-spacing:-.02em; margin:0; text-wrap:balance}
+p{margin:0}
+.eyebrow{font-size:12px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--indigo)}
+.brandline{display:inline-flex; align-items:center; gap:7px; font-weight:800; letter-spacing:-.03em}
+.brandline::before{content:""; width:.5em; height:.5em; border-radius:50%; background:currentColor; opacity:.9}
+
+/* header */
+header.top{padding:52px 0 20px}
+header.top h1{font-size:clamp(32px,5.4vw,50px); line-height:1.03; margin-top:16px}
+header.top .lede{color:var(--ink-soft); font-size:18px; max-width:60ch; margin-top:16px; font-weight:400}
+.howto{margin-top:22px; background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--indigo); border-radius:14px; padding:16px 20px; box-shadow:var(--shadow); font-size:15px; color:var(--ink-soft); max-width:70ch}
+.howto strong{color:var(--ink)}
+
+/* section */
+section{padding:40px 0; border-top:1px solid var(--line-soft)}
+.sec-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:12px; margin-bottom:22px}
+.sec-head h2{font-size:clamp(22px,3.2vw,30px)}
+.badge{font-size:11.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--indigo-deep); background:var(--indigo-wash); padding:5px 11px; border-radius:999px}
+.badge.dim{color:var(--ink-faint); background:var(--surface-2)}
+
+/* ——— post frames ——— */
+.rail{display:flex; gap:16px; overflow-x:auto; padding:6px 2px 18px; scroll-snap-type:x mandatory}
+.rail::-webkit-scrollbar{height:8px}
+.rail::-webkit-scrollbar-thumb{background:var(--line); border-radius:99px}
+.slot{scroll-snap-align:start; flex:0 0 auto; display:flex; flex-direction:column; gap:9px}
+.slabel{font-size:11.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-faint); text-align:center}
+
+.frame{container-type:inline-size; position:relative; overflow:hidden; box-shadow:0 10px 34px rgba(23,19,16,.16); border:1px solid rgba(23,19,16,.06)}
+.r45{aspect-ratio:4/5; width:clamp(250px,76vw,360px)}
+.r916{aspect-ratio:9/16; width:clamp(220px,66vw,300px)}
+.pad{position:absolute; inset:0; padding:9cqw; display:flex; flex-direction:column}
+.fr-ink{background:var(--ink); color:var(--cream)}
+.fr-indigo{background:var(--indigo); color:#fff}
+.fr-cream{background:var(--cream); color:var(--ink)}
+.fr-cream.alt{background:var(--surface)}
+
+.f-top{display:flex; justify-content:space-between; align-items:center; font-size:3.6cqw}
+.f-brand{font-weight:800; letter-spacing:-.02em}
+.f-eyebrow{font-size:3.5cqw; font-weight:800; letter-spacing:.14em; text-transform:uppercase}
+.tint{color:var(--indigo)} .tint-b{color:var(--indigo-bright)} .tint-w{color:#fff}
+.spacer-g{flex:1}
+.f-h{font-weight:800; letter-spacing:-.03em; line-height:1.02}
+.h-xl{font-size:12.5cqw} .h-lg{font-size:10.5cqw} .h-md{font-size:8.2cqw}
+.f-body{font-size:4.5cqw; line-height:1.32; font-weight:400; opacity:.92; margin-top:3.5cqw}
+.f-foot{font-size:3.7cqw; font-weight:600; display:flex; justify-content:space-between; align-items:center; gap:2cqw}
+.f-num{font-weight:900; font-size:7cqw; letter-spacing:-.03em; line-height:1}
+.swipe{font-size:3.6cqw; font-weight:700; letter-spacing:.02em; opacity:.85}
+.pill{display:inline-block; font-size:3.4cqw; font-weight:700; padding:1.6cqw 3.4cqw; border-radius:99px; letter-spacing:.02em}
+.pill-on-ink{background:rgba(154,148,245,.2); color:var(--indigo-bright)}
+.pill-on-indigo{background:rgba(255,255,255,.16); color:#fff}
+.pill-on-cream{background:var(--indigo-wash); color:var(--indigo-deep)}
+.sticker{margin-top:4cqw; font-size:3.7cqw; font-weight:600; opacity:.8; border:1.5px dashed currentColor; border-radius:3cqw; padding:2.6cqw 3.4cqw; opacity:.7}
+
+/* ——— caption block ——— */
+.cap{margin-top:20px; background:var(--surface); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); overflow:hidden}
+.cap .cap-h{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:12px 16px; background:var(--surface-2); border-bottom:1px solid var(--line)}
+.cap .cap-h span{font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-faint)}
+.copy{border:1px solid var(--line); background:var(--surface); color:var(--indigo-deep); font-family:var(--font); font-weight:600; font-size:12.5px; padding:6px 12px; border-radius:99px; cursor:pointer}
+.copy:hover{border-color:var(--indigo); background:var(--indigo-wash)}
+.copy:focus-visible{outline:2.5px solid var(--indigo); outline-offset:2px}
+.cap .cap-b{padding:16px 18px; font-size:15px; color:var(--ink-soft); white-space:pre-wrap; font-weight:400}
+.cap .tags{color:var(--indigo-deep); font-weight:500}
+.legend{font-size:13.5px; color:var(--ink-faint); margin-top:12px; font-style:italic; max-width:66ch}
+.note-row{display:grid; gap:8px; margin-top:14px}
+.note-row .nr{display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:var(--ink-soft)}
+.note-row .nr b{color:var(--ink)}
+.note-row .k{flex:none; width:22px; height:22px; border-radius:7px; background:var(--indigo-wash); color:var(--indigo-deep); font-weight:700; font-size:12px; display:grid; place-items:center}
+
+footer{border-top:1px solid var(--line-soft); padding:34px 0 60px; color:var(--ink-faint); font-size:14px}
+.toast{position:fixed; bottom:22px; left:50%; transform:translateX(-50%) translateY(20px); background:var(--ink); color:var(--cream); padding:10px 18px; border-radius:99px; font-size:14px; font-weight:600; opacity:0; transition:opacity .2s, transform .2s; pointer-events:none; z-index:50}
+.toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
+</style>
+
+<div class="wrap">
+
+  <header class="top">
+    <span class="eyebrow"><span class="brandline">eLucre</span> · Kit de posts · Passo 1</span>
+    <h1>Pacote-piloto: seus primeiros posts, prontos pra publicar.</h1>
+    <p class="lede">Um carrossel, um card de feed e uma sequência de Stories — desenhados na identidade da marca. Cada quadro já está no formato certo do Instagram.</p>
+    <div class="howto">
+      <strong>Como usar:</strong> tire um <strong>print de cada quadro</strong> (no celular ou no PC) e publique. Pra máxima qualidade, dê zoom no navegador (Ctrl/⌘ +) antes do print. As legendas têm botão <strong>Copiar</strong>. Formatos: carrossel e feed em <strong>4:5 (1080×1350)</strong>, Stories em <strong>9:16 (1080×1920)</strong>.
+    </div>
+  </header>
+
+  <!-- ============ CARROSSEL ============ -->
+  <section>
+    <div class="sec-head">
+      <h2>Carrossel</h2>
+      <span class="badge">Pilar 1 · Dor &amp; educação</span>
+      <span class="badge dim">6 slides · 4:5</span>
+    </div>
+
+    <div class="rail">
+      <div class="slot"><div class="slabel">Capa</div>
+        <div class="frame r45"><div class="pad fr-ink">
+          <div class="f-top"><span class="f-brand">eLucre</span><span class="tint-b" style="font-size:3.4cqw;font-weight:700">catálogo no WhatsApp</span></div>
+          <div class="spacer-g"></div>
+          <h3 class="f-h h-lg"><span class="tint-b">3 erros</span> que fazem você <span class="tint-b">perder venda</span> no WhatsApp</h3>
+          <div class="spacer-g"></div>
+          <div class="f-foot"><span>Você comete pelo menos 1.</span><span class="swipe">arraste →</span></div>
+        </div></div>
+      </div>
+
+      <div class="slot"><div class="slabel">Slide 2</div>
+        <div class="frame r45"><div class="pad fr-cream">
+          <div class="f-top"><span class="f-eyebrow tint">Erro 01</span><span class="f-num tint">01</span></div>
+          <div class="spacer-g"></div>
+          <h3 class="f-h h-md">Mandar foto solta</h3>
+          <p class="f-body">O cliente rola dezenas de imagens sem preço e sem ordem. Cansa e desiste antes de comprar.</p>
+          <div class="spacer-g"></div>
+          <span class="f-brand" style="font-size:3.6cqw">eLucre</span>
+        </div></div>
+      </div>
+
+      <div class="slot"><div class="slabel">Slide 3</div>
+        <div class="frame r45"><div class="pad fr-cream">
+          <div class="f-top"><span class="f-eyebrow tint">Erro 02</span><span class="f-num tint">02</span></div>
+          <div class="spacer-g"></div>
+          <h3 class="f-h h-md">Repetir preço o dia todo</h3>
+          <p class="f-body">"Quanto é?" "Tem tamanho M?" Você responde o mesmo 50 vezes — e some no meio das conversas.</p>
+          <div class="spacer-g"></div>
+          <span class="f-brand" style="font-size:3.6cqw">eLucre</span>
+        </div></div>
+      </div>
+
+      <div class="slot"><div class="slabel">Slide 4</div>
+        <div class="frame r45"><div class="pad fr-cream">
+          <div class="f-top"><span class="f-eyebrow tint">Erro 03</span><span class="f-num tint">03</span></div>
+          <div class="spacer-g"></div>
+          <h3 class="f-h h-md">Não ter um link pra divulgar</h3>
+          <p class="f-body">Sem uma vitrine, cada divulgação vira uma bagunça de prints soltos. Ninguém acha nada.</p>
+          <div class="spacer-g"></div>
+          <span class="f-brand" style="font-size:3.6cqw">eLucre</span>
+        </div></div>
+      </div>
+
+      <div class="slot"><div class="slabel">Slide 5 · virada</div>
+        <div class="frame r45"><div class="pad fr-indigo">
+          <div class="f-top"><span class="f-eyebrow tint-w" style="opacity:.85">A saída</span><span class="f-brand">eLucre</span></div>
+          <div class="spacer-g"></div>
+          <h3 class="f-h h-md">Um catálogo profissional</h3>
+          <p class="f-body" style="opacity:.95">Busca, filtros e o pedido já formatado caindo direto no seu WhatsApp. No ar em minutos, sem programador.</p>
+          <div class="spacer-g"></div>
+          <span class="pill pill-on-indigo">0% de comissão</span>
+        </div></div>
+      </div>
+
+      <div class="slot"><div class="slabel">Slide 6 · CTA</div>
+        <div class="frame r45"><div class="pad fr-ink">
+          <div class="f-top"><span class="f-brand">eLucre</span></div>
+          <div class="spacer-g"></div>
+          <h3 class="f-h h-md">Sua loja no ar <span class="tint-b">hoje.</span></h3>
+          <p class="f-body">Qualquer nicho — moda, lanche, celular, serviços. Sem comissão por venda.</p>
+          <div style="margin-top:4cqw"><span class="pill pill-on-ink">Teste 7 dias grátis</span></div>
+          <div class="spacer-g"></div>
+          <div class="f-foot"><span class="tint-b">elucre.net</span><span class="swipe" style="opacity:.7">link na bio</span></div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="cap">
+      <div class="cap-h"><span>Legenda + hashtags</span><button class="copy" data-cap="cap1" type="button">Copiar</button></div>
+      <div class="cap-b" id="cap1">Você provavelmente comete pelo menos 1 desses 3 erros — e eles fazem você perder venda todo dia. 👇
+
+Foto solta, repetir preço o dia inteiro e não ter um link pra divulgar são os maiores ladrões de venda no WhatsApp.
+
+A boa notícia: dá pra resolver os três de uma vez. Um catálogo profissional, com busca e filtros, e o pedido caindo pronto no seu WhatsApp — sua loja no ar em minutos, sem programador e sem comissão por venda.
+
+👉 Teste 7 dias grátis (link na bio). Sua loja de qualquer nicho, no ar hoje.
+
+<span class="tags">#lojaonline #vendaspelowhatsapp #catalogodigital #pequenoempreendedor #empreendedorismo #lojavirtual #comercio #vendasonline</span></div>
+    </div>
+    <p class="legend">Dica: no Instagram, carrossel que começa com "3 erros" e termina em solução costuma render bom salvamento e alcance. Grave também a versão em Reels lendo os slides.</p>
+  </section>
+
+  <!-- ============ CARD DE FEED ============ -->
+  <section>
+    <div class="sec-head">
+      <h2>Card de feed</h2>
+      <span class="badge">Pilar · Sem comissão</span>
+      <span class="badge dim">1 imagem · 4:5</span>
+    </div>
+
+    <div class="rail">
+      <div class="slot"><div class="slabel">Feed</div>
+        <div class="frame r45"><div class="pad fr-indigo">
+          <div class="f-top"><span class="f-brand">eLucre</span><span class="tint-w" style="opacity:.8;font-size:3.4cqw;font-weight:700">sem comissão</span></div>
+          <div class="spacer-g"></div>
+          <h3 class="f-h h-xl">0% de comissão.</h3>
+          <h3 class="f-h h-lg" style="opacity:.9;margin-top:1cqw">100% da venda<br>é sua.</h3>
+          <p class="f-body" style="opacity:.95;margin-top:5cqw">Mensalidade fixa e baixa. Você fica com cada real de cada pedido — sem taxa por venda.</p>
+          <div class="spacer-g"></div>
+          <div class="f-foot"><span class="pill pill-on-indigo">Teste 7 dias grátis</span><span class="tint-w" style="opacity:.85">elucre.net</span></div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="cap">
+      <div class="cap-h"><span>Legenda + hashtags</span><button class="copy" data-cap="cap2" type="button">Copiar</button></div>
+      <div class="cap-b" id="cap2">Marketplace e app de delivery levam até ~16% de cada venda sua. No fim do ano, é muito dinheiro saindo do seu bolso. 💸
+
+No eLucre é o contrário: mensalidade fixa e baixa, e você fica com 100% de cada venda. Sem comissão, sem taxa por pedido.
+
+👉 Faça as contas de quanto sobraria — e teste 7 dias grátis (link na bio).
+
+<span class="tags">#semcomissao #lojaonline #empreendedorismo #pequenonegocio #vendaspelowhatsapp #lojavirtual #maceio</span></div>
+    </div>
+    <p class="legend">Troque <b>#maceio</b> pela sua cidade/região — hashtags locais trazem lojista da sua área.</p>
+  </section>
+
+  <!-- ============ STORIES ============ -->
+  <section>
+    <div class="sec-head">
+      <h2>Stories</h2>
+      <span class="badge">Sequência de 3</span>
+      <span class="badge dim">9:16</span>
+    </div>
+
+    <div class="rail">
+      <div class="slot"><div class="slabel">Story 1 · gancho</div>
+        <div class="frame r916"><div class="pad fr-ink">
+          <div class="f-top"><span class="f-brand">eLucre</span></div>
+          <div class="spacer-g"></div>
+          <h3 class="f-h h-md">Você ainda manda <span class="tint-b">foto solta</span> no WhatsApp? 👀</h3>
+          <div class="spacer-g"></div>
+          <div class="sticker">🟪 Enquete: "Sim 🙈 / Já cansei disso"</div>
+        </div></div>
+      </div>
+
+      <div class="slot"><div class="slabel">Story 2 · valor</div>
+        <div class="frame r916"><div class="pad fr-cream">
+          <div class="f-top"><span class="f-brand tint">eLucre</span></div>
+          <div class="spacer-g"></div>
+          <h3 class="f-h h-md">Monte um catálogo <span class="tint">profissional</span>.</h3>
+          <p class="f-body">O pedido cai pronto no seu WhatsApp. Busca, filtros e sua vitrine num link só.</p>
+          <div style="margin-top:4cqw"><span class="pill pill-on-cream">0% de comissão</span></div>
+          <div class="spacer-g"></div>
+        </div></div>
+      </div>
+
+      <div class="slot"><div class="slabel">Story 3 · CTA</div>
+        <div class="frame r916"><div class="pad fr-indigo">
+          <div class="f-top"><span class="f-brand">eLucre</span></div>
+          <div class="spacer-g"></div>
+          <h3 class="f-h h-lg">Teste<br>7 dias<br>grátis</h3>
+          <p class="f-body" style="opacity:.95">Sua loja no ar em minutos. Qualquer nicho.</p>
+          <div class="spacer-g"></div>
+          <div class="sticker" style="opacity:.9">☝️ Link: elucre.net — arrasta pra cima / figurinha de link</div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="note-row">
+      <div class="nr"><span class="k">1</span><div><b>Story 1:</b> adicione a figurinha de <b>Enquete</b> ("Sim / Já cansei disso") — engajamento manda o Story pra mais gente.</div></div>
+      <div class="nr"><span class="k">2</span><div><b>Story 2:</b> se tiver, cole aqui um <b>vídeo curto</b> da loja pronta rolando (fica ainda melhor que o card estático).</div></div>
+      <div class="nr"><span class="k">3</span><div><b>Story 3:</b> use a figurinha de <b>Link</b> apontando pra <b>elucre.net</b> (ou pra sua loja-piloto).</div></div>
+    </div>
+  </section>
+
+  <footer>
+    <p><span class="brandline">Kit de Posts eLucre</span> — Passo 1, pacote-piloto. Mesma identidade do site (creme · índigo · Inter). Quer que eu produza o lote completo do mês (calendário com ~12–15 posts nos 5 pilares)? É só pedir.</p>
+  </footer>
+
+</div>
+
+<div class="toast" id="toast">Legenda copiada ✓</div>
+
+<script>
+(function(){
+  var toast=document.getElementById('toast'); var t;
+  function show(){ toast.classList.add('show'); clearTimeout(t); t=setTimeout(function(){toast.classList.remove('show')},1600); }
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el=document.getElementById(btn.getAttribute('data-cap'));
+      var text=el ? el.innerText : '';
+      function ok(){ show(); }
+      try{
+        if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok).catch(fallback); }
+        else fallback();
+      }catch(e){ fallback(); }
+      function fallback(){
+        try{ var ta=document.createElement('textarea'); ta.value=text; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); ok(); }catch(e2){}
+      }
+    });
+  });
+})();
+</script>

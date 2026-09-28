@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --indigo:#4F46E5; --indigo-deep:#4338CA; --hl:#B9C0FF;
+  --green:#39E08A; --green-soft:#8BF3BE; --wpp:#25D366;
+  --ink:#171310; --cream:#FAF9F7; --surface2:#EFEDE7;
+  --font:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{margin:0;background:#0F0D2A;font-family:var(--font)}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;color:#fff}
+.bg{position:absolute;inset:0;isolation:isolate;
+  background:
+    radial-gradient(85% 55% at 84% 4%, rgba(124,120,255,.55), transparent 55%),
+    radial-gradient(80% 55% at 8% 100%, rgba(28,24,88,.92), transparent 62%),
+    linear-gradient(160deg,#241F63 0%,#35309C 48%,#4F46E5 82%,#4A41D6 100%);}
+.bg::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(120% 120% at 50% 45%, transparent 58%, rgba(12,10,40,.5) 100%);}
+.dots{position:absolute;inset:0;opacity:.5;
+  background-image:
+    radial-gradient(2px 2px at 14% 18%, rgba(255,255,255,.5), transparent),
+    radial-gradient(2px 2px at 82% 12%, rgba(255,255,255,.4), transparent),
+    radial-gradient(2px 2px at 26% 92%, rgba(255,255,255,.35), transparent),
+    radial-gradient(2px 2px at 92% 70%, rgba(255,255,255,.4), transparent);}
+.in{position:absolute;inset:0;padding:92px 84px 84px;display:flex;flex-direction:column;z-index:2}
+.brand{display:flex;align-items:center;gap:18px}
+.mark{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;
+  background:linear-gradient(150deg,#8B84FF,#5B4FE6 60%,#4338CA);
+  box-shadow:0 10px 24px rgba(38,30,120,.5), inset 0 1px 0 rgba(255,255,255,.35)}
+.mark svg{width:36px;height:36px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.brand .wm{font-size:34px;font-weight:900;letter-spacing:-.01em}
+.eyebrow{margin-top:44px;font-size:23px;font-weight:800;letter-spacing:.18em;color:var(--hl);text-transform:uppercase}
+.hero{margin-top:16px;font-size:74px;line-height:1.04;font-weight:900;letter-spacing:-.02em}
+.hero b{color:var(--hl)}
+.sub{margin-top:22px;font-size:29px;line-height:1.4;font-weight:500;color:rgba(255,255,255,.9);max-width:20ch}
+.stage{flex:1;position:relative;display:grid;place-items:center;margin-top:8px}
+.phone{width:452px;height:632px;background:#0C0A26;border-radius:52px;padding:15px;
+  box-shadow:0 40px 80px rgba(8,6,30,.6), inset 0 1px 0 rgba(255,255,255,.15)}
+.screen{background:var(--cream);border-radius:40px;height:100%;overflow:hidden;display:flex;flex-direction:column}
+.appbar{background:#fff;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ECE9E2}
+.appbar .st{font-size:24px;font-weight:900;color:var(--ink)}
+.appbar .cart{width:38px;height:38px;border-radius:11px;background:var(--indigo);display:grid;place-items:center}
+.appbar .cart svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.search{margin:16px 18px 4px;background:var(--surface2);border-radius:13px;padding:13px 16px;color:#8a8f7a;font-size:19px;font-weight:600}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;padding:14px 18px}
+.prod{background:#fff;border:1px solid #EEEBE3;border-radius:16px;padding:12px}
+.thumb{height:96px;border-radius:11px;display:grid;place-items:center;font-size:52px;margin-bottom:9px}
+.t1{background:#EAF0FF}.t2{background:#FDEFE8}.t3{background:#EAF7EE}.t4{background:#F1ECFF}
+.pn{font-size:18px;font-weight:700;color:var(--ink);line-height:1.15}
+.pp{font-size:19px;font-weight:900;color:var(--indigo);margin-top:3px}
+.wppbar{margin-top:auto;background:var(--wpp);color:#fff;padding:18px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:21px;font-weight:800}
+.wppbar svg{width:24px;height:24px;fill:#fff}
+.seal{position:absolute;top:6px;right:2px;width:168px;height:168px;border-radius:50%;display:grid;place-items:center;
+  text-align:center;color:#08351F;transform:rotate(9deg);
+  background:radial-gradient(circle at 35% 30%, #8BF3BE, #39E08A 60%, #17B368);
+  box-shadow:0 24px 50px rgba(20,160,90,.45), inset 0 2px 0 rgba(255,255,255,.5);border:3px solid rgba(255,255,255,.55)}
+.seal .big{font-size:56px;font-weight:900;line-height:1}
+.seal .sm{font-size:19px;font-weight:800;margin-top:2px}
+.cta{display:flex;align-items:center;gap:22px;margin-top:10px}
+.btn{background:#fff;color:var(--indigo-deep);font-weight:900;font-size:27px;padding:20px 34px;border-radius:99px;box-shadow:0 16px 40px rgba(10,8,40,.4)}
+.site{display:flex;align-items:center;gap:11px;font-size:26px;font-weight:800}
+.site .d{width:11px;height:11px;border-radius:50%;background:var(--green)}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="bg"></div><div class="dots"></div>
+  <div class="in">
+    <div class="brand">
+      <div class="mark"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1.4"/><circle cx="18" cy="21" r="1.4"/><path d="M1.5 2.5h3l2.2 12.4a1.6 1.6 0 0 0 1.6 1.3h8.8a1.6 1.6 0 0 0 1.6-1.3L22 6.5H6"/></svg></div>
+      <div class="wm">eLucre</div>
+    </div>
+    <div class="eyebrow">Para lojas de celular</div>
+    <div class="hero">Sua loja de celular,<br><b>online</b>.</div>
+    <div class="sub">O cliente filtra por modelo e o pedido cai pronto no seu WhatsApp.</div>
+
+    <div class="stage">
+      <div class="phone">
+        <div class="screen">
+          <div class="appbar"><div class="st">TechCell</div><div class="cart"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1.4"/><circle cx="18" cy="21" r="1.4"/><path d="M1.5 2.5h3l2.2 12.4a1.6 1.6 0 0 0 1.6 1.3h8.8a1.6 1.6 0 0 0 1.6-1.3L22 6.5H6"/></svg></div></div>
+          <div class="search">Buscar modelo…</div>
+          <div class="grid">
+            <div class="prod"><div class="thumb t1">📱</div><div class="pn">iPhone 13</div><div class="pp">R$ 2.199</div></div>
+            <div class="prod"><div class="thumb t2">🎧</div><div class="pn">Fone TWS</div><div class="pp">R$ 89</div></div>
+            <div class="prod"><div class="thumb t3">🔌</div><div class="pn">Carregador</div><div class="pp">R$ 49</div></div>
+            <div class="prod"><div class="thumb t4">🔋</div><div class="pn">Power Bank</div><div class="pp">R$ 79</div></div>
+          </div>
+          <div class="wppbar"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 0 1 12 4z"/></svg>Pedido pronto no WhatsApp</div>
+        </div>
+      </div>
+      <div class="seal"><div><div class="big">0%</div><div class="sm">comissão</div></div></div>
+    </div>
+
+    <div class="cta">
+      <div class="btn">Teste 7 dias grátis</div>
+      <div class="site"><span class="d"></span>elucre.net</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

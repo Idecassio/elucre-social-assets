@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abordagem Ativa — Delivery · eLucre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --indigo:#4F46E5; --indigo-deep:#4338CA; --indigo-bright:#9A94F5; --hl:#5b53f0;
+    --green:#12864B; --green-soft:#E4F6EC; --wpp:#25D366; --wpp-bg:#E7FBEF;
+    --ink:#171310; --muted:#6a6f7a; --cream:#FAF9F7; --surface2:#EFEDE7; --line:#E4E1D9;
+    --font:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:var(--font);line-height:1.55;padding:32px 16px}
+  .doc{max-width:900px;margin:0 auto}
+  .top{background:linear-gradient(135deg,var(--indigo),var(--indigo-deep));color:#fff;border-radius:18px;padding:30px 34px;box-shadow:0 18px 44px -24px rgba(79,70,229,.6)}
+  .top .kicker{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+  .top h1{font-size:30px;font-weight:900;letter-spacing:-.02em;margin-top:6px;line-height:1.1}
+  .top p{font-size:15px;opacity:.92;margin-top:10px;max-width:60ch}
+  .chip{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:12px;font-weight:600;padding:4px 11px;border-radius:100px;margin:12px 6px 0 0}
+  section{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 26px;margin-top:18px;box-shadow:0 6px 26px -20px rgba(20,20,40,.25)}
+  h2{font-size:19px;font-weight:800;color:var(--indigo-deep);letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
+  h2 .n{background:var(--indigo);color:#fff;width:26px;height:26px;border-radius:8px;display:inline-grid;place-items:center;font-size:13px;font-weight:800;flex:none}
+  h3{font-size:14px;font-weight:800;margin:16px 0 7px;color:var(--ink)}
+  p.lead{color:var(--muted);font-size:14px;margin-top:4px}
+  ul{margin:8px 0 0 2px;list-style:none}
+  li{font-size:14px;margin:8px 0;padding-left:24px;position:relative}
+  li::before{content:"";position:absolute;left:2px;top:8px;width:8px;height:8px;border-radius:3px;background:var(--indigo-bright)}
+  .dor li::before{background:#E0574F}
+  .msg{background:var(--wpp-bg);border:1px solid #BEEBCF;border-left:4px solid var(--wpp);border-radius:12px;padding:14px 16px;margin:10px 0;position:relative}
+  .msg .tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--green);display:block;margin-bottom:8px}
+  .msg .txt{font-size:14.5px;white-space:pre-wrap;color:#12321f}
+  .copy{position:absolute;top:10px;right:10px;background:#fff;border:1px solid #BEEBCF;color:var(--green);font-family:var(--font);font-size:11px;font-weight:700;padding:5px 12px;border-radius:100px;cursor:pointer}
+  .copy:active{transform:scale(.96)}
+  .copy.done{background:var(--green);color:#fff;border-color:var(--green)}
+  table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13.5px}
+  td{border:1px solid var(--line);padding:10px 12px;vertical-align:top}
+  td.obj{background:#FBEDEB;font-weight:700;width:38%;color:#8a2f26}
+  .pill{display:inline-block;background:var(--green-soft);color:var(--green);font-weight:700;font-size:12px;padding:3px 10px;border-radius:100px}
+  .note{background:#FFF7E8;border:1px solid #F3E2B8;border-radius:10px;padding:12px 14px;font-size:13px;color:#7a5a12;margin-top:12px}
+  .demo{background:var(--green-soft);border:1px solid #BFE8CF;border-radius:10px;padding:12px 14px;font-size:13.5px;color:var(--green);margin-top:12px;font-weight:600}
+  .foot{color:var(--muted);font-size:12.5px;text-align:center;margin-top:22px}
+  b{color:var(--ink)}
+  @media print{body{background:#fff;padding:0}section,.top{box-shadow:none;break-inside:avoid}.copy{display:none}}
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <div class="top">
+    <span class="kicker">eLucre · Abordagem Ativa</span>
+    <h1>Delivery 🍔🍕</h1>
+    <p>Roteiro pronto pra prospectar lanchonete, hamburgueria, pizzaria, açaí, marmita e food truck. O trunfo: mostrar a demo pronta da <b>eLucre Burgers</b> e o argumento do <b>0% de comissão</b>.</p>
+    <span class="chip">0% comissão</span><span class="chip">7 dias grátis</span><span class="chip">demo pronta</span>
+  </div>
+
+  <section>
+    <h2><span class="n">0</span> As 5 regras de ouro (antes de enviar)</h2>
+    <ul>
+      <li><b>Curto.</b> 3–4 linhas. Dono de delivery vive na correria.</li>
+      <li><b>Personalizado.</b> Cite o nome do estabelecimento / o que você viu (o lanche, o açaí).</li>
+      <li><b>Termine com pergunta.</b> 1º toque é pra abrir conversa, não pra vender.</li>
+      <li><b>Sem link no 1º contato.</b> Link só no 2º toque (aí sim, a demo).</li>
+      <li><b>Volume + rapidez.</b> <b>15–20/dia</b> e responda na hora. Melhor horário: fora do pico do almoço/jantar.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="n">1</span> Quem abordar &amp; onde achar</h2>
+    <h3>Perfil ideal</h3>
+    <ul>
+      <li>Lanchonete, hamburgueria, pizzaria, açaí, <b>marmita/comida caseira</b>, doceria, food truck.</li>
+      <li>Que <b>já está no iFood</b> (pagando comissão) <b>ou</b> só vende por WhatsApp com cardápio em PDF/foto.</li>
+    </ul>
+    <h3>Onde garimpar</h3>
+    <ul>
+      <li><b>iFood:</b> a própria lista de restaurantes da cidade = lista pronta de quem <b>paga comissão</b> (dor perfeita).</li>
+      <li><b>Instagram:</b> <b>#hamburgueria[cidade] #delivery[cidade] #acai[cidade]</b> + geolocalização da cidade.</li>
+      <li><b>Google Maps:</b> "hamburgueria / pizzaria / açaí" por bairro.</li>
+    </ul>
+    <div class="note">💡 O <b>Lead Hunter</b> (Google Maps) pode montar a lista de deliverys da cidade com nome, telefone e e-mail. Me peça que eu rodo.</div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span> O gancho (a dor deles)</h2>
+    <ul class="dor">
+      <li>O app (iFood etc.) come <b>12% a 30% de comissão</b> — a margem do prato vai embora.</li>
+      <li>Cardápio no zap é <b>PDF/foto</b>: cliente pergunta preço, sabor, adicional; o pedido vem <b>bagunçado</b> e dá erro (ponto da carne, sem cebola…).</li>
+      <li>No pico, <b>anotar pedido no zap</b> é caótico — troca item, esquece adicional, retrabalho.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span> Mensagens prontas</h2>
+
+    <h3>1º contato — versão pergunta (recomendada)</h3>
+    <div class="msg"><span class="tag">Mensagem 1 · abre conversa</span>
+      <div class="txt">Opa, tudo bem? 🍔 Vi o [nome do delivery] aqui 👀 Rapidinho: hoje os pedidos de vocês chegam mais pelo iFood ou direto no WhatsApp? Pergunto porque ajudo delivery a receber pedido direto, com 0% de comissão.</div>
+    </div>
+
+    <h3>1º contato — versão direta (p/ WhatsApp)</h3>
+    <div class="msg"><span class="tag">Mensagem 1 · alternativa</span>
+      <div class="txt">Oi [nome]! Aqui é o [seu nome], da eLucre. Monto cardápio digital pra delivery: o cliente escolhe os itens, os adicionais e a observação, e o pedido cai pronto e organizado no seu WhatsApp — com 0% de comissão. Posso te mostrar um exemplo real em 1 minutinho?</div>
+    </div>
+
+    <h3>Follow-up (só se não responder em ~2 dias) — aqui entra a demo</h3>
+    <div class="msg"><span class="tag">Mensagem 2 · mostra a demo</span>
+      <div class="txt">[nome], olha um exemplo pronto que a gente fez 👉 elucre.net/elucre-burguer 🍔 Repara que o cliente escolhe adicionais e o pedido chega certinho no zap, sem erro. Enquanto o iFood leva até 30% do seu pedido, aqui é mensalidade fixa e a venda é 100% sua. Quer que eu monte o cardápio de vocês no teste grátis de 7 dias?</div>
+    </div>
+
+    <h3>Último toque (dia 5–7)</h3>
+    <div class="msg"><span class="tag">Mensagem 3 · porta aberta</span>
+      <div class="txt">[nome], não quero atrapalhar a correria 🙏 Fica o convite: se quiser parar de dividir seu lucro com app e ter um cardápio próprio seu, é só me chamar. Bom movimento aí! 🚀</div>
+    </div>
+
+    <div class="demo">✅ Fechador de ouro: a demo <b>elucre.net/elucre-burguer</b> mostra tudo funcionando. "Olha como ficaria o SEU cardápio" vale mais que mil explicações. (Confirme o link antes de enviar.)</div>
+    <div class="note">⚠️ Troque <b>[nome]</b>, <b>[seu nome]</b> e <b>[nome do delivery]</b> antes de enviar.</div>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span> Se ele responder interessado / "quanto custa?"</h2>
+    <div class="msg"><span class="tag">Resposta padrão + oferta de entrada</span>
+      <div class="txt">Show! É mensalidade fixa a partir de R$ 49/mês, com <b>0% de comissão</b> — nada do seu pedido vai embora. Pra você comparar: no iFood, 10 pedidos de R$ 50 já custam uns R$ 150 de comissão; aqui você paga fixo e pronto. Dá pra testar <b>7 dias grátis, sem cartão</b>, e eu mesmo <b>monto o seu cardápio</b> pra você. Me manda o cardápio de vocês (ou o link do iFood) que eu já deixo pronto pra você ver funcionando. Pode ser?</div>
+    </div>
+    <p class="lead">👉 A oferta "eu monto pra você" derruba a objeção de tempo. E pedir o cardápio já é um "sim" pequeno.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span> Quebra de objeções</h2>
+    <table>
+      <tr><td class="obj">"Tenho iFood"</td><td>Perfeito pra quem <b>te descobre</b>. Mas pro cliente que <b>já é seu</b>, por que pagar 20–30%? Use o eLucre pro cliente recorrente e pague fixo. Dá pra usar os dois — a maioria usa.</td></tr>
+      <tr><td class="obj">"Já mando cardápio no zap"</td><td>Mas o cliente não navega, não vê foto e <b>erra o pedido</b>. No link ele monta certinho — com adicional e observação — e chega pronto e organizado.</td></tr>
+      <tr><td class="obj">"É caro?"</td><td>A partir de <b>R$ 49/mês</b>. <b>1 ou 2 pedidos pagam o mês</b> — e sem comissão. <span class="pill">100% da venda é sua</span>.</td></tr>
+      <tr><td class="obj">"Não tenho tempo de montar"</td><td><b>A gente monta o cardápio pra você.</b> Você só manda os itens (ou o link do iFood). Veja a demo pronta: elucre.net/elucre-burguer.</td></tr>
+      <tr><td class="obj">"Meu cliente é acostumado com iFood"</td><td>O link vai na bio e no status do zap; em 1 pedido ele se acostuma. E aqui <b>o contato do cliente é seu</b> (no iFood não é) — dá pra chamar de novo.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span> Script de áudio / ligação (30s)</h2>
+    <div class="msg"><span class="tag">Áudio de WhatsApp</span>
+      <div class="txt">Oi [nome], tudo bem? [seu nome] aqui da eLucre, vou ser rápido. Vocês trabalham mais com iFood ou pelo WhatsApp? A gente monta um cardápio digital próprio pra você: o cliente escolhe os itens, os adicionais, e o pedido cai pronto e organizado no seu zap — com zero comissão, é mensalidade fixa. Tenho um exemplo pronto de hamburgueria pra te mostrar. Posso te mandar o link?</div>
+    </div>
+  </section>
+
+  <p class="foot">eLucre · material interno de vendas — <b>Delivery</b>. Mantido em <code>Desktop\eLucre_Posts\</code>. Meta da semana: 15–20 abordagens/dia.</p>
+</div>
+
+<script>
+document.querySelectorAll('.msg').forEach(function(box){
+  var btn=document.createElement('button');
+  btn.className='copy'; btn.textContent='copiar';
+  btn.addEventListener('click',function(){
+    var t=box.querySelector('.txt').innerText;
+    var ok=function(){btn.textContent='copiado ✓';btn.classList.add('done');setTimeout(function(){btn.textContent='copiar';btn.classList.remove('done');},1600);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok).catch(function(){fallback(t,ok);});}
+    else{fallback(t,ok);}
+  });
+  box.appendChild(btn);
+});
+function fallback(t,ok){try{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');document.body.removeChild(a);ok();}catch(e){}}
+</script>
+</body>
+</html>

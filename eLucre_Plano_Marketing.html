@@ -1,0 +1,487 @@
+<title>Plano de Crescimento eLucre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+<style>
+/* ————— Identidade eLucre: creme quente + índigo + Inter (tema claro, como o site) ————— */
+:root{
+  --bg:#FAF9F7; --surface:#FFFFFF; --surface-2:#F3F1EC; --band:#EFEDE7;
+  --ink:#171310; --ink-soft:#544C40; --ink-faint:#8B8272;
+  --line:#EBE7E0; --line-soft:#F1EEE8;
+  --accent:#4F46E5; --accent-deep:#4338CA; --accent-wash:#EEEDFB; --accent-tint:#F6F5FD;
+  --on-dark:#FAF9F7; --accent-bright:#9A94F5;
+  --shadow:0 1px 2px rgba(23,19,16,.04), 0 10px 30px rgba(23,19,16,.06);
+  --font:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font); font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px; margin:0 auto; padding:0 24px}
+h1,h2,h3{font-family:var(--font); font-weight:800; text-wrap:balance; letter-spacing:-.02em; margin:0}
+p{margin:0}
+a{color:var(--accent-deep)}
+:focus-visible{outline:2.5px solid var(--accent); outline-offset:3px; border-radius:4px}
+.eyebrow{font-size:12px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--accent)}
+.mono{font-weight:600; background:var(--accent-wash); color:var(--accent-deep); padding:1px 7px; border-radius:6px; font-variant-numeric:tabular-nums}
+
+/* top bar */
+.topbar{position:sticky; top:0; z-index:20; background:rgba(250,249,247,.82); backdrop-filter:blur(10px); border-bottom:1px solid var(--line-soft)}
+.topbar .row{display:flex; align-items:center; gap:16px; height:60px}
+.brand{display:flex; align-items:center; gap:9px; font-weight:800; font-size:20px; letter-spacing:-.03em}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.brand small{font-size:11px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:var(--ink-faint); margin-left:2px}
+.topnav{display:none; gap:22px; margin-left:auto; font-size:14px; font-weight:500}
+.topnav a{color:var(--ink-soft); text-decoration:none; white-space:nowrap}
+.topnav a:hover{color:var(--accent-deep)}
+.topnav a.p1{color:var(--accent-deep); font-weight:600}
+@media(min-width:860px){ .topnav{display:flex} }
+
+/* hero */
+.hero{padding:66px 0 46px}
+.hero h1{font-size:clamp(38px,6vw,66px); line-height:1.02; margin:18px 0 0}
+.hero .lede{font-size:clamp(18px,2.3vw,22px); color:var(--ink-soft); max-width:60ch; margin:22px 0 0; font-weight:400}
+.hero .facts{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px}
+.chip{font-size:13px; font-weight:500; padding:8px 14px; border-radius:999px; background:var(--surface); border:1px solid var(--line); color:var(--ink-soft); box-shadow:var(--shadow)}
+.chip.pri{background:var(--accent-wash); border-color:transparent; color:var(--accent-deep); font-weight:600}
+
+/* sections */
+section{padding:44px 0; border-top:1px solid var(--line-soft)}
+section.plain{border-top:none}
+.sec-head{max-width:66ch; margin-bottom:28px}
+.sec-head h2{font-size:clamp(24px,3.4vw,34px); margin:12px 0 0; line-height:1.08}
+.sec-head p{color:var(--ink-soft); margin-top:13px; font-size:18px; font-weight:400}
+.prose{max-width:66ch; font-weight:400}
+.prose p + p{margin-top:14px}
+.prose strong{color:var(--ink); font-weight:600}
+
+/* STEP banner */
+.step{margin:60px 0 6px; padding:34px 32px; border-radius:24px; background:var(--ink); color:var(--on-dark); box-shadow:var(--shadow); display:grid; grid-template-columns:auto 1fr; gap:26px; align-items:center}
+.step .n{font-size:clamp(52px,9vw,78px); font-weight:800; letter-spacing:-.05em; line-height:.85; color:var(--accent-bright)}
+.step .lbl{font-size:12px; text-transform:uppercase; letter-spacing:.15em; font-weight:700; color:rgba(250,249,247,.55)}
+.step h2{font-size:clamp(24px,3.6vw,34px); margin-top:7px; color:var(--on-dark); letter-spacing:-.02em}
+.step p{margin-top:11px; color:rgba(250,249,247,.78); max-width:62ch; font-weight:400; font-size:16px}
+.step .cost{display:inline-block; margin-top:14px; font-size:12.5px; font-weight:700; letter-spacing:.04em; padding:5px 12px; border-radius:999px; background:rgba(154,148,245,.18); color:var(--accent-bright)}
+@media(max-width:640px){ .step{grid-template-columns:1fr; gap:10px} }
+
+/* cards */
+.grid{display:grid; gap:18px}
+@media(min-width:760px){ .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)} }
+.card{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:24px; box-shadow:var(--shadow)}
+.card h3{font-size:20px; margin-bottom:8px; letter-spacing:-.01em}
+.card .num{font-size:12px; font-weight:700; color:var(--accent); letter-spacing:.06em; text-transform:uppercase}
+.card p{color:var(--ink-soft); font-size:15.5px; font-weight:400}
+.card ul{margin:12px 0 0; padding-left:0; list-style:none}
+.card ul li{position:relative; padding-left:20px; margin-top:8px; font-size:15px; color:var(--ink-soft); font-weight:400}
+.card ul li::before{content:""; position:absolute; left:2px; top:9px; width:7px; height:7px; border-radius:3px; background:var(--accent)}
+.card .when{font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint); margin-top:14px; padding-top:12px; border-top:1px dashed var(--line)}
+.free{border-top:3px solid var(--accent)}
+
+/* callout */
+.callout{background:var(--surface-2); border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:16px; padding:22px 24px; display:flex; gap:18px; align-items:flex-start}
+.callout .k{font-weight:800; font-size:30px; color:var(--accent); line-height:1; white-space:nowrap; letter-spacing:-.02em}
+.callout h3{font-size:18px; margin-bottom:6px}
+.callout p{color:var(--ink-soft); font-size:15.5px; max-width:62ch; font-weight:400}
+.callout.green{background:var(--accent-wash)}
+
+/* tables */
+.tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:16px; background:var(--surface); box-shadow:var(--shadow)}
+table{border-collapse:collapse; width:100%; min-width:520px; font-size:15px}
+th,td{text-align:left; padding:13px 16px; border-bottom:1px solid var(--line-soft); font-weight:400}
+thead th{font-size:11.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-faint); font-weight:700; background:var(--surface-2)}
+tbody tr:last-child td{border-bottom:none}
+td.num, th.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+td strong{color:var(--ink); font-weight:600}
+.hl{color:var(--accent-deep); font-weight:700}
+
+/* persona */
+.persona{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:22px; box-shadow:var(--shadow)}
+.persona .who{font-weight:700; font-size:18px; letter-spacing:-.01em}
+.persona .heat{font-size:11px; font-weight:600; padding:3px 9px; border-radius:999px; letter-spacing:.03em}
+.heat.hot{background:var(--accent-wash); color:var(--accent-deep)}
+.heat.cold{background:var(--surface-2); color:var(--ink-faint)}
+.persona dl{margin:14px 0 0; display:grid; gap:10px}
+.persona dt{font-size:11px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-faint); font-weight:700}
+.persona dd{margin:2px 0 0; font-size:15px; color:var(--ink-soft); font-weight:400}
+
+/* funnel / stages */
+.funnel{display:grid; gap:10px}
+.stage{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:16px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:14px 18px; box-shadow:var(--shadow)}
+.stage .st-ico{font-weight:700; color:var(--accent); width:26px; text-align:center}
+.stage .st-name{font-weight:600}
+.stage .st-desc{color:var(--ink-soft); font-size:14.5px; grid-column:2; margin-top:2px; font-weight:400}
+.stage .st-metric{font-size:12.5px; color:var(--ink-faint); text-align:right; font-weight:600}
+.stage .st-metric.free{border:none; color:var(--accent-deep)}
+
+/* priority (ordered) */
+.prio{display:grid; gap:12px; counter-reset:pr; margin-top:6px}
+.prio .row{display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:flex-start; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px 18px; box-shadow:var(--shadow)}
+.prio .row::before{counter-increment:pr; content:counter(pr); font-weight:800; color:var(--accent-deep); background:var(--accent-wash); width:32px; height:32px; border-radius:10px; display:grid; place-items:center; flex:none; font-size:15px}
+.prio .t{font-weight:600}
+.prio .d{color:var(--ink-soft); font-size:14.5px; margin-top:2px; font-weight:400}
+
+/* checklist */
+.checklist{display:grid; gap:10px; counter-reset:c}
+.check{display:flex; gap:14px; align-items:flex-start; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:15px 18px; box-shadow:var(--shadow)}
+.check::before{counter-increment:c; content:counter(c); font-weight:700; color:var(--accent-deep); background:var(--accent-wash); width:28px; height:28px; border-radius:9px; display:grid; place-items:center; flex:none; font-size:14px}
+.check .ct{font-weight:600}
+.check .cd{color:var(--ink-soft); font-size:14.5px; margin-top:2px; font-weight:400}
+
+.note{font-size:13.5px; color:var(--ink-faint); font-style:italic; margin-top:14px; max-width:64ch; font-weight:400}
+.divider-label{font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-faint); font-weight:700; margin-bottom:10px}
+footer{border-top:1px solid var(--line-soft); padding:36px 0 60px; color:var(--ink-faint); font-size:14px; font-weight:400}
+footer strong{color:var(--ink-soft); font-weight:600}
+.spacer{height:8px}
+</style>
+
+<div class="topbar">
+  <div class="wrap row">
+    <span class="brand"><span class="dot"></span>eLucre <small>Plano de Crescimento</small></span>
+    <nav class="topnav" aria-label="Seções">
+      <a href="#motores">3 motores</a>
+      <a href="#passo1" class="p1">Passo 1 · organizar</a>
+      <a href="#passo2">Passo 2 · investir</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow">Plano de crescimento · uma solução Forux</span>
+    <h1>Como fazer o eLucre ser conhecido — em 2 passos.</h1>
+    <p class="lede">Primeiro você <strong>organiza a casa sem gastar nada</strong>: perfis, conteúdo, cronograma, o produto se divulgando sozinho. Depois, com a base rodando, você entende <strong>onde vale investir</strong> pra acelerar. Um passo de cada vez.</p>
+    <div class="facts">
+      <span class="chip pri">Passo 1 · custo zero</span>
+      <span class="chip pri">Passo 2 · onde investir</span>
+      <span class="chip">Produto pronto · R$ 49–89/mês</span>
+      <span class="chip">Teste grátis de 7 dias</span>
+    </div>
+  </header>
+
+  <!-- FRAMING: 3 MOTORES -->
+  <section id="motores" class="plain">
+    <div class="sec-head">
+      <span class="eyebrow">Antes dos passos · a estratégia</span>
+      <h2>Três motores de vendas — cada um tem uma parte grátis e uma paga.</h2>
+      <p>Essa é a lógica que atravessa tudo. No Passo 1 você liga a <strong>parte grátis</strong> de cada motor. No Passo 2, a <strong>parte de investimento</strong>.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card free">
+        <span class="num">Motor 1 · Google</span>
+        <h3>Capturar quem já procura</h3>
+        <p>Quem já quer uma loja e está pesquisando. <strong>Grátis:</strong> conteúdo que rankeia (SEO). <strong>Pago:</strong> anúncio de busca.</p>
+      </div>
+      <div class="card free">
+        <span class="num">Motor 2 · Instagram</span>
+        <h3>Criar desejo em quem não procura</h3>
+        <p>A maioria do mercado. <strong>Grátis:</strong> perfil + conteúdo. <strong>Pago:</strong> anúncios Meta.</p>
+      </div>
+      <div class="card free">
+        <span class="num">Motor 3 · Produto</span>
+        <h3>Multiplicar com o próprio produto</h3>
+        <p>Cada loja divulga o eLucre. <strong>Grátis:</strong> marca embutida + indicação. Quase todo ele cabe no Passo 1.</p>
+      </div>
+    </div>
+    <div class="spacer"></div><div class="spacer"></div>
+    <div class="callout green">
+      <span class="k">→</span>
+      <div>
+        <h3>O que liga os três: o funil.</h3>
+        <p>Todo mundo cai no mesmo caminho — <strong>atenção → teste grátis de 7 dias → cliente pagante → indicação</strong>. Guarde isso: o marketing não vende direto, ele gera <strong>teste</strong>; o produto + o acompanhamento é que viram venda.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PASSO 1 ==================== -->
+  <div class="step" id="passo1">
+    <div class="n">1</div>
+    <div>
+      <span class="lbl">Passo 1 · Comece por aqui</span>
+      <h2>Organizar a casa — sem gastar um real.</h2>
+      <p>Tudo aqui é feito com o seu tempo, não com dinheiro. O objetivo: montar a base, começar a aparecer de graça e deixar tudo medível — pra que, quando você for investir (Passo 2), seja em cima de algo que já funciona.</p>
+      <span class="cost">R$ 0 · só trabalho e consistência</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <span class="eyebrow">Passo 1 · fundação</span>
+      <h2>Defina com quem você fala — e o que diz.</h2>
+      <p>Antes de qualquer post: saber os 3 tipos de lojista e as 4 frases que você repete em tudo. Isso é de graça e muda o resultado de todo o resto.</p>
+    </div>
+    <div class="grid g3">
+      <div class="persona">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="who">O recém-aberto</span><span class="heat hot">quente</span></div>
+        <dl>
+          <div><dt>Dor</dt><dd>Precisa "colocar a loja no ar" já.</dd></div>
+          <div><dt>Onde está</dt><dd>Pesquisando no Google agora.</dd></div>
+          <div><dt>Fale</dt><dd>"Sua loja no ar em minutos, sem programador."</dd></div>
+        </dl>
+      </div>
+      <div class="persona">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="who">O que já vende no zap</span><span class="heat cold">frio · maioria</span></div>
+        <dl>
+          <div><dt>Dor</dt><dd>Foto solta, repete preço, perde pedido.</dd></div>
+          <div><dt>Onde está</dt><dd>Rolando o Instagram.</dd></div>
+          <div><dt>Fale</dt><dd>"Pare de mandar foto solta. Pedido pronto no WhatsApp."</dd></div>
+        </dl>
+      </div>
+      <div class="persona">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="who">O que paga comissão</span><span class="heat hot">morno</span></div>
+        <dl>
+          <div><dt>Dor</dt><dd>Marketplace leva ~16% de cada venda.</dd></div>
+          <div><dt>Onde está</dt><dd>Instagram, grupos de lojistas.</dd></div>
+          <div><dt>Fale</dt><dd>"100% da venda é sua. Sem comissão."</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="spacer"></div><div class="spacer"></div>
+    <div class="divider-label">As 4 frases da marca — repita sempre</div>
+    <div class="grid g2">
+      <div class="card"><h3>No ar em minutos, sem programador</h3><p>Tira o medo de "é complicado".</p></div>
+      <div class="card"><h3>0% de comissão — 100% da venda é sua</h3><p>O maior diferencial.</p></div>
+      <div class="card"><h3>Pedido pronto no seu WhatsApp</h3><p>Encaixa no jeito que o lojista já vende.</p></div>
+      <div class="card"><h3>Mais barato que sua internet</h3><p>Derruba a objeção de preço.</p></div>
+    </div>
+  </section>
+
+  <section id="instagram">
+    <div class="sec-head">
+      <span class="eyebrow">Passo 1 · o principal</span>
+      <h2>Perfis + cronograma de publicações (Instagram e Facebook).</h2>
+      <p>Criar os perfis é grátis. Postar com consistência é o que faz o eLucre ser conhecido sem pagar mídia. Aqui está <strong>o que postar</strong> e <strong>com que frequência</strong>.</p>
+    </div>
+
+    <div class="divider-label">O que postar — 5 pilares de conteúdo</div>
+    <div class="grid g3">
+      <div class="card"><span class="num">Pilar 1</span><h3>Dor &amp; educação</h3><p>"3 erros que fazem você perder venda no WhatsApp." Mostra o problema que ele vive e nem percebe.</p></div>
+      <div class="card"><span class="num">Pilar 2</span><h3>Demonstração</h3><p>Gravação de tela: "Montei uma loja em 2 minutos." O antes/depois é o que mais converte.</p></div>
+      <div class="card"><span class="num">Pilar 3</span><h3>Por nicho</h3><p>Um post pra roupa, um pra lanche, um pra celular. Cada lojista precisa se ver ali.</p></div>
+      <div class="card"><span class="num">Pilar 4</span><h3>Prova &amp; resultado</h3><p>Print do pedido caindo no WhatsApp, depoimento, economia de comissão. Confiança.</p></div>
+      <div class="card"><span class="num">Pilar 5</span><h3>Marca &amp; bastidor</h3><p>Quem é a eLucre, o valor "sem comissão", novidades. Cria identificação.</p></div>
+      <div class="card" style="background:var(--surface-2);border-style:dashed">
+        <span class="num">Cronograma semanal</span><h3>Com que frequência</h3>
+        <ul>
+          <li><strong>Reels</strong> — 3–4/semana (é o que dá alcance novo)</li>
+          <li><strong>Carrossel</strong> — 1–2/semana (educa e é salvo)</li>
+          <li><strong>Stories</strong> — todo dia, 2–5 (engaja + chama pro teste)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="spacer"></div><div class="spacer"></div>
+    <div class="divider-label">Projeção de crescimento do perfil — só com orgânico e consistência</div>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Mês</th><th class="num">Seguidores</th><th class="num">Alcance/mês</th><th class="num">Cliques p/ o site</th><th class="num">Testes iniciados</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Mês 1</strong></td><td class="num">150–400</td><td class="num">5k–15k</td><td class="num">100–300</td><td class="num">10–30</td></tr>
+          <tr><td><strong>Mês 3</strong></td><td class="num">600–2.000</td><td class="num">20k–60k</td><td class="num">400–900</td><td class="num">40–100</td></tr>
+          <tr><td><strong>Mês 6</strong></td><td class="num">2.000–5.000</td><td class="num">50k–130k</td><td class="num">900–2.500</td><td class="num">100–300</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Faixas de referência para crescimento <strong>orgânico</strong> (sem anúncio). O que mais move esses números: postar sem falhar e ter 1–2 vídeos que "estouram". No Passo 2, o investimento acelera tudo isso.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="eyebrow">Passo 1 · Google grátis</span>
+      <h2>Conteúdo que aparece no Google sozinho (SEO).</h2>
+      <p>Escrever páginas que respondem o que o lojista busca é de graça — só o seu tempo. Demora pra pegar tração, mas depois traz visita <strong>todo dia, sem pagar</strong>. E escala infinito: cada nicho é uma página nova.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Buscas gerais</h3>
+        <ul>
+          <li>"como criar loja online grátis"</li>
+          <li>"como vender pelo WhatsApp"</li>
+          <li>"catálogo digital" · "loja virtual sem comissão"</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Uma página por nicho</h3>
+        <ul>
+          <li>"loja online para roupas"</li>
+          <li>"cardápio digital para lanchonete"</li>
+          <li>"catálogo para loja de celular"…</li>
+        </ul>
+        <div class="when">Meta: 2–4 páginas por mês</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="eyebrow">Passo 1 · o motor mais barato</span>
+      <h2>Deixe o próprio produto te divulgar.</h2>
+      <p>Configurar isto é grátis e trabalha sozinho conforme você ganha clientes. Cada loja no ar vira um outdoor do eLucre.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Marca embutida</h3>
+        <ul>
+          <li>"Feito com eLucre" no rodapé de cada loja</li>
+          <li>Link <span class="mono">elucre.net/sua-loja</span>, QR no balcão, Story e PDF já levam a marca a cada cliente do lojista</li>
+          <li>Diretório "Descubra": as lojas se acham e o Google indexa</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Indicação (montar a regra é grátis)</h3>
+        <ul>
+          <li><strong>Indicou, ganhou:</strong> lojista que traz outro ganha 1 mês grátis ou desconto</li>
+          <li>Só custa quando dá certo — e transforma cliente em vendedor</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="funil">
+    <div class="sec-head">
+      <span class="eyebrow">Passo 1 · medir e destravar de graça</span>
+      <h2>Instale o rastreio e entenda o funil.</h2>
+      <p>Instalar o Pixel da Meta e a tag do Google é <strong>gratuito</strong> — e é o que te deixa enxergar de onde vem cada cliente (essencial pro Passo 2). E o ponto onde a maioria trava — a <strong>ativação</strong> — se conserta sem gastar.</p>
+    </div>
+    <div class="funnel">
+      <div class="stage"><span class="st-ico">↓</span><span class="st-name">Atrair</span><span class="st-metric">de graça no Passo 1</span><span class="st-desc" style="grid-column:2">Visitante chega pelo conteúdo/perfil.</span></div>
+      <div class="stage"><span class="st-ico">↓</span><span class="st-name">Testar</span><span class="st-metric">botão de teste claro</span><span class="st-desc" style="grid-column:2">Começa o teste grátis de 7 dias.</span></div>
+      <div class="stage"><span class="st-ico">★</span><span class="st-name">Ativar — o ponto crítico</span><span class="st-metric free">melhoria grátis</span><span class="st-desc" style="grid-column:2">Se não montar a 1ª loja, não vira cliente. Onboarding guiado + WhatsApp de boas-vindas custam R$ 0 e valem mais que qualquer anúncio.</span></div>
+      <div class="stage"><span class="st-ico">↓</span><span class="st-name">Pagar</span><span class="st-metric">fim dos 7 dias</span><span class="st-desc" style="grid-column:2">Vira assinatura.</span></div>
+      <div class="stage"><span class="st-ico">♻</span><span class="st-name">Indicar</span><span class="st-metric">alimenta o Motor 3</span><span class="st-desc" style="grid-column:2">Cliente satisfeito vira canal de aquisição.</span></div>
+    </div>
+    <p class="note">Melhorar a etapa de <strong>ativação</strong> (o cliente subir o 1º produto e compartilhar o link) é a alavanca mais poderosa — e não custa nada. Faça isso antes de investir em trazer mais gente.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="eyebrow">Passo 1 · mão na massa</span>
+      <h2>Sua primeira semana — tudo de graça.</h2>
+      <p>Faça nesta ordem. Ao fim da semana você já está aparecendo e medindo, sem ter gasto em mídia.</p>
+    </div>
+    <div class="checklist">
+      <div class="check"><div><div class="ct">Criar Instagram e Facebook do eLucre</div><div class="cd">Mesma identidade, bio com o link do teste grátis.</div></div></div>
+      <div class="check"><div><div class="ct">Escrever as 4 frases da marca e os 5 pilares</div><div class="cd">Seu "roteiro" — evita ficar sem ideia de post.</div></div></div>
+      <div class="check"><div><div class="ct">Instalar o Pixel da Meta e a tag do Google</div><div class="cd">Grátis. É o que te deixa medir — não pule.</div></div></div>
+      <div class="check"><div><div class="ct">Gravar 3 vídeos "loja em 2 minutos"</div><div class="cd">Um de roupa, um de lanche, um de celular. Celular na mão.</div></div></div>
+      <div class="check"><div><div class="ct">Subir 2 lojas-piloto reais</div><div class="cd">Viram prova social e material de post.</div></div></div>
+      <div class="check"><div><div class="ct">Montar o cronograma da 1ª semana de posts</div><div class="cd">Distribua os 5 pilares nos formatos (Reels/Carrossel/Stories).</div></div></div>
+      <div class="check"><div><div class="ct">Configurar a regra de indicação</div><div class="cd">"Indicou, ganhou" — deixa o Motor 3 pronto.</div></div></div>
+    </div>
+  </section>
+
+  <!-- ==================== PASSO 2 ==================== -->
+  <div class="step" id="passo2">
+    <div class="n">2</div>
+    <div>
+      <span class="lbl">Passo 2 · Depois da casa organizada</span>
+      <h2>Onde investir para acelerar.</h2>
+      <p>Quando o Passo 1 estiver rodando e o orgânico já mostrar sinal do que funciona, é hora de colocar dinheiro pra crescer mais rápido. Abaixo, <strong>onde</strong> o investimento entra e <strong>em que ordem</strong> — sem valores; os números você define depois, olhando o que o Passo 1 revelou.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <span class="eyebrow">Passo 2 · a bússola</span>
+      <h2>A regra que diz se vale investir.</h2>
+    </div>
+    <div class="prose">
+      <p>Antes de onde, o princípio que decide tudo — em duas ideias simples:</p>
+    </div>
+    <div class="spacer"></div>
+    <div class="grid g2">
+      <div class="callout"><span class="k">LTV</span><div><h3>Quanto um cliente te paga na vida</h3><p>Depende da mensalidade e de quantos meses ele fica. Quanto mais ele fica (e maior o plano), maior o LTV.</p></div></div>
+      <div class="callout"><span class="k">CAC</span><div><h3>Quanto custa trazer um cliente</h3><p>Todo o gasto de marketing dividido pelo número de clientes que vieram.</p></div></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="prose">
+      <p><strong>A regra de ouro:</strong> só invista (e só aumente o investimento) enquanto o <span class="hl">CAC ficar bem menor que o LTV</span> — cada cliente precisa custar bem menos do que ele te paga. Enquanto essa conta fecha, investir mais = vender mais. Quando não fecha, a solução <strong>não</strong> é gastar mais — é melhorar a conversão (que você trabalhou de graça no Passo 1). Por isso o Passo 1 vem primeiro.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="eyebrow">Passo 2 · o mapa</span>
+      <h2>Onde o dinheiro entra.</h2>
+      <p>As frentes de investimento, do mais certeiro ao mais amplo. Você não precisa ligar todas de uma vez — o próximo bloco mostra a ordem.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card free">
+        <span class="num">Reconquista</span><h3>Retargeting</h3>
+        <p>Reaparecer pra quem visitou o site e não assinou. É o investimento mais eficiente por real.</p>
+        <div class="when">Ligar cedo — barato e certeiro</div>
+      </div>
+      <div class="card free">
+        <span class="num">Amplificar</span><h3>Impulsionar o conteúdo campeão</h3>
+        <p>O post orgânico que já estourou vira anúncio. Você investe no que o público já aprovou.</p>
+        <div class="when">Assim que um post se destacar</div>
+      </div>
+      <div class="card free">
+        <span class="num">Colher demanda</span><h3>Google Ads (busca)</h3>
+        <p>Aparecer no topo pra quem já digita "criar loja online". Intenção altíssima, conversão alta.</p>
+        <div class="when">Cedo — poucos, mas quentes</div>
+      </div>
+      <div class="card free">
+        <span class="num">Criar demanda</span><h3>Meta / Instagram Ads</h3>
+        <p>Mostrar pro público frio que ainda não sabe que precisa. É o motor de escala — com criativo já validado no orgânico.</p>
+        <div class="when">Depois de validar criativo</div>
+      </div>
+      <div class="card free">
+        <span class="num">Multiplicar</span><h3>Afiliados / revendedores</h3>
+        <p>Comissão por venda: você só paga quando alguém traz cliente. Transforma gente em vendedor.</p>
+        <div class="when">Quando houver o que vender bem</div>
+      </div>
+      <div class="card free">
+        <span class="num">Alcance de nicho</span><h3>Parcerias &amp; micro-influenciadores</h3>
+        <p>Contadores, associações comerciais (CDL), fornecedores de nicho e criadores de empreendedorismo.</p>
+        <div class="when">Contínuo, conforme surgem</div>
+      </div>
+    </div>
+    <p class="note">Ferramentas (design, agendador de posts) também entram como pequeno investimento de apoio — ajudam a manter o ritmo do Passo 1 quando o volume cresce.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="eyebrow">Passo 2 · a ordem</span>
+      <h2>Por onde abrir as torneiras.</h2>
+      <p>Comece pelo mais barato e certeiro, e só avance quando a conta do anterior fechar (CAC &lt; LTV).</p>
+    </div>
+    <div class="prio">
+      <div class="row"><div><div class="t">Reconquista e amplificação primeiro</div><div class="d">Retargeting + impulsionar o conteúdo que já funcionou. Barato, e usa o que o Passo 1 já provou.</div></div></div>
+      <div class="row"><div><div class="t">Colher a demanda quente (Google Ads)</div><div class="d">Quem já procura converte fácil. Pouco volume, mas o dinheiro mais bem gasto pra começar.</div></div></div>
+      <div class="row"><div><div class="t">Criar demanda em escala (Meta Ads)</div><div class="d">Só depois de ter um criativo que já funcionou no orgânico. É onde o volume cresce de verdade.</div></div></div>
+      <div class="row"><div><div class="t">Multiplicar com pessoas (afiliados e parcerias)</div><div class="d">Quando o produto já converte bem, coloque gente pra vender por você — pagando por resultado.</div></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <span class="eyebrow">Passo 2 · o painel</span>
+      <h2>Os 4 números que dizem se o investimento vale.</h2>
+      <p>Sem valores fixos aqui — o que importa é a direção de cada um. Se estes quatro estão saudáveis, pode investir mais.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card"><h3>Custo por teste</h3><p>Quanto custou cada cadastro de teste grátis. <strong>Direção: cair.</strong></p></div>
+      <div class="card"><h3>Teste → pagante</h3><p>% de testes que viram assinatura. <strong>Direção: subir</strong> — a alavanca mais poderosa.</p></div>
+      <div class="card"><h3>CAC vs LTV</h3><p>Custo por cliente contra o que ele paga na vida. <strong>Direção: CAC bem abaixo do LTV.</strong></p></div>
+      <div class="card"><h3>Churn</h3><p>Quantos cancelam por mês. <strong>Direção: cair</strong> — loja que vende não cancela.</p></div>
+    </div>
+    <div class="spacer"></div><div class="spacer"></div>
+    <div class="callout green">
+      <span class="k">✓</span>
+      <div>
+        <h3>Resumo dos 2 passos</h3>
+        <p><strong>Passo 1 (grátis):</strong> perfis, conteúdo, cronograma, SEO, produto se divulgando, rastreio instalado e ativação afinada. <strong>Passo 2 (investir):</strong> retargeting → Google Ads → Meta Ads → afiliados/parcerias, nessa ordem, sempre enquanto <strong>CAC &lt; LTV</strong>. Organize a casa primeiro; invista depois, em cima do que já funciona.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Plano de Crescimento eLucre</strong> — documento de trabalho. As faixas de projeção do Passo 1 são referências de mercado, não garantias. O Passo 2 mostra <em>onde</em> investir; os valores você define depois, guiado pelo que o Passo 1 revelar.</p>
+  </footer>
+
+</div>

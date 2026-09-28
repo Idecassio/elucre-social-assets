@@ -1,0 +1,31 @@
+{
+  "key": "elucre",
+  "name": "eLucre",
+  "handle": "@elucre.oficial",
+  "site": "elucre.net",
+  "igUserId": "17841435197554548",
+  "igUserIdEnv": "IG_USER_ID",
+  "tokens": {
+    "bgGradient": "linear-gradient(160deg,#241F63 0%,#35309C 48%,#4F46E5 82%,#4A41D6 100%)",
+    "indigo": "#4F46E5",
+    "indigoDeep": "#4338CA",
+    "hl": "#B9C0FF",
+    "green": "#39E08A",
+    "wpp": "#25D366",
+    "ink": "#171310",
+    "cream": "#FAF9F7",
+    "font": "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+  },
+  "formats": {
+    "feed": { "w": 1080, "h": 1350 },
+    "story": { "w": 1080, "h": 1920 }
+  },
+  "copyRules": [
+    "Produto = LOJA ONLINE (site próprio, PC+celular, carrinho+painel); WhatsApp só recebe o pedido.",
+    "Nunca 'full texto' — sempre elemento gráfico (mockup/comparativo/selo/bento/chat).",
+    "Toda peça sai em feed (1080×1350) + story (1080×1920).",
+    "Frases-âncora: 0% de comissão · no ar em minutos, sem programador · pedido pronto no WhatsApp.",
+    "CTA: Teste 7 dias grátis + elucre.net"
+  ],
+  "note": "Identidade e regras de copy do eLucre. O token de acesso NUNCA vai aqui — só no .env. Ver ../../../_social/eLucre_Posts_Playbook.md."
+}
