@@ -188,5 +188,31 @@
     ],
     "publishedAt": "2026-09-28T20:46:12.912Z",
     "error": null
+  },
+  {
+    "id": "p_mumxg252b2go",
+    "brand": "elucre",
+    "type": "carousel",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/educacao - 3 sinais/feed_1.jpg",
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/educacao - 3 sinais/feed_2.jpg",
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/educacao - 3 sinais/feed_3.jpg",
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/educacao - 3 sinais/feed_4.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/educacao - 3 sinais/Stories/story_1.jpg",
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/educacao - 3 sinais/Stories/story_2.jpg",
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/educacao - 3 sinais/Stories/story_3.jpg",
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/educacao - 3 sinais/Stories/story_4.jpg"
+    ],
+    "day": "2026-09-29",
+    "caption": "3 sinais de que você já precisa de uma loja online 👇\n\n1) Você perde pedido no chat · 2) Não tem link pra divulgar · 3) Paga comissão pra vender. Se deu 1, já passou da hora — e a solução é uma loja só sua, sem comissão.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net\n\n#lojaonline #empreendedorismo #dicasdevendas #vendaspelowhatsapp #pequenonegocio",
+    "scheduledAt": "2026-09-29T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
