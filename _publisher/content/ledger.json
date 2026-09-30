@@ -219,5 +219,25 @@
     ],
     "publishedAt": "2026-09-29T20:31:09.447Z",
     "error": null
+  },
+  {
+    "id": "p_muo3scurmdt6",
+    "brand": "elucre",
+    "type": "image",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/conversao - teste gratis/feed_1.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/conversao - teste gratis/Stories/story_1.jpg"
+    ],
+    "day": "2026-09-30",
+    "caption": "Sua loja online no ar, grátis por 7 dias. 🚀\n\nLoja de verdade, no PC e no celular. Pedido no WhatsApp, 0% de comissão, sem programador. Comece hoje — qualquer nicho.\n\n👇🏻 Teste 7 dias grátis!\n\nelucre.net\n\n#testegratis #lojaonline #comecehoje #empreendedorismo #vendaspelowhatsapp",
+    "scheduledAt": "2026-09-30T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
