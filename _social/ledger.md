@@ -26,20 +26,20 @@
 | Categoria (pasta) | Tema | Pilar | Nicho | Feed | Story |
 |---|---|---|---|---|---|
 | `institucional - loja de verdade` | Perfil ≠ loja (comparativo) | Institucional | geral | ✅ | ✅ |
-| `nicho - pet shop` | Pet shop online | Nicho | pet | ✅ | ✅ |
-| `feature - pix e cartao` | Pix e cartão no site | Produto | geral | ✅ | ✅ |
+| `dica - precificacao` | Precificação: custo→margem→preço | Dor & educação | geral | ✅ | ✅ |
+| `dica - fotos que vendem` | 3 fotos que vendem mais | Dor & educação | geral | ✅ | ✅ |
 | `nicho - beleza` | Loja de beleza 24h | Nicho | beleza | ✅ | ✅ |
 | `dor - custo de nao ter loja` | Quanto custa não ter loja (bento) | Dor & educação | geral | ✅ | ✅ |
-| `prova - depoimento cliente` | "Vendi 3× mais" (5 estrelas) | Prova | geral | ✅ | ✅ |
+| `dica - responder quanto e` | Atendimento: responder "quanto é?" | Dor & educação | geral | ✅ | ✅ |
 | `dia das criancas` | Dia das Crianças (loja kids) | Sazonal/Nicho | kids | ✅ | ✅ |
 | `nicho - confeitaria` | Encomendas de doces sem bagunça | Nicho | doces | ✅ | ✅ |
-| `feature - cupom` | Cupom de desconto | Produto | geral | ✅ | ✅ |
+| `dica - combo ticket medio` | Combo aumenta o ticket médio | Dor & educação | geral | ✅ | ✅ |
 | `nicho - papelaria` | Papelaria e personalizados | Nicho | papelaria | ✅ | ✅ |
 | `feature - relatorios` | Relatórios do painel (stats) | Produto | geral | ✅ | ✅ |
-| `nicho - suplementos` | Loja de suplementos | Nicho | suplementos | ✅ | ✅ |
+| `dica - horario nobre` | Horário nobre das vendas (gráfico) | Dor & educação | geral | ✅ | ✅ |
 | `demonstracao - voce mesmo edita` | Você mesmo edita o preço | Demonstração | geral | ✅ | ✅ |
 | `feature - frete e retirada` | Frete e retirada | Produto | geral | ✅ | ✅ |
-| `nicho - brecho` | Brechó / peça única | Nicho | brechó | ✅ | ✅ |
+| `dica - peca avaliacao` | Prova social: peça avaliação | Dor & educação | geral | ✅ | ✅ |
 | `servicos - salao` | Serviços vendem online | Nicho | serviços | ✅ | ✅ |
 | `conversao - link na bio` | Um link na bio = loja 24h | Conversão | geral | ✅ | ✅ |
 | `prova - roi` | Se paga com 1 venda (R$49 x R$180) | Prova | geral | ✅ | ✅ |
@@ -71,20 +71,20 @@
 | Data | Tema | Pilar | Postado? |
 |---|---|---|---|
 | 01/10 | Perfil ≠ loja | Institucional | ⬜ |
-| 02/10 | Pet shop | Nicho · pet | ⬜ |
-| 05/10 | Pix e cartão | Produto | ⬜ |
+| 02/10 | Precificação sem prejuízo | Dor & educação | ⬜ |
+| 05/10 | 3 fotos que vendem | Dor & educação | ⬜ |
 | 06/10 | Loja de beleza | Nicho · beleza | ⬜ |
 | 07/10 | Custo de não ter loja | Dor & educação | ⬜ |
-| 08/10 | Depoimento "3× mais" | Prova | ⬜ |
+| 08/10 | Atendimento "quanto é?" | Dor & educação | ⬜ |
 | 09/10 | Dia das Crianças | Sazonal/Nicho | ⬜ |
 | 13/10 | Confeitaria | Nicho · doces | ⬜ |
-| 14/10 | Cupom de desconto | Produto | ⬜ |
+| 14/10 | Combo aumenta o ticket | Dor & educação | ⬜ |
 | 15/10 | Papelaria | Nicho · papelaria | ⬜ |
 | 16/10 | Relatórios do painel | Produto | ⬜ |
-| 19/10 | Suplementos | Nicho · suplementos | ⬜ |
+| 19/10 | Horário nobre das vendas | Dor & educação | ⬜ |
 | 20/10 | Você mesmo edita | Demonstração | ⬜ |
 | 21/10 | Frete e retirada | Produto | ⬜ |
-| 22/10 | Brechó | Nicho · brechó | ⬜ |
+| 22/10 | Prova social: peça avaliação | Dor & educação | ⬜ |
 | 23/10 | Serviços/agenda | Nicho · serviços | ⬜ |
 | 26/10 | Link na bio | Conversão | ⬜ |
 | 27/10 | ROI: 1 venda paga | Prova | ⬜ |
@@ -104,8 +104,10 @@
 Campo `tema_visual` ("dark"|"claro") marcado em todos os itens dos calendários.
 
 ## Ângulos/nichos já usados (evitar repetir cru)
-- Ângulos usados: foto solta, repetir preço, sem link, comparativo de comissão, "quem somos", perfil≠loja, custo de não ter loja, depoimento/prova social, ROI (se paga com 1 venda), loja 24/7, você mesmo edita, link na bio.
-- Features já mostradas: pedido pronto no WhatsApp, painel próprio, catálogo, Pix/cartão, cupom, frete/retirada, relatórios.
-- Nichos JÁ explorados: geral, delivery, moda, celular, pet, beleza, doces/confeitaria, papelaria, suplementos, brechó, serviços/agenda, kids.
-- Nichos ainda NÃO explorados (p/ próximos meses): mercado/hortifruti, floricultura, farmácia/manipulação, autopeças, artesanato, livros/sebo, calçados, joias/semijoias, tabacaria, artigos religiosos.
+- Ângulos usados: foto solta, repetir preço, sem link, comparativo de comissão, "quem somos", perfil≠loja, custo de não ter loja, ROI (se paga com 1 venda), loja 24/7, você mesmo edita, link na bio.
+- **Dicas de valor p/ lojista já feitas** (educação): precificação (custo→margem→preço), 3 fotos que vendem, atendimento "quanto é?", combo/ticket médio, horário nobre das vendas, prova social (peça avaliação).
+- Features já mostradas: pedido pronto no WhatsApp, painel próprio, catálogo, frete/retirada, relatórios.
+- Nichos JÁ explorados: geral, delivery, moda, celular, beleza, doces/confeitaria, papelaria, serviços/agenda, kids.
+- Nichos ainda NÃO explorados (p/ próximos meses): pet, suplementos, brechó, mercado/hortifruti, floricultura, farmácia/manipulação, autopeças, artesanato, livros/sebo, calçados, joias/semijoias.
+- Ideias de valor p/ próximos meses: recuperar cliente sumido, frete grátis (quando vale), descrição que vende, escassez/urgência, pós-venda, indicação/boca a boca.
 - Sazonais próximos: Black Friday (nov), Natal (dez), volta às aulas (jan/fev).
