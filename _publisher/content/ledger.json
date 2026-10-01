@@ -241,5 +241,25 @@
     ],
     "publishedAt": "2026-09-30T20:37:34.635Z",
     "error": null
+  },
+  {
+    "id": "p_muptc9zd6kyf",
+    "brand": "elucre",
+    "type": "image",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/institucional - loja de verdade/feed_1.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/institucional - loja de verdade/Stories/story_1.jpg"
+    ],
+    "day": "2026-10-01",
+    "caption": "Perfil no Instagram não é loja. É vitrine bonita — mas sem carrinho, sem pagamento e sem link de compra. A eLucre te dá uma loja de verdade: o cliente escolhe, paga no site e o pedido cai pronto no seu WhatsApp. 0% de comissão.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#lojaonline #eLucre #empreendedorismo #vendaspelowhatsapp #loja",
+    "scheduledAt": "2026-10-01T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
