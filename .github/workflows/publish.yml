@@ -1,10 +1,11 @@
 name: eLucre · publish
-# Todo dia útil 13:00 BRT (16:00 UTC): publica feed+story dos itens vencidos e não vetados.
-# 2 horários (16:00 e 16:20 UTC) por resiliência — o 2º pula o que já publicou (idempotente).
+# Todo dia útil ~13:08 BRT (16:08 UTC): publica feed+story dos itens vencidos e não vetados.
+# 2 horários em minuto quebrado (16:08 e 16:28 UTC) — fogem da fila de hora cheia do GitHub;
+# o 2º pula o que já publicou (idempotente). Janela de veto 08:35 → 13:08.
 on:
   schedule:
-    - cron: '0 16 * * 1-5'
-    - cron: '20 16 * * 1-5'
+    - cron: '8 16 * * 1-5'
+    - cron: '28 16 * * 1-5'
   workflow_dispatch:
     inputs:
       date:
