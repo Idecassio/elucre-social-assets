@@ -275,11 +275,11 @@
     "day": "2026-10-05",
     "caption": "3 fotos vendem mais que 30 no story 📸 1) Fundo limpo e luz natural — perto da janela resolve. 2) Mostre o tamanho real: na mão, no corpo ou ao lado de algo conhecido. 3) Frente, um close do detalhe e o produto em uso. Foto boa tira a dúvida e fecha a venda.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#dicasdevendas #fotodeproduto #lojaonline #empreendedorismo #eLucre",
     "scheduledAt": "2026-10-05T16:00:00.000Z",
-    "status": "pending",
+    "status": "error",
     "mediaId": null,
     "permalink": null,
     "storyMediaIds": null,
     "publishedAt": null,
-    "error": null
+    "error": "Graph API 403: Application request limit reached (code 4)"
   }
 ]
