@@ -1,10 +1,9 @@
 name: eLucre · daily preview
-# Todo dia útil ~08:35 BRT (11:35 UTC): posta a prévia no Discord + enfileira o post do dia.
-# Minuto quebrado (:35) e um pouco mais cedo DE PROPÓSITO: o cron do GitHub Actions é "best-effort"
-# e atrasa muito em hora cheia (:00). O buffer garante a prévia + janela de veto antes das 13:00.
+# Posta a prévia no Discord + enfileira o post do dia.
+# DISPARO: agendado pelo n8n — workflow "eLucre · disparador (cron externo)" (~08:35 BRT) chama via
+# workflow_dispatch. O cron do GitHub Actions era "best-effort" (atrasava horas e às vezes sumia),
+# então foi removido daqui; o n8n é o agendador confiável.
 on:
-  schedule:
-    - cron: '35 11 * * 1-5'
   workflow_dispatch: {}
 permissions:
   contents: write

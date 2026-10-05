@@ -1,11 +1,8 @@
 name: eLucre · publish
-# Todo dia útil ~13:08 BRT (16:08 UTC): publica feed+story dos itens vencidos e não vetados.
-# 2 horários em minuto quebrado (16:08 e 16:28 UTC) — fogem da fila de hora cheia do GitHub;
-# o 2º pula o que já publicou (idempotente). Janela de veto 08:35 → 13:08.
+# Publica feed+story dos itens vencidos e não vetados. Janela de veto 08:35 → 13:08.
+# DISPARO: agendado pelo n8n — workflow "eLucre · disparador (cron externo)" (~13:08 BRT) chama via
+# workflow_dispatch. Removido do cron do GitHub Actions (best-effort, falhava); n8n é o agendador.
 on:
-  schedule:
-    - cron: '8 16 * * 1-5'
-    - cron: '28 16 * * 1-5'
   workflow_dispatch:
     inputs:
       date:
