@@ -295,11 +295,11 @@
     "day": "2026-10-06",
     "caption": "Batom, skincare, perfume — sua loja de beleza aberta 24h 💄 A cliente escolhe o tom, monta o carrinho e o pedido cai no seu WhatsApp. 0% de comissão.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#lojadebeleza #cosmeticos #lojaonline #vendaspelowhatsapp #eLucre",
     "scheduledAt": "2026-10-06T16:00:00.000Z",
-    "status": "pending",
+    "status": "error",
     "mediaId": null,
     "permalink": null,
     "storyMediaIds": null,
     "publishedAt": null,
-    "error": null
+    "error": "Graph API 403: Application request limit reached (code 4)"
   }
 ]
