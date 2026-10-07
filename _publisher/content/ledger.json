@@ -301,5 +301,25 @@
     "storyMediaIds": null,
     "publishedAt": null,
     "error": "Graph API 403: Application request limit reached (code 4)"
+  },
+  {
+    "id": "p_muy7m07im4jo",
+    "brand": "elucre",
+    "type": "image",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/dor - custo de nao ter loja/feed_1.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/dor - custo de nao ter loja/Stories/story_1.jpg"
+    ],
+    "day": "2026-10-07",
+    "caption": "Quanto custa NÃO ter loja online? O pedido das 22h que você não viu, o cliente que cansou de perguntar preço, a comissão que o marketplace levou… Some tudo. A eLucre resolve os três: loja no ar em minutos, 0% de comissão.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#dicasdevendas #lojaonline #empreendedorismo #vendaspelowhatsapp #eLucre",
+    "scheduledAt": "2026-10-07T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
