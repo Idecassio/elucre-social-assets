@@ -321,5 +321,25 @@
     "storyMediaIds": null,
     "publishedAt": null,
     "error": "Graph API 403: Application request limit reached (code 4)"
+  },
+  {
+    "id": "p_muzn1u9rdkl8",
+    "brand": "elucre",
+    "type": "image",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/dica - responder quanto e/feed_1.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/dica - responder quanto e/Stories/story_1.jpg"
+    ],
+    "day": "2026-10-08",
+    "caption": "\"Quanto é?\" não é só jogar o preço 💬 Responda com preço + motivo + próximo passo: \"R$189 💚 couro legítimo, cabe notebook, tenho em preto e caramelo. Quer que eu separe? 👉 link da loja\". Preço + benefício + link = pedido pronto. (Numa loja online o cliente já vê tudo isso sozinho.)\n\nTeste 7 dias grátis 👉 elucre.net\n\n#atendimento #dicasdevendas #vendaspelowhatsapp #lojaonline #eLucre",
+    "scheduledAt": "2026-10-08T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
