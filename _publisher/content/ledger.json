@@ -355,11 +355,11 @@
     "day": "2026-10-09",
     "caption": "Dia das Crianças é uma das maiores datas do trimestre 🧸 Brinquedos, moda e papelaria infantil numa vitrine pronta pra vender. Monte a sua agora e chegue faturando na data. 0% de comissão.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#diadascriancas #lojaonline #lojadebrinquedos #vendaspelowhatsapp #eLucre",
     "scheduledAt": "2026-10-09T16:00:00.000Z",
-    "status": "pending",
+    "status": "error",
     "mediaId": null,
     "permalink": null,
     "storyMediaIds": null,
     "publishedAt": null,
-    "error": null
+    "error": "Graph API 403: Application request limit reached (code 4)"
   }
 ]
