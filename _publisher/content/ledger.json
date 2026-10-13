@@ -375,11 +375,13 @@
     "day": "2026-10-13",
     "caption": "Encomenda de doce não precisa virar 20 mensagens 🧁 Sabor, tamanho e data de entrega no catálogo — o pedido chega certinho no seu WhatsApp. Sua confeitaria vendendo sem bagunça.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#confeitaria #docesgourmet #lojaonline #vendaspelowhatsapp #eLucre",
     "scheduledAt": "2026-10-13T16:00:00.000Z",
-    "status": "pending",
-    "mediaId": null,
-    "permalink": null,
-    "storyMediaIds": null,
-    "publishedAt": null,
+    "status": "published",
+    "mediaId": "18129182246481559",
+    "permalink": "https://www.instagram.com/p/DechiaLlxxM/",
+    "storyMediaIds": [
+      "18465436216139975"
+    ],
+    "publishedAt": "2026-10-13T19:08:32.822Z",
     "error": null
   }
 ]
