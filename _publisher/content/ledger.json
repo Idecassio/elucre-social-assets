@@ -405,5 +405,25 @@
     ],
     "publishedAt": "2026-10-14T19:08:32.948Z",
     "error": null
+  },
+  {
+    "id": "p_mv9n4u078o9f",
+    "brand": "elucre",
+    "type": "image",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/nicho - papelaria/feed_1.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/nicho - papelaria/Stories/story_1.jpg"
+    ],
+    "day": "2026-10-15",
+    "caption": "Papelaria e personalizados numa vitrine só ✏️ Do caderno ao convite com nome: o cliente escolhe modelo, cor e detalhes — e o pedido chega detalhado, sem retrabalho. 0% de comissão.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#papelaria #personalizados #lojaonline #vendaspelowhatsapp #eLucre",
+    "scheduledAt": "2026-10-15T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
