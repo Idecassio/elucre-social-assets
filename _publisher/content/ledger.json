@@ -427,5 +427,25 @@
     ],
     "publishedAt": "2026-10-15T19:08:34.552Z",
     "error": null
+  },
+  {
+    "id": "p_mvb2kpkh097b",
+    "brand": "elucre",
+    "type": "image",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/feature - relatorios/feed_1.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/feature - relatorios/Stories/story_1.jpg"
+    ],
+    "day": "2026-10-16",
+    "caption": "Pare de vender no achismo 📊 O painel da eLucre mostra vendas, pedidos e ticket médio em tempo real — e qual produto mais vende. Decisão com número, na palma da mão.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#gestao #lojaonline #dados #eLucre #empreendedorismo",
+    "scheduledAt": "2026-10-16T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
