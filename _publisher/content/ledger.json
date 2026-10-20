@@ -471,5 +471,25 @@
     ],
     "publishedAt": "2026-10-19T19:08:41.870Z",
     "error": null
+  },
+  {
+    "id": "p_mvgsc6m8l5r8",
+    "brand": "elucre",
+    "type": "image",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/demonstracao - voce mesmo edita/feed_1.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/demonstracao - voce mesmo edita/Stories/story_1.jpg"
+    ],
+    "day": "2026-10-20",
+    "caption": "Mudou o preço? Muda na loja na hora ⚡ Você mesmo edita produto, preço e estoque pelo painel — no celular, em segundos. Sem depender de agência, sem mensalidade extra.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#autonomia #lojaonline #eLucre #empreendedorismo #vendaspelowhatsapp",
+    "scheduledAt": "2026-10-20T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
