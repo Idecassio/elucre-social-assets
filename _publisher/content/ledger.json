@@ -485,11 +485,11 @@
     "day": "2026-10-20",
     "caption": "Mudou o preço? Muda na loja na hora ⚡ Você mesmo edita produto, preço e estoque pelo painel — no celular, em segundos. Sem depender de agência, sem mensalidade extra.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#autonomia #lojaonline #eLucre #empreendedorismo #vendaspelowhatsapp",
     "scheduledAt": "2026-10-20T16:00:00.000Z",
-    "status": "pending",
+    "status": "error",
     "mediaId": null,
     "permalink": null,
     "storyMediaIds": null,
     "publishedAt": null,
-    "error": null
+    "error": "Graph API 400: The requested resource does not exist (code 24)"
   }
 ]
