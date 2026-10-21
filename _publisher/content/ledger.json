@@ -505,11 +505,13 @@
     "day": "2026-10-21",
     "caption": "Frete e retirada do seu jeito 🚚 Entrega no bairro, retirada na loja ou Correios — você define as regras e o cliente escolhe no checkout. O pedido cai pronto no seu WhatsApp.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#frete #entrega #lojaonline #vendaspelowhatsapp #eLucre",
     "scheduledAt": "2026-10-21T16:00:00.000Z",
-    "status": "pending",
-    "mediaId": null,
-    "permalink": null,
-    "storyMediaIds": null,
-    "publishedAt": null,
+    "status": "published",
+    "mediaId": "18111267740182946",
+    "permalink": "https://www.instagram.com/p/DexH5B_DNCN/",
+    "storyMediaIds": [
+      "18219641476355912"
+    ],
+    "publishedAt": "2026-10-21T19:08:32.201Z",
     "error": null
   }
 ]
