@@ -491,5 +491,25 @@
     "storyMediaIds": null,
     "publishedAt": null,
     "error": "Graph API 400: The requested resource does not exist (code 24)"
+  },
+  {
+    "id": "p_mvi7s18u3ys2",
+    "brand": "elucre",
+    "type": "image",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/feature - frete e retirada/feed_1.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/feature - frete e retirada/Stories/story_1.jpg"
+    ],
+    "day": "2026-10-21",
+    "caption": "Frete e retirada do seu jeito 🚚 Entrega no bairro, retirada na loja ou Correios — você define as regras e o cliente escolhe no checkout. O pedido cai pronto no seu WhatsApp.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#frete #entrega #lojaonline #vendaspelowhatsapp #eLucre",
+    "scheduledAt": "2026-10-21T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
