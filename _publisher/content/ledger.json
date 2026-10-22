@@ -513,5 +513,25 @@
     ],
     "publishedAt": "2026-10-21T19:08:32.201Z",
     "error": null
+  },
+  {
+    "id": "p_mvjn7r56x1kb",
+    "brand": "elucre",
+    "type": "image",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/dica - peca avaliacao/feed_1.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/dica - peca avaliacao/Stories/story_1.jpg"
+    ],
+    "day": "2026-10-22",
+    "caption": "Peça avaliação — ela vende por você ⭐ Cliente confia em cliente. Peça logo após entregar (no calor da satisfação), facilite ao máximo (uma frase, um clique) e ofereça um cupom em troca. Depois, mostre as melhores na sua loja: prova social atrai o próximo comprador.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#provasocial #avaliacoes #dicasdevendas #lojaonline #eLucre",
+    "scheduledAt": "2026-10-22T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
