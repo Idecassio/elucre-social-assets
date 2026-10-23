@@ -535,5 +535,25 @@
     ],
     "publishedAt": "2026-10-22T19:08:33.658Z",
     "error": null
+  },
+  {
+    "id": "p_mvl2nt5jr1zs",
+    "brand": "elucre",
+    "type": "image",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/servicos - salao/feed_1.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/servicos - salao/Stories/story_1.jpg"
+    ],
+    "day": "2026-10-23",
+    "caption": "Serviço também vende online 💇 Salão, estética, manutenção: mostre serviços e preços num link, e o cliente pede pelo WhatsApp sem ficar perguntando valor. Agenda no seu controle, 0% de comissão.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#servicos #salao #estetica #lojaonline #vendaspelowhatsapp",
+    "scheduledAt": "2026-10-23T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
