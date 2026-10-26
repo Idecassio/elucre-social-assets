@@ -557,5 +557,25 @@
     ],
     "publishedAt": "2026-10-23T19:08:37.695Z",
     "error": null
+  },
+  {
+    "id": "p_mvpcz65knvte",
+    "brand": "elucre",
+    "type": "image",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/conversao - link na bio/feed_1.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/conversao - link na bio/Stories/story_1.jpg"
+    ],
+    "day": "2026-10-26",
+    "caption": "Troque o \"chama no direct\" por um link que vende sozinho 🔗 Um link na bio → sua loja aberta 24h: quem clica já vê preço, monta o carrinho e fecha. Coloque na bio hoje.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#linknabio #lojaonline #instagram #vendaspelowhatsapp #eLucre",
+    "scheduledAt": "2026-10-26T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
