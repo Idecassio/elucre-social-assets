@@ -571,11 +571,13 @@
     "day": "2026-10-26",
     "caption": "Troque o \"chama no direct\" por um link que vende sozinho 🔗 Um link na bio → sua loja aberta 24h: quem clica já vê preço, monta o carrinho e fecha. Coloque na bio hoje.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#linknabio #lojaonline #instagram #vendaspelowhatsapp #eLucre",
     "scheduledAt": "2026-10-26T16:00:00.000Z",
-    "status": "pending",
-    "mediaId": null,
-    "permalink": null,
-    "storyMediaIds": null,
-    "publishedAt": null,
+    "status": "published",
+    "mediaId": "17978503398131089",
+    "permalink": "https://www.instagram.com/p/De9_3v3FTBn/",
+    "storyMediaIds": [
+      "18129110588494416"
+    ],
+    "publishedAt": "2026-10-26T19:08:36.549Z",
     "error": null
   }
 ]
