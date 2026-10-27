@@ -593,11 +593,13 @@
     "day": "2026-10-27",
     "caption": "Sua loja se paga com 1 venda 💸 A eLucre custa ~R$1,63 por dia. Uma única venda no mês já cobre tudo — o resto é lucro. Loja completa, 0% de comissão.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#lojaonline #eLucre #empreendedorismo #lucro #vendaspelowhatsapp",
     "scheduledAt": "2026-10-27T16:00:00.000Z",
-    "status": "pending",
-    "mediaId": null,
-    "permalink": null,
-    "storyMediaIds": null,
-    "publishedAt": null,
+    "status": "published",
+    "mediaId": "18111159083121189",
+    "permalink": "https://www.instagram.com/p/DfAkrKUkR6X/",
+    "storyMediaIds": [
+      "18394491799167399"
+    ],
+    "publishedAt": "2026-10-27T19:08:44.865Z",
     "error": null
   }
 ]
