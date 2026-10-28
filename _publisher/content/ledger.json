@@ -601,5 +601,25 @@
     ],
     "publishedAt": "2026-10-27T19:08:44.865Z",
     "error": null
+  },
+  {
+    "id": "p_mvs7uzaedyuv",
+    "brand": "elucre",
+    "type": "image",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/sazonal - black friday/feed_1.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/sazonal - black friday/Stories/story_1.jpg"
+    ],
+    "day": "2026-10-28",
+    "caption": "A Black Friday é a maior venda do ano — e é em novembro 🔥 Quem monta a loja agora chega com cupom criado, pagamento no site e tudo no ar. Não deixe pra última hora.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#blackfriday #lojaonline #eLucre #empreendedorismo #vendaspelowhatsapp",
+    "scheduledAt": "2026-10-28T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
