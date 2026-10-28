@@ -615,11 +615,13 @@
     "day": "2026-10-28",
     "caption": "A Black Friday é a maior venda do ano — e é em novembro 🔥 Quem monta a loja agora chega com cupom criado, pagamento no site e tudo no ar. Não deixe pra última hora.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#blackfriday #lojaonline #eLucre #empreendedorismo #vendaspelowhatsapp",
     "scheduledAt": "2026-10-28T16:00:00.000Z",
-    "status": "pending",
-    "mediaId": null,
-    "permalink": null,
-    "storyMediaIds": null,
-    "publishedAt": null,
+    "status": "published",
+    "mediaId": "17957667807275115",
+    "permalink": "https://www.instagram.com/p/DfDJdYxlEtX/",
+    "storyMediaIds": [
+      "18070335338786416"
+    ],
+    "publishedAt": "2026-10-28T19:08:33.820Z",
     "error": null
   }
 ]
