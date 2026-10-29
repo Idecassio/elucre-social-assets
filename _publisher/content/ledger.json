@@ -637,11 +637,13 @@
     "day": "2026-10-29",
     "caption": "Você dorme. Sua loja vende 🌙 Loja no ar 24h: o cliente compra na madrugada e o pedido te espera pela manhã, pronto no WhatsApp. Quanto você já perdeu vendendo só no horário comercial?\n\nTeste 7 dias grátis 👉 elucre.net\n\n#lojaonline #vendas24horas #eLucre #vendaspelowhatsapp #empreendedorismo",
     "scheduledAt": "2026-10-29T16:00:00.000Z",
-    "status": "pending",
-    "mediaId": null,
-    "permalink": null,
-    "storyMediaIds": null,
-    "publishedAt": null,
+    "status": "published",
+    "mediaId": "18113549909182196",
+    "permalink": "https://www.instagram.com/p/DfFuQwejfMP/",
+    "storyMediaIds": [
+      "18137102806659221"
+    ],
+    "publishedAt": "2026-10-29T19:08:38.445Z",
     "error": null
   }
 ]
