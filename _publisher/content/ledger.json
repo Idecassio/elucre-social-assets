@@ -623,5 +623,25 @@
     ],
     "publishedAt": "2026-10-28T19:08:33.820Z",
     "error": null
+  },
+  {
+    "id": "p_mvtnaorejc4f",
+    "brand": "elucre",
+    "type": "image",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/dor - loja 24-7/feed_1.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/dor - loja 24-7/Stories/story_1.jpg"
+    ],
+    "day": "2026-10-29",
+    "caption": "Você dorme. Sua loja vende 🌙 Loja no ar 24h: o cliente compra na madrugada e o pedido te espera pela manhã, pronto no WhatsApp. Quanto você já perdeu vendendo só no horário comercial?\n\nTeste 7 dias grátis 👉 elucre.net\n\n#lojaonline #vendas24horas #eLucre #vendaspelowhatsapp #empreendedorismo",
+    "scheduledAt": "2026-10-29T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
