@@ -645,5 +645,25 @@
     ],
     "publishedAt": "2026-10-29T19:08:38.445Z",
     "error": null
+  },
+  {
+    "id": "p_mvv2qlaln6h8",
+    "brand": "elucre",
+    "type": "image",
+    "assets": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/conversao - fecha mes/feed_1.jpg"
+    ],
+    "story": [
+      "/home/runner/work/elucre-social-assets/elucre-social-assets/conversao - fecha mes/Stories/story_1.jpg"
+    ],
+    "day": "2026-10-30",
+    "caption": "Feche o mês com a loja vendendo sozinha 🚀 No ar em minutos, sem programador, pedido pronto no WhatsApp e 0% de comissão. Comece agora com 7 dias grátis.\n\nTeste 7 dias grátis 👉 elucre.net\n\n#lojaonline #vendaspelowhatsapp #eLucre #comecehoje #testegratis",
+    "scheduledAt": "2026-10-30T16:00:00.000Z",
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "storyMediaIds": null,
+    "publishedAt": null,
+    "error": null
   }
 ]
